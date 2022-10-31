@@ -1,6 +1,9 @@
+import java.sql.*;
+
 public class SQLManager {
     //tablename = UserInformation ?
     //    ajfiojsaidoiajfs
+    Connection database = DriverManager.getConnection();
     public static void viewTable(Connection con) throws SQLException {
         String query = "select ID, USERNAME, PASSWORD, EMAIL, BODYFAT, WEIGHT from USERINFORMATION";
         try (Statement stmt = con.createStatement()) {
@@ -18,5 +21,9 @@ public class SQLManager {
         } catch (SQLException e) {
             JDBCTutorialUtilities.printSQLException(e);
         }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(viewTable(database););
     }
 }
