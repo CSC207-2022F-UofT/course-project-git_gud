@@ -24,6 +24,6 @@ public class SQLManager {
     }
 
     public static void main(String[] args) {
-        System.out.println(viewTable(database););
+        System.out.println(viewTable(database));
     }
 }
