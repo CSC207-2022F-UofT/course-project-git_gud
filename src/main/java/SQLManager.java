@@ -3,8 +3,20 @@ import java.sql.*;
 public class SQLManager {
     //tablename = UserInformation ?
     //    ajfiojsaidoiajfs
-    Connection database = DriverManager.getConnection();
-    public static void viewTable(Connection con) throws SQLException {
+    static Connection database;
+
+    static {
+        try {
+            database = DriverManager.getConnection("jdbc:mysql://localhost:3306", "root", "root");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public SQLManager() throws SQLException {
+    }
+
+    public static boolean viewTable(Connection con) throws SQLException {
         String query = "select ID, USERNAME, PASSWORD, EMAIL, BODYFAT, WEIGHT from USERINFORMATION";
         try (Statement stmt = con.createStatement()) {
             ResultSet rs = stmt.executeQuery(query);
@@ -21,9 +33,10 @@ public class SQLManager {
         } catch (SQLException e) {
             //SQL Exception
         }
+        return false;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         System.out.println(viewTable(database));
     }
 }
