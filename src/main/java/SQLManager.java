@@ -19,7 +19,7 @@ public class SQLManager {
                         ", " + email + ", " + weight + ", " + bodyFat);
             }
         } catch (SQLException e) {
-            JDBCTutorialUtilities.printSQLException(e);
+            //SQL Exception
         }
     }
 
