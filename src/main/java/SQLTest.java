@@ -1,6 +1,6 @@
 import java.sql.*;
 
-public class MYSQL {
+public class SQLTest {
 
     public static void main(String[] args) {
 
