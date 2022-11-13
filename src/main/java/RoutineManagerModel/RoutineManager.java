@@ -1,3 +1,5 @@
+package RoutineManagerModel;
+
 public class RoutineManager {
 
     Workout[] workouts;
@@ -39,6 +41,10 @@ public class RoutineManager {
         } else if (workouts[4] == workout) {
             this.history.UpdateHistory("Workout 5");
         }
+    }
+
+    public Workout[] getWorkouts() {
+        return this.workouts;
     }
 
 }
