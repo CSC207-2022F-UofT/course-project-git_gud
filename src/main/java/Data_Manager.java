@@ -4,7 +4,7 @@ public class Data_Manager {
         try {
 
             Connection connection1 = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/JDBCT?allowMultiQueries=true", "root", "root");
+                    "jdbc:mysql://127.0.0.1:3306/JDBCT?allowMultiQueries=true", "root", "root");
             Statement statement = connection1.createStatement();
 
 
