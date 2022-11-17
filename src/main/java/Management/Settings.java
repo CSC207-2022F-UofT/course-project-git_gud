@@ -8,14 +8,8 @@ import Controllers.DashboardController;
 public class Settings {
     public static void main(String[] args) throws SQLException {
         Scanner userInput = new Scanner(System.in);  // Create a Scanner object
-        System.out.println("""
-                Select the number for a Setting
-                1) Delete Account
-                2) Change Username
-                3) Change Email
-                4) Change Password
-                5) Change Body Fat Stats
-                6) Change Body Weight Stats""");
+        System.out.println(" Select the number for a Setting\n 1) Delete Account\n2) Change Username\n3) Change Email\n" +
+                        "4) Change Password\n5) Change Body Fat Stats\n6) Change Body Weight Stats");
 
         String chosenSetting = userInput.nextLine();  // Read user input
         if (Objects.equals(chosenSetting, "1")){
