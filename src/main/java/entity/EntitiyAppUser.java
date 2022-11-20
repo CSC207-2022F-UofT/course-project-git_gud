@@ -1,4 +1,5 @@
-public class EntitiyAppUser implements UserDetails{
+package entity;
+public class EntitiyAppUser implements UserDetails {
 
     public String username;
     public String password;

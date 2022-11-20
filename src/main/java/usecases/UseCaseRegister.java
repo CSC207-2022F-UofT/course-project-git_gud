@@ -1,5 +1,8 @@
-import javax.swing.text.View;
+package usecases;
+import presenter.Presenter;
 import java.sql.*;
+import entity.EntitiyAppUser;
+import ui.ViewLoginPage;
 
 public class UseCaseRegister {
     public static void newUser(String username, String password, String email) {
@@ -22,7 +25,6 @@ public class UseCaseRegister {
     public static void Registered(ViewLoginPage x){
         Presenter.completeRegistration(x);
     }
-
     public static void usernameExists(ViewLoginPage x){
         Presenter.usernameExists(x);
     }

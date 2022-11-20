@@ -1,3 +1,5 @@
+package entity;
+
 public interface UserDetails {
     public String getUsername();
     public String getPassword();

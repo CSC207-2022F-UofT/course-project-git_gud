@@ -1,19 +1,21 @@
+package ui;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import controller.Controller;
 
 //User Interface
 public class ViewLoginPage implements ActionListener {
-    JButton loginButton;
-    JTextField usernameField;
-    JPasswordField passwordField;
-    JTextField emailField;
-    JLabel message;
-    JButton signupButton;
-    ViewLoginPage(){
+    public JButton loginButton;
+    public JTextField usernameField;
+    public JPasswordField passwordField;
+    public JTextField emailField;
+    public JLabel message;
+    public JButton signupButton;
+    public ViewLoginPage(){
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(600,600);
