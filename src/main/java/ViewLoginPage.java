@@ -39,9 +39,9 @@ public class ViewLoginPage implements ActionListener {
         passwordField.setLocation(130,200);
 
         message = new JLabel();
-        message.setBounds(50,100,100,35);
+        message.setBounds(50,100,200,35);
         message.setLocation(120,250);
-        message.setText("testing");
+        message.setText("");
 
         loginButton = new JButton("Login");
         loginButton.setBounds(125,200,100,25);

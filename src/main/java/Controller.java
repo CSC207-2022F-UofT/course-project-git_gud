@@ -10,7 +10,7 @@ public class Controller {
         String password = String.valueOf(page.passwordField.getPassword());
         String email = page.emailField.getText();
 
-        if(existsInDatabase(username, password, email)){
+        if(existsInDatabase(username)){
             if(passwordCorrectness(password)){
                 UseCaseLogin.login(page);
             }
@@ -23,14 +23,14 @@ public class Controller {
             UseCaseRegister.Registered(page);
         }
     }
-    public static Boolean existsInDatabase(String username, String password, String email){
+    public static Boolean existsInDatabase(String username){
         try {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBC", "root", "root1234");
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("select username from USER");
+            ResultSet resultSet = statement.executeQuery("Select * From USER");
 
             while (resultSet.next()) {
-                if (resultSet.equals(username)) {
+                if (resultSet.getString(1).equals(username)){
                     return true;
                 }
             }
@@ -43,9 +43,9 @@ public class Controller {
         try {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBC", "root", "root1234");
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("select password from USER");
+            ResultSet resultSet = statement.executeQuery("Select * From USER");
             while (resultSet.next()) {
-                if (resultSet.equals(password)) {
+                if (resultSet.getString(2).equals(password)) {
                     return true;
                 }
             }
