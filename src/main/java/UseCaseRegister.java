@@ -6,7 +6,6 @@ public class UseCaseRegister {
         EntitiyAppUser x = new EntitiyAppUser(username, password, email);
         try {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBC", "root", "root1234");
-            Statement statement = connection.createStatement();
             String SQL = "INSERT into USER(username, password, email)" + "VALUES (?, ?, ?)";
             PreparedStatement p = connection.prepareStatement(SQL);
             p.setString(1, x.getUsername());
