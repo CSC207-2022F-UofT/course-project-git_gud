@@ -16,6 +16,8 @@ public class Workout {
     public Workout() {
 
         this.workout = new ArrayList<String>();
+        this.workout.add("hi");
+        this.workout.add("hiiii");
     }
 
     /**
