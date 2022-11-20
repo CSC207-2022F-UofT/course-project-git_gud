@@ -1,5 +1,7 @@
 
 import javax.swing.*;
+import javax.swing.border.LineBorder;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -10,10 +12,11 @@ public class ViewLoginPage implements ActionListener {
     JPasswordField passwordField;
     JTextField emailField;
     JLabel message;
+    JButton signupButton;
     ViewLoginPage(){
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(500,500);
+        frame.setSize(600,600);
         JLabel usernameLabel = new JLabel("Username");
         usernameLabel.setBounds(50,100,75,25);
         usernameLabel.setLocation(50,100);
@@ -44,9 +47,14 @@ public class ViewLoginPage implements ActionListener {
         message.setText("");
 
         loginButton = new JButton("Login");
-        loginButton.setBounds(125,200,100,25);
-        loginButton.setLocation(125,200);
+        loginButton.setBounds(130,300,75,25);
+        loginButton.setLocation(135,275);
         loginButton.addActionListener(this);
+
+        signupButton = new JButton("Signup");
+        signupButton.setBounds(60, 300, 75, 25);
+        signupButton.setLocation(60,290);
+        signupButton.addActionListener(this);
 
         frame.add(usernameLabel);
         frame.add(emailLabel);
@@ -56,12 +64,16 @@ public class ViewLoginPage implements ActionListener {
         frame.add(passwordField);
         frame.add(emailField);
         frame.add(loginButton);
+        frame.add(signupButton);
         frame.setVisible(true);
+
     }
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == loginButton){
-            Controller.Verify(this);
+            Controller.loginButton(this);
+        } else if (e.getSource()== signupButton) {
+            Controller.signupButton(this);
         }
     }
 }

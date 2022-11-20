@@ -1,3 +1,4 @@
+import javax.swing.text.View;
 import java.awt.event.ActionEvent;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -5,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class Controller {
-    public static void Verify(ViewLoginPage page) {
+    public static void loginButton(ViewLoginPage page) {
         String username = page.usernameField.getText();
         String password = String.valueOf(page.passwordField.getPassword());
         String email = page.emailField.getText();
@@ -19,10 +20,23 @@ public class Controller {
             }
         }
         else{
+            UseCaseRegister.pleaseSignup(page);
+        }
+    }
+    public static void signupButton(ViewLoginPage page){
+        String username = page.usernameField.getText();
+        String password = String.valueOf(page.passwordField.getPassword());
+        String email = page.emailField.getText();
+
+        if(existsInDatabase(username)){
+            UseCaseRegister.usernameExists(page);
+        }
+        else{
             UseCaseRegister.newUser(username, password, email);
             UseCaseRegister.Registered(page);
         }
     }
+
     public static Boolean existsInDatabase(String username){
         try {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBC", "root", "root1234");

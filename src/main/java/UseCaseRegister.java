@@ -16,8 +16,15 @@ public class UseCaseRegister {
             e.printStackTrace();
         }
     }
+    public static void pleaseSignup(ViewLoginPage x){
+        Presenter.pleaseSignup(x);
+    }
     public static void Registered(ViewLoginPage x){
         Presenter.completeRegistration(x);
+    }
+
+    public static void usernameExists(ViewLoginPage x){
+        Presenter.usernameExists(x);
     }
 
 }
