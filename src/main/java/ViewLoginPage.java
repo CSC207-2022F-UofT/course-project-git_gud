@@ -4,11 +4,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 //User Interface
-public class LoginPage implements ActionListener {
+public class ViewLoginPage implements ActionListener {
     JButton loginButton;
     JTextField usernameField;
     JPasswordField passwordField;
-    LoginPage(){
+    JTextField emailField;
+    JLabel message;
+    ViewLoginPage(){
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500,500);
@@ -24,7 +26,7 @@ public class LoginPage implements ActionListener {
         emailLabel.setBounds(50,100,75,25);
         emailLabel.setLocation(50,150);
 
-        JTextField emailField = new JTextField();
+        emailField = new JTextField();
         emailField.setBounds(130,150,200,25);
         emailField.setLocation(130,150);
 
@@ -36,7 +38,7 @@ public class LoginPage implements ActionListener {
         passwordField.setBounds(130,200,200,25);
         passwordField.setLocation(130,200);
 
-        JLabel message = new JLabel();
+        message = new JLabel();
         message.setBounds(50,100,100,35);
         message.setLocation(120,250);
         message.setText("testing");
@@ -59,8 +61,7 @@ public class LoginPage implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == loginButton){
-            String username = usernameField.getText();
-            String password = String.valueOf(passwordField.getPassword());
+            Controller.Verify(this);
         }
     }
 }
