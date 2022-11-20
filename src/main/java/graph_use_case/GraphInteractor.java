@@ -9,12 +9,13 @@ public class GraphInteractor implements GraphInputBoundary {
         this.graphPresenter = graphPresenter;
     }
 
-    @Override
-    public GraphResponseModel plot(GraphRequestModel requestModel) {
-        if (requestModel.getBodyweightData().isEmpty()){
-            return graphPresenter.prepareFailView(String "There is no data to display");
-        }
-    }
+//    @Override
+//    public GraphResponseModel plot(GraphRequestModel requestModel) {
+////        if (requestModel.getBodyweightData().isEmpty()){
+////            return graphPresenter.prepareFailView(String "There is no data to display");
+//        return null;
+//        }
+//    }
 
 
 }
