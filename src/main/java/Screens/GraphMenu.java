@@ -1,4 +1,4 @@
-package graph_use_case;
+package Screens;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -10,12 +10,12 @@ import javax.swing.WindowConstants;
 
 
 
-public class GraphView extends JFrame{
+public class GraphMenu extends JFrame{
 
 
 //    private final graph_use_case.GraphController g;
 
-    public GraphView(){
+    public GraphMenu(){
 
 
         final JFrame frame = new JFrame();

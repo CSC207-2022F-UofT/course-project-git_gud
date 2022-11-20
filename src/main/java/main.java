@@ -1,10 +1,13 @@
-import graph_use_case.GraphView;
+import Screens.BodyweightScreen;
+import Screens.GraphMenu;
 
 public class main {
 
 
     public static void main(String[] args) {
-        GraphView g = new GraphView();
+//        GraphMenu g = new GraphMenu();
+        BodyweightScreen b = new BodyweightScreen();
+        b.setVisible(true);
 
     }
 }

@@ -22,6 +22,17 @@ public class ExerciseUser implements User{
         this.volume = new Volume();
     }
 
+    public String getusername(){
+        return this.username;
+    }
+
+    public String getpassword(){
+        return this.password;
+    }
+
+
+
+
 
 
 
