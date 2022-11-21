@@ -1,5 +1,8 @@
+/**
+ * This is a UI class that instantiates the JFrame and all other components the user will first
+ * see when the program runs
+ */
 package ui;
-
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
