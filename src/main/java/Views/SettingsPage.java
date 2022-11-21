@@ -78,11 +78,9 @@ public class SettingsPage {
                 }
                 if (e.getSource() == changeEmail) {
                     EmailView emailViewer = new EmailView();
-                    //System.exit(0);
                 }
                 if (e.getSource() == changePassword) {
                     PasswordView passwordViewer = new PasswordView();
-                    //System.exit(0);
                 }
                 if (e.getSource() == deleteAccount) {
                     System.exit(0);
@@ -91,10 +89,10 @@ public class SettingsPage {
                     System.exit(0);
                 }
                 if (e.getSource() == changeWeight) {
-                    System.exit(0);
+                    WeightView weightViewer = new WeightView();
                 }
                 if (e.getSource() == changeFat) {
-                    System.exit(0);
+                    FatView fatViewer = new FatView();
                 }
             }
         };

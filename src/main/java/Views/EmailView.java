@@ -1,7 +1,7 @@
 package Views;
 
 import Controllers.DashboardController;
-import ViewUpdaters.EmailViewUpdate;
+import Controllers.PresenterViewUpdate;
 
 import javax.swing.*;
 import java.awt.*;
@@ -63,11 +63,11 @@ public class EmailView {
                     String newEmail = newEmailInput.getText();
                     try {
                         //System.out.println(DashboardController.ChangeEmailUseCase(oldEmail, newEmail, EmailView.this));
-                        DashboardController.ChangeEmailUseCase(oldEmail, newEmail, EmailView.this);
+                        DashboardController.ChangeEmailUseCase(oldEmail, newEmail);
                     } catch (SQLException ex) {
                         throw new RuntimeException(ex);
                     }
-                    EmailViewUpdate updateEmailView = new EmailViewUpdate(EmailView.this);
+                    PresenterViewUpdate updateEmailView = new PresenterViewUpdate.UpdateEmailView(EmailView.this);
                     //System.exit(0);
                 }
                 if (e.getSource() == backButton){

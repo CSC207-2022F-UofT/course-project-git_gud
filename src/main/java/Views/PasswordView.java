@@ -1,6 +1,7 @@
 package Views;
 
 import Controllers.DashboardController;
+import Controllers.PresenterViewUpdate;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,7 +9,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 
+@SuppressWarnings("Convert2Lambda")
 public class PasswordView {
+    public JPanel password;
     public PasswordView(){
         JFrame passwordFrame = new JFrame();
         passwordFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -16,7 +19,7 @@ public class PasswordView {
         passwordFrame.setLayout(null);
         passwordFrame.setTitle("Change Password");
 
-        JPanel password = new JPanel();
+        password = new JPanel();
         password.setLocation(0, 250);
         password.setBounds(50, 144, 200, 275);
         password.setBackground(Color.lightGray);
@@ -62,11 +65,12 @@ public class PasswordView {
                     String oldPassword = passwordInput.getText();
                     String newPassword = newPasswordInput.getText();
                     try {
-                        System.out.println(DashboardController.ChangePasswordUseCase(oldPassword, newPassword));
+                        DashboardController.ChangePasswordUseCase(oldPassword, newPassword);
                     } catch (SQLException ex) {
                         throw new RuntimeException(ex);
                     }
-                    System.exit(0);
+                    PresenterViewUpdate updatePasswordView = new PresenterViewUpdate.UpdatePasswordView(PasswordView.this);
+                    //System.exit(0);
                 }
                 if (e.getSource() == backButton){
                     passwordFrame.dispose();

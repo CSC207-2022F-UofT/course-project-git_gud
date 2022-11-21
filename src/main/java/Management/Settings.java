@@ -36,21 +36,21 @@ public class Settings {
             String oldPassword = userInput.nextLine();
             System.out.println("What is your new account password?");
             String newPassword = userInput.nextLine();
-            System.out.println(DashboardController.ChangePasswordUseCase(oldPassword, newPassword));
+            //System.out.println(DashboardController.ChangePasswordUseCase(oldPassword, newPassword));
         }
         else if (Objects.equals(chosenSetting, "5")){
             System.out.println("What is your username?");
             String username2 = userInput.nextLine();
             System.out.println("What is your new body fat?");
             int newFat = Integer.parseInt(userInput.nextLine());
-            System.out.println(DashboardController.ChangeBodyFatUseCase(username2, newFat));
+            //System.out.println(DashboardController.ChangeBodyFatUseCase(username2, newFat));
         }
         else if (Objects.equals(chosenSetting, "6")){
             System.out.println("What is your username?");
             String username1 = userInput.nextLine();
             System.out.println("What is your new weight?");
             int newWeight = Integer.parseInt(userInput.nextLine());
-            System.out.println(DashboardController.ChangeBodyWeightUseCase(username1, newWeight));
+            //System.out.println(DashboardController.ChangeBodyWeightUseCase(username1, newWeight));
         }
     }
 }

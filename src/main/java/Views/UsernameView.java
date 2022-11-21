@@ -1,7 +1,7 @@
 package Views;
 
 import Controllers.DashboardController;
-import com.sun.tools.javac.Main;
+import Controllers.PresenterViewUpdate;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,6 +11,7 @@ import java.sql.SQLException;
 
 @SuppressWarnings("Convert2Lambda")
 public class UsernameView {
+    public JPanel username;
     public UsernameView(){
         JFrame usernameFrame = new JFrame();
         usernameFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -18,7 +19,7 @@ public class UsernameView {
         usernameFrame.setLayout(null);
         usernameFrame.setTitle("Change Username");
 
-        JPanel username = new JPanel();
+        username = new JPanel();
         username.setLocation(0, 250);
         username.setBounds(50, 144, 200, 275);
         username.setBackground(Color.lightGray);
@@ -61,12 +62,12 @@ public class UsernameView {
                     String userName = usernameInput.getText();
                     String newUserName = newUsernameInput.getText();
                     try {
-                        System.out.println(DashboardController.ChangeUsernameUseCase(userName, newUserName,
-                                UsernameView.this));
+                        DashboardController.ChangeUsernameUseCase(userName, newUserName);
                     } catch (SQLException ex) {
                         throw new RuntimeException(ex);
                     }
-                    System.exit(0);
+                    PresenterViewUpdate updateUsernameView = new PresenterViewUpdate.UpdateUsernameView(UsernameView.this);
+                    //System.exit(0);
                 }
                 if (e.getSource() == backButton){
                     usernameFrame.dispose();
