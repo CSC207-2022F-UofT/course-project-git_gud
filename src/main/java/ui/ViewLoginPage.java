@@ -1,7 +1,3 @@
-/**
- * This is a UI class that instantiates the JFrame and all other components the user will first
- * see when the program runs
- */
 package ui;
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -12,6 +8,10 @@ import controller.Controller;
 
 //User Interface
 public class ViewLoginPage implements ActionListener {
+    /**
+     * This is a UI class that instantiates the JFrame and all other components the user will first
+     * see when the program runs
+     */
     public JButton loginButton;
     public JTextField usernameField;
     public JPasswordField passwordField;

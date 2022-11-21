@@ -2,8 +2,6 @@
  * This is a main controller class that handles inputs and changes made by the user
  * in the UI, and determines which use case method to call
  */
-
-
 package controller;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -15,7 +13,6 @@ import usecases.UseCaseLogin;
 import usecases.UseCaseRegister;
 
 public class Controller {
-
     /**
      * The Controller for the loginButton takes in inputs from the text fields
      * of the given UI page, and determine which use case to select.
