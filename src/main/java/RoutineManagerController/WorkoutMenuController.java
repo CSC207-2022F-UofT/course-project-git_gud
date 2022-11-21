@@ -34,7 +34,7 @@ public class WorkoutMenuController {
         }
     }
 
-    class RemoveExerciseDisplay implements ActionListener{
+    class RemoveExerciseDisplay implements ActionListener, DisplayExercisesRemoveMenu {
 
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -44,22 +44,20 @@ public class WorkoutMenuController {
                 theView.dispose();
                 RemoveExerciseMenu removeExerciseMenu = new RemoveExerciseMenu();
 
-                for (int i=0; i<theModel.getWorkouts()[0].getWorkout().size(); i++){
-                    removeExerciseMenu.addExercise(theModel.getWorkouts()[0].getWorkout().get(i));
-                }
+                displayExercises(theModel, removeExerciseMenu, 1);
 
                 removeExerciseMenu.setWorkoutNumber(1);
 
                 RemoveExerciseMenuController theController = new RemoveExerciseMenuController(theModel, removeExerciseMenu);
+
             }
             if (theView.getWorkoutNumber()==2) {
 
                 theView.dispose();
                 RemoveExerciseMenu removeExerciseMenu = new RemoveExerciseMenu();
 
-                for (int i=0; i<theModel.getWorkouts()[1].getWorkout().size(); i++){
-                    removeExerciseMenu.addExercise(theModel.getWorkouts()[1].getWorkout().get(i));
-                }
+                displayExercises(theModel, removeExerciseMenu, 2);
+
                 removeExerciseMenu.setWorkoutNumber(2);
 
                 RemoveExerciseMenuController theController = new RemoveExerciseMenuController(theModel, removeExerciseMenu);
@@ -70,9 +68,8 @@ public class WorkoutMenuController {
                 theView.dispose();
                 RemoveExerciseMenu removeExerciseMenu = new RemoveExerciseMenu();
 
-                for (int i=0; i<theModel.getWorkouts()[2].getWorkout().size(); i++){
-                    removeExerciseMenu.addExercise(theModel.getWorkouts()[2].getWorkout().get(i));
-                }
+                displayExercises(theModel, removeExerciseMenu, 3);
+
                 removeExerciseMenu.setWorkoutNumber(3);
 
                 RemoveExerciseMenuController theController = new RemoveExerciseMenuController(theModel, removeExerciseMenu);
@@ -83,9 +80,8 @@ public class WorkoutMenuController {
                 theView.dispose();
                 RemoveExerciseMenu removeExerciseMenu = new RemoveExerciseMenu();
 
-                for (int i=0; i<theModel.getWorkouts()[3].getWorkout().size(); i++){
-                    removeExerciseMenu.addExercise(theModel.getWorkouts()[3].getWorkout().get(i));
-                }
+                displayExercises(theModel, removeExerciseMenu, 4);
+
                 removeExerciseMenu.setWorkoutNumber(4);
 
                 RemoveExerciseMenuController theController = new RemoveExerciseMenuController(theModel, removeExerciseMenu);
@@ -96,15 +92,21 @@ public class WorkoutMenuController {
                 theView.dispose();
                 RemoveExerciseMenu removeExerciseMenu = new RemoveExerciseMenu();
 
-                for (int i=0; i<theModel.getWorkouts()[4].getWorkout().size(); i++){
-                    removeExerciseMenu.addExercise(theModel.getWorkouts()[4].getWorkout().get(i));
-                }
+                displayExercises(theModel, removeExerciseMenu, 5);
+
                 removeExerciseMenu.setWorkoutNumber(5);
 
                 RemoveExerciseMenuController theController = new RemoveExerciseMenuController(theModel, removeExerciseMenu);
+            }
+        }
 
+        @Override
+        public void displayExercises(RoutineManager theModel, RemoveExerciseMenu removeExerciseMenu, int workoutNumber) {
+            if (!theModel.getWorkouts()[workoutNumber-1].getWorkout().isEmpty()) {
+                for (int i = 0; i < theModel.getWorkouts()[workoutNumber - 1].getWorkout().size(); i++) {
+                    removeExerciseMenu.addExercise(theModel.getWorkouts()[workoutNumber - 1].getWorkout().get(i));
+                }
             }
         }
     }
-
 }

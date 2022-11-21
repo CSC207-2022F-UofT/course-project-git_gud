@@ -24,7 +24,7 @@ public class RemoveExerciseMenuController {
         this.theView.addBackListener(new BackAction());
     }
 
-    class RemoveExerciseAction implements ActionListener{
+    class RemoveExerciseAction implements ActionListener, DisplayExercisesWorkoutMenu {
 
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -42,11 +42,7 @@ public class RemoveExerciseMenuController {
 
                         WorkoutMenuController workoutMenuController = new WorkoutMenuController(theModel, workoutMenu);
 
-                        if (!theModel.getWorkouts()[0].getWorkout().isEmpty()) {
-                            for (int i = 0; i < theModel.getWorkouts()[0].getWorkout().size(); i++) {
-                                workoutMenu.addExercise(theModel.getWorkouts()[0].getWorkout().get(i));
-                            }
-                        }
+                        displayExercises(theModel, workoutMenu, 1);
                     }
                     if (theView.getWorkoutNumber()==2){
                         theModel.getWorkouts()[1].removeExercise(exercise.getText());
@@ -58,11 +54,7 @@ public class RemoveExerciseMenuController {
 
                         WorkoutMenuController workoutMenuController = new WorkoutMenuController(theModel, workoutMenu);
 
-                        if (!theModel.getWorkouts()[1].getWorkout().isEmpty()) {
-                            for (int i = 0; i < theModel.getWorkouts()[1].getWorkout().size(); i++) {
-                                workoutMenu.addExercise(theModel.getWorkouts()[1].getWorkout().get(i));
-                            }
-                        }
+                        displayExercises(theModel, workoutMenu, 2);
                     }
                     if (theView.getWorkoutNumber()==3){
                         theModel.getWorkouts()[2].removeExercise(exercise.getText());
@@ -74,11 +66,7 @@ public class RemoveExerciseMenuController {
 
                         WorkoutMenuController workoutMenuController = new WorkoutMenuController(theModel, workoutMenu);
 
-                        if (!theModel.getWorkouts()[2].getWorkout().isEmpty()) {
-                            for (int i = 0; i < theModel.getWorkouts()[2].getWorkout().size(); i++) {
-                                workoutMenu.addExercise(theModel.getWorkouts()[2].getWorkout().get(i));
-                            }
-                        }
+                        displayExercises(theModel, workoutMenu, 3);
                     }
                     if (theView.getWorkoutNumber()==4){
                         theModel.getWorkouts()[3].removeExercise(exercise.getText());
@@ -90,11 +78,7 @@ public class RemoveExerciseMenuController {
 
                         WorkoutMenuController workoutMenuController = new WorkoutMenuController(theModel, workoutMenu);
 
-                        if (!theModel.getWorkouts()[3].getWorkout().isEmpty()) {
-                            for (int i = 0; i < theModel.getWorkouts()[3].getWorkout().size(); i++) {
-                                workoutMenu.addExercise(theModel.getWorkouts()[3].getWorkout().get(i));
-                            }
-                        }
+                        displayExercises(theModel, workoutMenu, 4);
                     }
                     if (theView.getWorkoutNumber()==5){
                         theModel.getWorkouts()[4].removeExercise(exercise.getText());
@@ -106,19 +90,23 @@ public class RemoveExerciseMenuController {
 
                         WorkoutMenuController workoutMenuController = new WorkoutMenuController(theModel, workoutMenu);
 
-                        if (!theModel.getWorkouts()[4].getWorkout().isEmpty()) {
-                            for (int i = 0; i < theModel.getWorkouts()[4].getWorkout().size(); i++) {
-                                workoutMenu.addExercise(theModel.getWorkouts()[4].getWorkout().get(i));
-                            }
-                        }
+                        displayExercises(theModel, workoutMenu, 5);
                     }
                 }
             }
         }
 
+        @Override
+        public void displayExercises(RoutineManager theModel, WorkoutMenu workoutMenu, int workoutNumber) {
+            if (!theModel.getWorkouts()[workoutNumber-1].getWorkout().isEmpty()) {
+                for (int i = 0; i < theModel.getWorkouts()[workoutNumber-1].getWorkout().size(); i++) {
+                    workoutMenu.addExercise(theModel.getWorkouts()[workoutNumber-1].getWorkout().get(i));
+                }
+            }
+        }
     }
 
-    class BackAction implements ActionListener{
+    class BackAction implements ActionListener, DisplayExercisesWorkoutMenu {
 
 
         @Override
@@ -133,11 +121,7 @@ public class RemoveExerciseMenuController {
 
                 WorkoutMenuController workoutMenuController = new WorkoutMenuController(theModel, workoutMenu);
 
-                if (!theModel.getWorkouts()[0].getWorkout().isEmpty()) {
-                    for (int i = 0; i < theModel.getWorkouts()[0].getWorkout().size(); i++) {
-                        workoutMenu.addExercise(theModel.getWorkouts()[0].getWorkout().get(i));
-                    }
-                }
+                displayExercises(theModel, workoutMenu, 1);
             }
             if (theView.getWorkoutNumber()==2) {
 
@@ -148,11 +132,7 @@ public class RemoveExerciseMenuController {
 
                 WorkoutMenuController workoutMenuController = new WorkoutMenuController(theModel, workoutMenu);
 
-                if (!theModel.getWorkouts()[1].getWorkout().isEmpty()) {
-                    for (int i = 0; i < theModel.getWorkouts()[1].getWorkout().size(); i++) {
-                        workoutMenu.addExercise(theModel.getWorkouts()[1].getWorkout().get(i));
-                    }
-                }
+                displayExercises(theModel, workoutMenu, 2);
             }
             if (theView.getWorkoutNumber()==3) {
 
@@ -163,11 +143,7 @@ public class RemoveExerciseMenuController {
 
                 WorkoutMenuController workoutMenuController = new WorkoutMenuController(theModel, workoutMenu);
 
-                if (!theModel.getWorkouts()[2].getWorkout().isEmpty()) {
-                    for (int i = 0; i < theModel.getWorkouts()[2].getWorkout().size(); i++) {
-                        workoutMenu.addExercise(theModel.getWorkouts()[2].getWorkout().get(i));
-                    }
-                }
+                displayExercises(theModel, workoutMenu, 3);
             }
             if (theView.getWorkoutNumber()==4) {
 
@@ -178,11 +154,7 @@ public class RemoveExerciseMenuController {
 
                 WorkoutMenuController workoutMenuController = new WorkoutMenuController(theModel, workoutMenu);
 
-                if (!theModel.getWorkouts()[3].getWorkout().isEmpty()) {
-                    for (int i = 0; i < theModel.getWorkouts()[3].getWorkout().size(); i++) {
-                        workoutMenu.addExercise(theModel.getWorkouts()[3].getWorkout().get(i));
-                    }
-                }
+                displayExercises(theModel, workoutMenu, 4);
             }
             if (theView.getWorkoutNumber()==5) {
 
@@ -193,10 +165,15 @@ public class RemoveExerciseMenuController {
 
                 WorkoutMenuController workoutMenuController = new WorkoutMenuController(theModel, workoutMenu);
 
-                if (!theModel.getWorkouts()[4].getWorkout().isEmpty()) {
-                    for (int i = 0; i < theModel.getWorkouts()[4].getWorkout().size(); i++) {
-                        workoutMenu.addExercise(theModel.getWorkouts()[4].getWorkout().get(i));
-                    }
+                displayExercises(theModel, workoutMenu, 5);
+            }
+        }
+
+        @Override
+        public void displayExercises(RoutineManager theModel, WorkoutMenu workoutMenu, int workoutNumber) {
+            if (!theModel.getWorkouts()[workoutNumber-1].getWorkout().isEmpty()) {
+                for (int i = 0; i < theModel.getWorkouts()[workoutNumber-1].getWorkout().size(); i++) {
+                    workoutMenu.addExercise(theModel.getWorkouts()[workoutNumber-1].getWorkout().get(i));
                 }
             }
         }
