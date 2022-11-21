@@ -1,9 +1,9 @@
 /**
  * This presenter class contains methods to be called for different use cases which updates the view
  */
-package presenter;
+package Presenters;
 import Views.SettingsPage;
-import ui.ViewLoginPage;
+import Views.ViewLoginPage;
 
 public class Presenter {
 

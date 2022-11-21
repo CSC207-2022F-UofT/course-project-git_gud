@@ -1,6 +1,6 @@
 package Views;
 
-import Controllers.PresenterViewUpdate;
+import Presenters.PresenterViewUpdate;
 
 import javax.swing.*;
 import java.awt.*;

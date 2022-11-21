@@ -1,4 +1,4 @@
-package Settings;
+package Usecases;
 
 import java.sql.PreparedStatement;
 import Management.Data_Manager;

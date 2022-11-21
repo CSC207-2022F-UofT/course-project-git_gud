@@ -1,7 +1,7 @@
-package Controllers;
+package Presenters;
 
 import Views.*;
-import ui.ViewLoginPage;
+import Views.ViewLoginPage;
 
 import javax.swing.*;
 
@@ -55,7 +55,7 @@ public class PresenterViewUpdate {
         public UpdateDeleteLogoutView() {
             super();
             DeleteView.deleteFrame.dispose();
-            ui.ViewLoginPage smth = new ViewLoginPage();
+            ViewLoginPage smth = new ViewLoginPage();
         }
     }
 }

@@ -1,4 +1,4 @@
-package entity;
+package Entities;
 
 public interface UserDetails {
     public String getUsername();

@@ -1,9 +1,9 @@
 /**
  * This class is called when use enters wrong password
  */
-package usecases;
-import presenter.Presenter;
-import ui.ViewLoginPage;
+package Usecases;
+import Presenters.Presenter;
+import Views.ViewLoginPage;
 
 public class UseCaseFalseLogin {
 

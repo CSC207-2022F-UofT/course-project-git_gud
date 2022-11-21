@@ -1,6 +1,7 @@
 package Controllers;
 
-import Settings.*;
+import Usecases.*;
+
 import java.sql.*;
 
 public class DashboardController {

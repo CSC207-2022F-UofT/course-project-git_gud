@@ -1,11 +1,11 @@
 /**
  * This class Registers the user
  */
-package usecases;
-import presenter.Presenter;
+package Usecases;
+import Presenters.Presenter;
 import java.sql.*;
-import entity.EntitiyAppUser;
-import ui.ViewLoginPage;
+import Entities.EntitiyAppUser;
+import Views.ViewLoginPage;
 
 public class UseCaseRegister {
     /**

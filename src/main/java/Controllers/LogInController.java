@@ -2,17 +2,17 @@
  * This is a main controller class that handles inputs and changes made by the user
  * in the UI, and determines which use case method to call
  */
-package controller;
+package Controllers;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import ui.ViewLoginPage;
-import usecases.UseCaseFalseLogin;
-import usecases.UseCaseLogin;
-import usecases.UseCaseRegister;
+import Views.ViewLoginPage;
+import Usecases.UseCaseFalseLogin;
+import Usecases.UseCaseLogin;
+import Usecases.UseCaseRegister;
 
-public class Controller {
+public class LogInController {
     /**
      * The Controller for the loginButton takes in inputs from the text fields
      * of the given UI page, and determine which use case to select.

@@ -1,10 +1,8 @@
-package ui;
+package Views;
 import javax.swing.*;
-import javax.swing.border.LineBorder;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import controller.Controller;
+import Controllers.LogInController;
 
 //User Interface
 public class ViewLoginPage implements ActionListener {
@@ -81,9 +79,9 @@ public class ViewLoginPage implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == loginButton){
-            Controller.loginButton(this);
+            LogInController.loginButton(this);
         } else if (e.getSource()== signupButton) {
-            Controller.signupButton(this);
+            LogInController.signupButton(this);
         }
     }
 }

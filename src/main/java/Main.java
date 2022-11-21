@@ -1,4 +1,4 @@
-import ui.ViewLoginPage;
+import Views.ViewLoginPage;
 public class Main {
     /**
      * This main class instantiates the UI

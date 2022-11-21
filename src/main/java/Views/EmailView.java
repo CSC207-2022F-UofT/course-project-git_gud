@@ -1,7 +1,7 @@
 package Views;
 
 import Controllers.DashboardController;
-import Controllers.PresenterViewUpdate;
+import Presenters.PresenterViewUpdate;
 
 import javax.swing.*;
 import java.awt.*;

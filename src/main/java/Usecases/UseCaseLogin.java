@@ -1,9 +1,9 @@
 /**
  * This class login the user
  */
-package usecases;
-import presenter.Presenter;
-import ui.ViewLoginPage;
+package Usecases;
+import Presenters.Presenter;
+import Views.ViewLoginPage;
 
 public class UseCaseLogin{
 
