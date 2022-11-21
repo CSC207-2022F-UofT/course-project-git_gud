@@ -3,7 +3,7 @@ package entities;
 import java.util.ArrayList;
 
 /**
- * This class is a modified example of a singleton class. A singleton class is used usually when
+ * @apiNote This class is a modified example of a singleton class. A singleton class is used usually when
  * there is only one instance of a class throughout the project and there is only one instance of
  * the list of Targets.
  * @author jhalaksaraogi
