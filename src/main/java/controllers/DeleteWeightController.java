@@ -3,6 +3,10 @@ package controllers;
 import usecases.DeleteTargetORM;
 import usecases.DeleteTargetWeight;
 
+/**
+ * Controller that interacts with both the view model and the respective delete usecase.
+ * @author jhalaksaraogi
+ */
 public class DeleteWeightController {
     public String delete(){
         DeleteTargetWeight deleteTargetWeight = new DeleteTargetWeight();
