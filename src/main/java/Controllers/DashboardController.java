@@ -1,11 +1,9 @@
 package Controllers;
 
-import Management.Settings;
 import Settings.*;
-
 import java.sql.*;
 
-public class DashboardController extends Settings {
+public class DashboardController {
     public static Connection connection1;
 
     static {
@@ -22,13 +20,10 @@ public class DashboardController extends Settings {
         //return to login screen(Adrian's work)
     }
 
-    public static String DeleteAccountUseCase(String userName) throws SQLException {
-        //remove account data from database(username, associated password/email, associated stats)
-        PreparedStatement resultDelete = Delete_Account.Delete(connection1);
+    public static void DeleteAccountUseCase(String userName) throws SQLException {
+        PreparedStatement resultDelete = Delete_Account.DeleteAccount();
         resultDelete.setString(1, userName);
         resultDelete.executeUpdate();
-
-        return "Account " + userName + " was successfully deleted";
     }
 
     public static void ChangeEmailUseCase(String oldEmail, String newEmail) throws SQLException {
@@ -50,7 +45,6 @@ public class DashboardController extends Settings {
         resultPassword.setString(1, newPassword);
         resultPassword.setString(2, oldPassword);
         resultPassword.executeUpdate();
-        //return "Account password has been successfully changed";
     }
 
     public static void ChangeBodyWeightUseCase(String username1, int newWeight) throws SQLException {
@@ -58,7 +52,6 @@ public class DashboardController extends Settings {
         resultWeight.setInt(1, newWeight);
         resultWeight.setString(2, username1);
         resultWeight.executeUpdate();
-        //return "Account BodyWeight: been successfully changed to " + newWeight;
     }
 
     public static void ChangeBodyFatUseCase(String username2, int newFat) throws SQLException {
@@ -66,6 +59,5 @@ public class DashboardController extends Settings {
         resultFat.setInt(1, newFat);
         resultFat.setString(2, username2);
         resultFat.executeUpdate();
-        //return "Account BodyWeight: been successfully changed to " + newFat;
     }
 }

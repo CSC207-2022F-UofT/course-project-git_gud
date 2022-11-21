@@ -1,10 +1,10 @@
 package Settings;
 
+import Management.Data_Manager;
 import java.sql.*;
 
-public class Delete_Account {
-    public static PreparedStatement Delete(Connection connection1) throws SQLException {
-        return connection1.prepareStatement(
-                "DELETE FROM dashtest WHERE username=?");
+public class Delete_Account extends Data_Manager {
+    public static PreparedStatement DeleteAccount() {
+        return Data_Manager.delete;
     }
 }

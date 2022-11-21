@@ -1,13 +1,9 @@
 package Views;
 
-import Controllers.DashboardController;
-import Management.Settings;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.SQLException;
 
 @SuppressWarnings("Convert2Lambda")
 public class SettingsPage {
@@ -83,7 +79,7 @@ public class SettingsPage {
                     PasswordView passwordViewer = new PasswordView();
                 }
                 if (e.getSource() == deleteAccount) {
-                    System.exit(0);
+                    DeleteView deleteViewer = new DeleteView();
                 }
                 if (e.getSource() == logOut) {
                     System.exit(0);

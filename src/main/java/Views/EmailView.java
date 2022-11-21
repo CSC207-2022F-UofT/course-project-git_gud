@@ -62,13 +62,11 @@ public class EmailView {
                     String oldEmail = emailInput.getText();
                     String newEmail = newEmailInput.getText();
                     try {
-                        //System.out.println(DashboardController.ChangeEmailUseCase(oldEmail, newEmail, EmailView.this));
                         DashboardController.ChangeEmailUseCase(oldEmail, newEmail);
                     } catch (SQLException ex) {
                         throw new RuntimeException(ex);
                     }
                     PresenterViewUpdate updateEmailView = new PresenterViewUpdate.UpdateEmailView(EmailView.this);
-                    //System.exit(0);
                 }
                 if (e.getSource() == backButton){
                     emailFrame.dispose();
