@@ -48,3 +48,5 @@ dependencies {
     implementation 'com.mysql:mysql-connector-j:8.0.31'
  ```
 A local SQL database must be used until an online one is formed. Changes to the variable 'connection' and 'connection1' must be altered to match your personal database. Changes to any SQL query statement in the code must be made to match your table name. The default tablename is 'dashtest'.
+
+ADD: more detail, specifics and sql configuration.
