@@ -13,7 +13,7 @@ public class ViewVolumeController {
     /**
      * @return a string with the list of targets
      */
-    public String viewWVolume(){
+    public String viewVolume(){
         TargetVolume targetVolume = TargetVolume.getInstance();
         ArrayList<Target> targetVolumeList = targetVolume.targetVolumeList;
         if (targetVolumeList.isEmpty()){

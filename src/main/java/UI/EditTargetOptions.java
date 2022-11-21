@@ -1,4 +1,6 @@
 package UI;
+import controllers.*;
+
 import javax.swing.*;
 /**
  * UI for when edit Target option is clicked on the HomeUI screen
@@ -20,6 +22,7 @@ public class EditTargetOptions extends JFrame{
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         TargetTypes types = new TargetTypes((JPanel) frame.getContentPane(), "Edit ");
         frame.setVisible(true);
+
     }
 
 
