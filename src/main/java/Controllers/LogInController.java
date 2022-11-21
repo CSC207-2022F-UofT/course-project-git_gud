@@ -59,6 +59,12 @@ public class LogInController {
      */
     public static Boolean existsInDatabase(String username){
         try {
+            /** TODO
+             Change the connection variable to match your personal database, localhost should be fine to leave,
+             JDBCT should be changed to JDBC or whatever you setup the database as, user and password
+             should be what you initially setup with your workbench program.
+             Change dashtest to whatever your chosen table name is. Change this is every location you see it.
+             */
             //Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBC", "root", "root1234");
             Connection connection = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/JDBCT?allowMultiQueries=true", "root", "root");

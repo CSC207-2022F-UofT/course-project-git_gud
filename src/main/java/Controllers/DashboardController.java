@@ -9,6 +9,11 @@ public class DashboardController {
 
     static {
         try {
+            /** TODO
+             Change the connection variable to match your personal database, localhost should be fine to leave,
+             JDBCT should be changed to JDBC or whatever you setup the database as, user and password
+             should be what you initially setup with your workbench program.
+             */
             connection1 = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/JDBCT?allowMultiQueries=true", "root", "root");
         } catch (SQLException e) {

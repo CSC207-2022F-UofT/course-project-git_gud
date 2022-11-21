@@ -16,6 +16,9 @@ public class Data_Manager {
 
     static {
         try {
+            /** TODO
+             Change dashtest to whatever your chosen table name is. Change this is every location you see it.
+             */
             email = DashboardController.connection1.prepareStatement(
                     "UPDATE dashtest SET email = ? WHERE email = ?");
             password = DashboardController.connection1.prepareStatement(
