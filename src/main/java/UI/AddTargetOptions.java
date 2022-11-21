@@ -2,6 +2,10 @@ package UI;
 
 import javax.swing.*;
 
+/**
+ * UI for when add Target option is clicked on the HomeUI screen
+ * @author jhalaksaraogi
+ */
 public class AddTargetOptions extends JFrame{
 
     public AddTargetOptions(){
@@ -17,7 +21,9 @@ public class AddTargetOptions extends JFrame{
     public static void main(){
         AddTargetOptions frame = new AddTargetOptions();
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        TargetTypes types = new TargetTypes((JPanel) frame.getContentPane(), "Add ");
+        TargetTypes types = new TargetTypes((JPanel) frame.getContentPane(), "Add "); // the Target types class
+        // has buttons for Volume, Weight and ORM. These buttons are added to the panel. types is initialised to access
+        // these buttons for when an action should be performed
         frame.setVisible(true);
     }
 

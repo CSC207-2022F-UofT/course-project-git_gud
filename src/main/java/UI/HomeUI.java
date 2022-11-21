@@ -7,6 +7,7 @@ import java.awt.Button;
 /**
  *  Home UI class for targets that extends JFrame
  *  Running the main method displays 4 buttons corresponding to each of the usecases(add, edit, delete, view)
+ * @author jhalaksaraogi
  */
 public class HomeUI extends JFrame {
     JButton buttonAdd;

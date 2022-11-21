@@ -8,6 +8,10 @@ import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * Usecase to add a target ORM
+ * @author jhalaksaraogi
+ */
 public class UpdateTargetORM {
     Date date;
     Float value;

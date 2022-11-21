@@ -7,6 +7,10 @@ import entities.TargetVolume;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * Usecase to edit the most recently added target ORM
+ * @author jhalaksaraogi
+ */
 public class EditTargetORM {
     Date date;
     Float value;

@@ -5,6 +5,10 @@ import entities.TargetVolume;
 
 import java.util.ArrayList;
 
+/**
+ * Usecase to delete the most recently added target Volume
+ * @author jhalaksaraogi
+ */
 public class DeleteTargetVolume {
     /**
      * @return true if a target is deleted, false otherwise

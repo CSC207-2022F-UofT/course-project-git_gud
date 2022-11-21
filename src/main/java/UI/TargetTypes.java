@@ -4,7 +4,8 @@ import javax.swing.*;
 
 /**
  * The class TargetTypes is essentially made to create 3 buttons common to all use cases(Volume, weight and
- * ORM)
+ * ORM). Reduces responsibilities of the TargetOptions Classes.
+ * @author jhalaksaraogi
  **/
 public class TargetTypes {
     JButton buttonVolume;

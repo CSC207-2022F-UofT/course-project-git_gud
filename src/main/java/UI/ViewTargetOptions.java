@@ -2,6 +2,10 @@ package UI;
 
 import javax.swing.*;
 
+/**
+ * UI for when view Target option is clicked on the HomeUI screen
+ * @author jhalaksaraogi
+ */
 public class ViewTargetOptions extends JFrame{
     public ViewTargetOptions(){
         this.setTitle("Choose Target to be added");

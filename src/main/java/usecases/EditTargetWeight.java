@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.Date;
 
 /**
- * Class to edit the most recent target weight/current target
+ * Usecase to edit the most recently added target ORM
+ * @author jhalaksaraogi
  */
 public class EditTargetWeight {
     Date date;

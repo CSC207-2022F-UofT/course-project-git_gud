@@ -6,6 +6,10 @@ import entities.TargetVolume;
 
 import java.util.ArrayList;
 
+/**
+ * Usecase to delete the most recently added target ORM
+ * @author jhalaksaraogi
+ */
 public class DeleteTargetORM {
     /**
      * @return true if a target is deleted, false otherwise

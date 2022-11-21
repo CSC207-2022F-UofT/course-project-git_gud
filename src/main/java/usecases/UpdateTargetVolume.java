@@ -6,7 +6,10 @@ import entities.TargetWeight;
 
 import java.util.ArrayList;
 import java.util.Date;
-
+/**
+ * Usecase to add a target Volume
+ * @author jhalaksaraogi
+ */
 public class UpdateTargetVolume {
     Date date;
     Float value;

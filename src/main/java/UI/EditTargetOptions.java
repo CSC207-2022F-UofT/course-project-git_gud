@@ -1,7 +1,10 @@
 package UI;
 
 import javax.swing.*;
-
+/**
+ * UI for when edit Target option is clicked on the HomeUI screen
+ * @author jhalaksaraogi
+ */
 public class EditTargetOptions extends JFrame{
     public EditTargetOptions(){
         this.setTitle("Choose Target to be edited");

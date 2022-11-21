@@ -6,7 +6,10 @@ import entities.TargetWeight;
 
 import java.util.ArrayList;
 import java.util.Date;
-
+/**
+ * Usecase to edit the most recently added target Volume
+ * @author jhalaksaraogi
+ */
 public class EditTargetVolume {
     Date date;
     Float value;

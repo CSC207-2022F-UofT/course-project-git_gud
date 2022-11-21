@@ -3,7 +3,10 @@ import entities.Target;
 import entities.TargetWeight;
 
 import java.util.ArrayList;
-
+/**
+ * Usecase to delete the most recently added target weight
+ * @author jhalaksaraogi
+ */
 public class DeleteTargetWeight {
     /**
      * @return true if a target is deleted, false otherwise

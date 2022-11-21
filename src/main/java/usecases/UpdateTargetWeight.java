@@ -6,6 +6,10 @@ import entities.TargetWeight;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * Usecase to add a target Weight
+ * @author jhalaksaraogi
+ */
 public class UpdateTargetWeight {
     Date date;
     Float value;
