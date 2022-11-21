@@ -47,6 +47,19 @@ dependencies {
     testImplementation('org.junit.jupiter:junit-jupiter:5.6.0')
     implementation 'com.mysql:mysql-connector-j:8.0.31'
  ```
-A local SQL database must be used until an online one is formed. Changes to the variable 'connection' and 'connection1' must be altered to match your personal database. Changes to any SQL query statement in the code must be made to match your table name. The default tablename is 'dashtest'.
-
-ADD: more detail, specifics and sql configuration.
+A local SQL database must be used until an online one is formed. The steps are as follows:
+1) Download MySQL Workbench.
+2) Set your user and password and remember these as you will need to change the code with them accordingly.
+3) Add a MySQL connection, hostname should be 127.0.0.1, port 3306, username and password is whatever you setup in the previous step.
+4) Open you connection and create a new schema with the name 'JDBC'.
+5) From within the schema create a new table called 'USER'.
+6) Within table 'USER' open a new query and run the following:
+```
+ALTER TABLE `jdbct`.`USER` 
+ADD COLUMN `username` VARCHAR(45),
+ADD COLUMN `password` VARCHAR(45),
+ADD COLUMN `email` VARCHAR(45),
+ADD COLUMN `bodyfat` INT NOT NULL,
+ADD COLUMN `bodyweight` INT NOT NULL;
+```
+7) Make changes to the code where it says TODO. 
