@@ -75,25 +75,31 @@ public class SettingsPage {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (e.getSource() == changeUsername) {
+                    settingsFrame.dispose();
                     UsernameView usernameViewer = new UsernameView();
-                    //System.exit(0);
                 }
                 if (e.getSource() == changeEmail) {
+                    settingsFrame.dispose();
                     EmailView emailViewer = new EmailView();
                 }
                 if (e.getSource() == changePassword) {
+                    settingsFrame.dispose();
                     PasswordView passwordViewer = new PasswordView();
                 }
                 if (e.getSource() == deleteAccount) {
+                    settingsFrame.dispose();
                     DeleteView deleteViewer = new DeleteView();
                 }
                 if (e.getSource() == logOut) {
+                    settingsFrame.dispose();
                     PresenterViewUpdate updateDeleteLogoutView = new PresenterViewUpdate.UpdateDeleteLogoutView();
                 }
                 if (e.getSource() == changeWeight) {
+                    settingsFrame.dispose();
                     WeightView weightViewer = new WeightView();
                 }
                 if (e.getSource() == changeFat) {
+                    settingsFrame.dispose();
                     FatView fatViewer = new FatView();
                 }
             }

@@ -1,6 +1,8 @@
 package Controllers;
 
 import Views.*;
+import ui.ViewLoginPage;
+
 import javax.swing.*;
 
 public class PresenterViewUpdate {
@@ -52,7 +54,8 @@ public class PresenterViewUpdate {
     public static class UpdateDeleteLogoutView extends PresenterViewUpdate {
         public UpdateDeleteLogoutView() {
             super();
-            //adrian's ting
+            DeleteView.deleteFrame.dispose();
+            ui.ViewLoginPage smth = new ViewLoginPage();
         }
     }
 }

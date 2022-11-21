@@ -12,8 +12,9 @@ import java.sql.SQLException;
 @SuppressWarnings("Convert2Lambda")
 public class DeleteView {
     public JPanel delete;
+    public static JFrame deleteFrame;
     public DeleteView(){
-        JFrame deleteFrame = new JFrame();
+        deleteFrame = new JFrame();
         deleteFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         deleteFrame.setSize(320, 564);
         deleteFrame.setLayout(null);

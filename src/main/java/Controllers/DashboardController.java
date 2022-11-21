@@ -15,11 +15,6 @@ public class DashboardController {
         }
     }
 
-    public void LogOutUseCase(){
-        //logout
-        //return to login screen(Adrian's work)
-    }
-
     public static void DeleteAccountUseCase(String userName) throws SQLException {
         PreparedStatement resultDelete = Delete_Account.DeleteAccount();
         resultDelete.setString(1, userName);
