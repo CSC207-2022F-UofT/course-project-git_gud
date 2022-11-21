@@ -52,7 +52,7 @@ public class PresenterViewUpdate {
     public static class UpdateDeleteLogoutView extends PresenterViewUpdate {
         public UpdateDeleteLogoutView() {
             super();
-            //LogOutView logout = new LogOutView; this will be a new class of Adrian's work
+            //adrian's ting
         }
     }
 }

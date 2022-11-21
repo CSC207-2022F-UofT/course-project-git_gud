@@ -1,5 +1,7 @@
 package Views;
 
+import Controllers.PresenterViewUpdate;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -7,6 +9,10 @@ import java.awt.event.ActionListener;
 
 @SuppressWarnings("Convert2Lambda")
 public class SettingsPage {
+    /***
+     * SettingsPage is called by Main and builds a GUI with all the available settings for the app. From here you can
+     * pick what setting to perform which then calls upon other view pages.
+     */
 
     public SettingsPage() {
         JFrame settingsFrame = new JFrame();
@@ -82,7 +88,7 @@ public class SettingsPage {
                     DeleteView deleteViewer = new DeleteView();
                 }
                 if (e.getSource() == logOut) {
-                    System.exit(0);
+                    PresenterViewUpdate updateDeleteLogoutView = new PresenterViewUpdate.UpdateDeleteLogoutView();
                 }
                 if (e.getSource() == changeWeight) {
                     WeightView weightViewer = new WeightView();
