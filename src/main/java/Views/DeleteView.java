@@ -11,6 +11,9 @@ import java.sql.SQLException;
 
 @SuppressWarnings("Convert2Lambda")
 public class DeleteView {
+    /**
+     * DeleteView holds a constructor that instantiates a new view model for the usecase of deleting a USER
+     */
     public JPanel delete;
     public static JFrame deleteFrame;
     public DeleteView(){

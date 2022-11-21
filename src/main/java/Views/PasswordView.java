@@ -11,9 +11,13 @@ import java.sql.SQLException;
 
 @SuppressWarnings("Convert2Lambda")
 public class PasswordView {
+    /**
+     * PasswordView holds a constructor that instantiates a new view model for the usecase of changing a USER's password
+     */
     public JPanel password;
+    public JFrame passwordFrame;
     public PasswordView(){
-        JFrame passwordFrame = new JFrame();
+        passwordFrame = new JFrame();
         passwordFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         passwordFrame.setSize(320, 564);
         passwordFrame.setLayout(null);
@@ -37,6 +41,10 @@ public class PasswordView {
         newPasswordInput.setPreferredSize(new Dimension(150, 20));
         newPasswordInput.setFont(new Font("Dialog", Font.BOLD, 10));
 
+        JTextField userName = new JTextField();
+        userName.setPreferredSize(new Dimension(150, 20));
+        userName.setFont(new Font("Dialog", Font.BOLD, 10));
+
         JButton submitButton = new JButton();
         submitButton.setText("Submit");
         submitButton.setFocusable(false);
@@ -47,6 +55,7 @@ public class PasswordView {
         backButton.setFocusable(false);
         backButton.setFont(new Font("Dialog", Font.BOLD, 10));
 
+        password.add(userName);
         password.add(inputPassword);
         password.add(passwordInput);
         password.add(inputNewPassword);
@@ -62,15 +71,15 @@ public class PasswordView {
             public void actionPerformed(ActionEvent e) {
                 //once button submit is pressed, send to query changer
                 if (e.getSource() == submitButton){
+                    String username = userName.getText();
                     String oldPassword = passwordInput.getText();
                     String newPassword = newPasswordInput.getText();
                     try {
-                        DashboardController.ChangePasswordUseCase(oldPassword, newPassword);
+                        DashboardController.ChangePasswordUseCase(oldPassword, newPassword, username);
                     } catch (SQLException ex) {
                         throw new RuntimeException(ex);
                     }
                     PresenterViewUpdate updatePasswordView = new PresenterViewUpdate.UpdatePasswordView(PasswordView.this);
-                    //System.exit(0);
                 }
                 if (e.getSource() == backButton){
                     passwordFrame.dispose();

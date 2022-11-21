@@ -11,6 +11,9 @@ import java.sql.SQLException;
 
 @SuppressWarnings("Convert2Lambda")
 public class UsernameView {
+    /**
+     * UsernameView holds a constructor that instantiates a new view model for the usecase of changing a USER's username
+     */
     public JPanel username;
     public UsernameView(){
         JFrame usernameFrame = new JFrame();

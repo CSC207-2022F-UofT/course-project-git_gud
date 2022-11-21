@@ -6,6 +6,11 @@ import Views.ViewLoginPage;
 import javax.swing.*;
 
 public class PresenterViewUpdate {
+    /**
+     * PresenterViewUpdate consists of classes that update the current view(depending on the setting) to display
+     * a confirmation message. The only differing class is UpdateDeleteView, which is used by both delete and logout
+     * functions and creates a new login/signup page view to begin the process anew.
+     */
     public static class UpdateEmailView extends PresenterViewUpdate {
         public UpdateEmailView(EmailView var2) {
             super();
@@ -54,7 +59,6 @@ public class PresenterViewUpdate {
     public static class UpdateDeleteLogoutView extends PresenterViewUpdate {
         public UpdateDeleteLogoutView() {
             super();
-            DeleteView.deleteFrame.dispose();
             ViewLoginPage smth = new ViewLoginPage();
         }
     }

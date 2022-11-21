@@ -11,6 +11,9 @@ import java.sql.SQLException;
 
 @SuppressWarnings("Convert2Lambda")
 public class EmailView {
+    /**
+     * EmailView holds a constructor that instantiates a new view model for the usecase of changing a USER's email
+     */
     public JPanel email;
     public EmailView(){
         JFrame emailFrame = new JFrame();

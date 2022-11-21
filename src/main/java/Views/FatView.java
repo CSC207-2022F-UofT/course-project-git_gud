@@ -11,6 +11,9 @@ import java.sql.SQLException;
 
 @SuppressWarnings("Convert2Lambda")
 public class FatView {
+    /**
+     * FatView holds a constructor that instantiates a new view model for the usecase of changing a USER's fat stats
+     */
     public JPanel fat;
     public FatView(){
         JFrame fatFrame = new JFrame();
