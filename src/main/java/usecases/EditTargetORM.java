@@ -3,7 +3,7 @@ package usecases;
 import entities.Target;
 import entities.TargetORM;
 import java.util.ArrayList;
-import java.sql.Date;
+import java.util.Date;
 
 /**
  * Usecase to edit the most recently added target ORM

@@ -5,7 +5,7 @@ import entities.TargetVolume;
 import entities.TargetWeight;
 
 import java.util.ArrayList;
-import java.sql.Date;
+import java.util.Date;
 /**
  * Usecase to add a target Volume
  * @author jhalaksaraogi

@@ -1,6 +1,6 @@
 package entities;
 
-import java.sql.Date;
+import java.util.Date;
 
 /**
  * Target class with two instances, the target's date and the value(either weight, volume or ORM)

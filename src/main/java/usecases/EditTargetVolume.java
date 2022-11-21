@@ -2,7 +2,7 @@ package usecases;
 import entities.Target;
 import entities.TargetVolume;
 import java.util.ArrayList;
-import java.sql.Date;
+import java.util.Date;
 /**
  * Usecase to edit the most recently added target Volume
  * @author jhalaksaraogi
