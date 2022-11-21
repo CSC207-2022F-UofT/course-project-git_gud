@@ -63,3 +63,9 @@ ADD COLUMN `bodyfat` INT NOT NULL,
 ADD COLUMN `bodyweight` INT NOT NULL;
 ```
 7) Make changes to the code where it says TODO. 
+
+## Feature 6 (Graphing)
+The graphing feature produces output on the right input(A LinkedHashMap of Dates and Floats), but a lot still needs to be done to make the graphs look better. At the moment, the axes aren't labeled and only points are plotted. 
+
+![Screenshot (786)](https://user-images.githubusercontent.com/96087837/203178755-40d391e2-d651-4e50-a318-faa0f36ba13c.png)
+
