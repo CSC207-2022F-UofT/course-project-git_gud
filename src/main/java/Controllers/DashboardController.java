@@ -2,6 +2,10 @@ package Controllers;
 
 import Management.Settings;
 import Settings.*;
+import ViewUpdaters.*;
+import Views.EmailView;
+import Views.UsernameView;
+
 import java.sql.*;
 
 public class DashboardController extends Settings {
@@ -30,19 +34,22 @@ public class DashboardController extends Settings {
         return "Account " + userName + " was successfully deleted";
     }
 
-    public static String ChangeEmailUseCase(String oldEmail, String newEmail) throws SQLException {
+    public static void ChangeEmailUseCase(String oldEmail, String newEmail, EmailView emailViewer) throws SQLException {
         PreparedStatement resultEmail = Change_Email.ChangeEmail();
         resultEmail.setString(1, newEmail);
         resultEmail.setString(2, oldEmail);
         resultEmail.executeUpdate();
-        return "Account email: " + oldEmail + " has been successfully changed to " + newEmail;
+
+
+        // return "Account email: " + oldEmail + " has been successfully changed to " + newEmail;
     }
 
-    public static String ChangeUsernameUseCase(String userName, String newUserName) throws SQLException {
+    public static String ChangeUsernameUseCase(String userName, String newUserName, UsernameView usernameViewer) throws SQLException {
         PreparedStatement resultUsername = Change_Username.ChangeUsername();
         resultUsername.setString(1, newUserName);
         resultUsername.setString(2, userName);
         resultUsername.executeUpdate();
+        UsernameViewUpdate updateUsernameView = new UsernameViewUpdate(usernameViewer);
         return "Account username: " + userName + " has been successfully changed to " + newUserName;
     }
 
@@ -54,19 +61,19 @@ public class DashboardController extends Settings {
         return "Account password has been successfully changed";
     }
 
-    public static String ChangeBodyWeightUseCase(int oldWeight, int newWeight) throws SQLException {
+    public static String ChangeBodyWeightUseCase(String username1, int newWeight) throws SQLException {
         PreparedStatement resultWeight = Change_Weight.ChangeWeight();
         resultWeight.setInt(1, newWeight);
-        resultWeight.setInt(2, oldWeight);
+        resultWeight.setString(2, username1);
         resultWeight.executeUpdate();
-        return "Account BodyWeight: " + oldWeight + " been successfully changed to " + newWeight;
+        return "Account BodyWeight: been successfully changed to " + newWeight;
     }
 
-    public static String ChangeBodyFatUseCase(int oldFat, int newFat) throws SQLException {
+    public static String ChangeBodyFatUseCase(String username2, int newFat) throws SQLException {
         PreparedStatement resultFat = Change_Fat.ChangeFat();
         resultFat.setInt(1, newFat);
-        resultFat.setInt(2, oldFat);
+        resultFat.setString(2, username2);
         resultFat.executeUpdate();
-        return "Account BodyWeight: " + oldFat + " been successfully changed to " + newFat;
+        return "Account BodyWeight: been successfully changed to " + newFat;
     }
 }

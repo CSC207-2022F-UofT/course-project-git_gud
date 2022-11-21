@@ -8,7 +8,7 @@ import Controllers.DashboardController;
 public class Settings {
     public static void main(String[] args) throws SQLException {
         Scanner userInput = new Scanner(System.in);  // Create a Scanner object
-        System.out.println(" Select the number for a Setting\n 1) Delete Account\n2) Change Username\n3) Change Email\n" +
+        System.out.println(" Select the number for a Setting\n1) Delete Account\n2) Change Username\n3) Change Email\n" +
                         "4) Change Password\n5) Change Body Fat Stats\n6) Change Body Weight Stats");
 
         String chosenSetting = userInput.nextLine();  // Read user input
@@ -22,14 +22,14 @@ public class Settings {
             String userName = userInput.nextLine();
             System.out.println("What is your new account username?");
             String newUserName = userInput.nextLine();
-            System.out.println(DashboardController.ChangeUsernameUseCase(userName, newUserName));
+            //System.out.println(DashboardController.ChangeUsernameUseCase(userName, newUserName));
         }
         else if (Objects.equals(chosenSetting, "3")){
             System.out.println("What is your account email address?");
             String oldEmail = userInput.nextLine();
             System.out.println("What is your new account email address?");
             String newEmail = userInput.nextLine();
-            System.out.println(DashboardController.ChangeEmailUseCase(oldEmail, newEmail));
+            //System.out.println(DashboardController.ChangeEmailUseCase(oldEmail, newEmail));
         }
         else if (Objects.equals(chosenSetting, "4")){
             System.out.println("What is your account password?");
@@ -39,18 +39,18 @@ public class Settings {
             System.out.println(DashboardController.ChangePasswordUseCase(oldPassword, newPassword));
         }
         else if (Objects.equals(chosenSetting, "5")){
-            System.out.println("What is your old body fat?");
-            int oldFat = Integer.parseInt(userInput.nextLine());
+            System.out.println("What is your username?");
+            String username2 = userInput.nextLine();
             System.out.println("What is your new body fat?");
             int newFat = Integer.parseInt(userInput.nextLine());
-            System.out.println(DashboardController.ChangeBodyFatUseCase(oldFat, newFat));
+            System.out.println(DashboardController.ChangeBodyFatUseCase(username2, newFat));
         }
         else if (Objects.equals(chosenSetting, "6")){
-            System.out.println("What is your old weight?");
-            int oldWeight = Integer.parseInt(userInput.nextLine());
+            System.out.println("What is your username?");
+            String username1 = userInput.nextLine();
             System.out.println("What is your new weight?");
             int newWeight = Integer.parseInt(userInput.nextLine());
-            System.out.println(DashboardController.ChangeBodyWeightUseCase(oldWeight, newWeight));
+            System.out.println(DashboardController.ChangeBodyWeightUseCase(username1, newWeight));
         }
     }
 }

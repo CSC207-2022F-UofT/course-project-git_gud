@@ -4,7 +4,7 @@ import java.sql.*;
 import Controllers.DashboardController;
 
 public class Data_Manager {
-    protected static PreparedStatement email;
+    public static PreparedStatement email;
     protected static PreparedStatement username;
     protected static PreparedStatement password;
     public static PreparedStatement Weight;
@@ -19,9 +19,9 @@ public class Data_Manager {
             username = DashboardController.connection1.prepareStatement(
                     "UPDATE dashtest SET username = ? WHERE username = ?");
             Weight = DashboardController.connection1.prepareStatement(
-                    "UPDATE dashtest SET bodyweight = ? WHERE bodyweight = ?");
+                    "UPDATE dashtest SET bodyweight = ? WHERE username = ?");
             Fat = DashboardController.connection1.prepareStatement(
-                    "UPDATE dashtest SET bodyfat = ? WHERE bodyfat = ?");
+                    "UPDATE dashtest SET bodyfat = ? WHERE username = ?");
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
