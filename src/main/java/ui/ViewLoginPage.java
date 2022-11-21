@@ -13,15 +13,19 @@ public class ViewLoginPage implements ActionListener {
      * see when the program runs
      */
     public JButton loginButton;
+
+    public JFrame frame;
     public JTextField usernameField;
     public JPasswordField passwordField;
     public JTextField emailField;
     public JLabel message;
     public JButton signupButton;
     public ViewLoginPage(){
-        JFrame frame = new JFrame();
+        frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(600,600);
+        frame.setTitle("Git_Gud;");
+        frame.setLayout(null);
         JLabel usernameLabel = new JLabel("Username");
         usernameLabel.setBounds(50,100,75,25);
         usernameLabel.setLocation(50,100);
@@ -48,7 +52,7 @@ public class ViewLoginPage implements ActionListener {
 
         message = new JLabel();
         message.setBounds(50,100,200,35);
-        message.setLocation(120,250);
+        message.setLocation(120,350);
         message.setText("");
 
         loginButton = new JButton("Login");
@@ -57,8 +61,9 @@ public class ViewLoginPage implements ActionListener {
         loginButton.addActionListener(this);
 
         signupButton = new JButton("Signup");
-        signupButton.setBounds(60, 300, 75, 25);
-        signupButton.setLocation(60,290);
+        signupButton.setBounds(210, 275, 75, 25);
+        signupButton.setLocation(210,275);
+        signupButton.setFocusable(false);
         signupButton.addActionListener(this);
 
         frame.add(usernameLabel);

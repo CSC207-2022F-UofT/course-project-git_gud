@@ -2,6 +2,7 @@
  * This presenter class contains methods to be called for different use cases which updates the view
  */
 package presenter;
+import Views.SettingsPage;
 import ui.ViewLoginPage;
 
 public class Presenter {
@@ -16,6 +17,7 @@ public class Presenter {
         x.usernameField.setText("");
         x.emailField.setText("");
         x.signupButton.setVisible(false);
+        x.loginButton.setVisible(true);
     }
     /**
      * This method tells the user that password is wrong
@@ -29,7 +31,8 @@ public class Presenter {
      * This method transitions to the dashboard as user has successfully logged in
      */
     public static void login(ViewLoginPage x){
-
+        x.frame.dispose();
+        SettingsPage dashboardViewer = new SettingsPage();
     }
 
     /**

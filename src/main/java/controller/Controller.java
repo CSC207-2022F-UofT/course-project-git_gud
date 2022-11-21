@@ -59,9 +59,11 @@ public class Controller {
      */
     public static Boolean existsInDatabase(String username){
         try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBC", "root", "root1234");
+            //Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBC", "root", "root1234");
+            Connection connection = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/JDBCT?allowMultiQueries=true", "root", "root");
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("Select * From USER");
+            ResultSet resultSet = statement.executeQuery("Select * From dashtest");//USER for Adrian's comp
 
             while (resultSet.next()) {
                 if (resultSet.getString(1).equals(username)){
@@ -75,9 +77,11 @@ public class Controller {
     }
     public static Boolean passwordCorrectness(String password){
         try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBC", "root", "root1234");
+            //Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBC", "root", "root1234");
+            Connection connection = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/JDBCT?allowMultiQueries=true", "root", "root");
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("Select * From USER");
+            ResultSet resultSet = statement.executeQuery("Select * From dashtest");//USER for Adrian's comp
             while (resultSet.next()) {
                 if (resultSet.getString(2).equals(password)) {
                     return true;
