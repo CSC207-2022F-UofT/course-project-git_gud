@@ -14,6 +14,8 @@ public class WorkoutMenu extends JFrame {
     private JButton historyButton = new JButton("Workout History");
     public JButton backButton = new JButton("Back");
 
+    public int workoutNumber = 0;
+
     public WorkoutMenu() {
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -79,16 +81,24 @@ public class WorkoutMenu extends JFrame {
 
     }
 
+    public int getWorkoutNumber() {
+
+        return workoutNumber;
+    }
+
+    public void setWorkoutNumber(int i) {
+
+        workoutNumber = i;
+    }
+
     public void addWorkoutSelectionDisplay(ActionListener displayListener){
 
         backButton.addActionListener(displayListener);
     }
 
-//    @Override
-//    public void actionPerformed(ActionEvent e) {
-//        if(e.getSource()==backButton) {
-//            this.dispose();
-//            WorkoutSelection workoutSelection = new WorkoutSelection();
-//        }
-//    }
+    public void addRemoveExerciseDisplay(ActionListener displayListener){
+
+        removeButton.addActionListener(displayListener);
+    }
+
 }

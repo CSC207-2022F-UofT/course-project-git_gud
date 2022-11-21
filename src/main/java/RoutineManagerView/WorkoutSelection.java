@@ -17,7 +17,7 @@ public class WorkoutSelection extends JFrame{
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(320, 564);
         this.setLayout(null);
-        this.setTitle("Routine Manager");
+        this.setTitle("Workout Selection");
 
         JPanel workoutsPanel = new JPanel();
         workoutsPanel.setLocation(0, 250);

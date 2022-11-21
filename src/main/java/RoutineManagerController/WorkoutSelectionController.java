@@ -28,6 +28,7 @@ public class WorkoutSelectionController {
             if (e.getSource() == theView.workout1Button) {
                 theView.dispose();
                 WorkoutMenu workout1Menu = new WorkoutMenu();
+                workout1Menu.setWorkoutNumber(1);
 
                 WorkoutMenuController theController = new WorkoutMenuController(theModel, workout1Menu);
 
@@ -40,6 +41,7 @@ public class WorkoutSelectionController {
             if (e.getSource() == theView.workout2Button) {
                 theView.dispose();
                 WorkoutMenu workout2Menu = new WorkoutMenu();
+                workout2Menu.setWorkoutNumber(2);
 
                 WorkoutMenuController theController = new WorkoutMenuController(theModel, workout2Menu);
 
@@ -52,6 +54,7 @@ public class WorkoutSelectionController {
             if (e.getSource() == theView.workout3Button) {
                 theView.dispose();
                 WorkoutMenu workout3Menu = new WorkoutMenu();
+                workout3Menu.setWorkoutNumber(3);
 
                 WorkoutMenuController theController = new WorkoutMenuController(theModel, workout3Menu);
 
@@ -64,6 +67,7 @@ public class WorkoutSelectionController {
             if (e.getSource() == theView.workout4Button) {
                 theView.dispose();
                 WorkoutMenu workout4Menu = new WorkoutMenu();
+                workout4Menu.setWorkoutNumber(4);
 
                 WorkoutMenuController theController = new WorkoutMenuController(theModel, workout4Menu);
 
@@ -76,6 +80,7 @@ public class WorkoutSelectionController {
             if (e.getSource() == theView.workout5Button) {
                 theView.dispose();
                 WorkoutMenu workout5Menu = new WorkoutMenu();
+                workout5Menu.setWorkoutNumber(5);
 
                 WorkoutMenuController theController = new WorkoutMenuController(theModel, workout5Menu);
 

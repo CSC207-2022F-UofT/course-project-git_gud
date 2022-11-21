@@ -44,11 +44,12 @@ public class Workout {
 
     /**
      * Removes an exercise from the workout ArrayList from a specified index.
-     * @param index an int representing the index in where an Exercise object will be removed from the workout ArrayList.
+     *
+     * @param exercise an int representing the index in where an Exercise object will be removed from the workout ArrayList.
      */
-    public void removeExercise(int index) {
+    public void removeExercise(String exercise) {
 
-        this.workout.remove(index);
+        this.workout.remove(exercise);
     }
 
     /**
