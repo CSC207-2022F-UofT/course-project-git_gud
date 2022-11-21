@@ -20,15 +20,17 @@ public class TargetWeight {
     }
 
     /**
-     *
-     * @param targetWeight arraylist of target weight
+     * @param targetWeight sets the instance variable of this class
      * setter method
      */
-
     public void setTargetWeight(TargetWeight targetWeight) {
         TargetWeight.targetWeight = targetWeight;
     }
 
+    /**
+     *
+     * @param targetWeightList an ArrayList of targets
+     */
     public void setTargetWeightList(ArrayList<Target> targetWeightList) {
         this.targetWeightList = targetWeightList;
     }
@@ -37,7 +39,6 @@ public class TargetWeight {
      *
      * @return the instance variable target weight of this class
      */
-
     public static TargetWeight getInstance(){
         if (targetWeight == null){
             targetWeight = new TargetWeight();

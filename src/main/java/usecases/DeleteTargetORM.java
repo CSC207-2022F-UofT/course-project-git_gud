@@ -8,19 +8,19 @@ import java.util.ArrayList;
 
 public class DeleteTargetORM {
     /**
-     *
-     * @throws Exception if the target list is empty
-     * Deletes most recently added target (temporary)
+     * @return true if a target is deleted, false otherwise
+     * Deletes most recently added target
      */
-    void deleteTargetVolume() throws Exception {
+    public Boolean deleteTargetORM() {
         TargetORM targetORM = TargetORM.getInstance();
         ArrayList<Target> targetORMList = targetORM.targetORMList;
         if (targetORMList.size() >= 1) {
             targetORMList.remove(targetORMList.size() - 1);   // removes current target
             targetORM.setTargetORMList(targetORMList);
+            return true;
         }
         else{
-            throw new Exception("No target for ORM exists");  //throws exception if target list
+            return false;  //returns false
             // is empty, this exception will be changed to an error message once UI is implemented
         }
     }

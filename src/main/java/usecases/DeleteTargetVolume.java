@@ -7,20 +7,19 @@ import java.util.ArrayList;
 
 public class DeleteTargetVolume {
     /**
-     *
-     * @throws Exception if the target list is empty
-     * Deletes most recently added target (temporary)
+     * @return true if a target is deleted, false otherwise
+     *  Deletes the most recently added target
      */
-    void deleteTargetVolume() throws Exception {
+    public Boolean deleteTargetVolume(){
         TargetVolume targetVolume = TargetVolume.getInstance();
         ArrayList<Target> targetVolumeList = targetVolume.targetVolumeList;
         if (targetVolumeList.size() >= 1) {
             targetVolumeList.remove(targetVolumeList.size() - 1);   // removes current target
             targetVolume.setTargetVolumeList(targetVolumeList);
+            return true;
         }
         else{
-            throw new Exception("No current target for Volume exists");  //throws exception if target list
-            // is empty, this exception will be changed to an error message once UI is implemented
+            return false;
         }
     }
 }

@@ -29,6 +29,11 @@ public class TargetVolume {
         TargetVolume.targetVolume = targetVolume;
     }
 
+    /**
+     *
+     * @param targetWeightList an array list of target weights
+     * setter method
+     */
     public void setTargetVolumeList(ArrayList<Target> targetWeightList) {
         this.targetVolumeList = targetWeightList;
     }

@@ -4,11 +4,21 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.Button;
 
+/**
+ *  Home UI class for targets that extends JFrame
+ *  Running the main method displays 4 buttons corresponding to each of the usecases(add, edit, delete, view)
+ */
 public class HomeUI extends JFrame {
     JButton buttonAdd;
     JButton buttonView;
     JButton buttonDelete;
     JButton buttonEdit;
+
+    /**
+     * Constructor for the HomeUI class
+     * sets size, title and visibility of the frame
+     * adds the four required buttons to the panel of the frame
+     */
     public HomeUI(){
         this.setTitle("Home Target");
         this.setSize(710,400);
@@ -33,8 +43,8 @@ public class HomeUI extends JFrame {
     }
 
     /**
-     *
-     * main function to display frame
+     * @param args
+     * running this function creates new homeFrame and displays it
      */
     public static void main(String args[]){
         HomeUI homeFrame = new HomeUI();
