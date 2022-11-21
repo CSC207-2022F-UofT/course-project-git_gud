@@ -37,3 +37,16 @@ Moving forward, we expect you to maintain this project structure. You *should* u
 ![image](https://user-images.githubusercontent.com/5333020/196066655-d3c97bf4-fdbd-46b0-b6ae-aeb8dbcf351d.png)
 
 You can create another simple class and try generating a test for this class.
+
+## Feature 1 and 2 Usage
+To use these features properly, you must change the file 'build.gradle'. Replace the dependencies section with:
+```
+dependencies {
+    implementation 'junit:junit:4.13.1'
+    implementation 'mysql:mysql-connector-java:8.0.28'
+    testImplementation('org.junit.jupiter:junit-jupiter:5.6.0')
+    implementation 'com.mysql:mysql-connector-j:8.0.31'
+ ```
+A local SQL database must be used until an online one is formed. Changes to the variable 'connection' and 'connection1' must be altered to match your personal database. Changes to any SQL query statement in the code must be made to match your table name. The default tablename is 'dashtest'.
+
+ADD: more detail, specifics and sql configuration.
