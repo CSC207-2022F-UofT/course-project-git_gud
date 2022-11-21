@@ -1,11 +1,8 @@
 package usecases;
-
 import entities.Target;
 import entities.TargetVolume;
-import entities.TargetWeight;
-
 import java.util.ArrayList;
-import java.util.Date;
+import java.sql.Date;
 /**
  * Usecase to edit the most recently added target Volume
  * @author jhalaksaraogi

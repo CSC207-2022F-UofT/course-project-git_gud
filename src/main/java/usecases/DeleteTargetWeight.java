@@ -1,7 +1,6 @@
 package usecases;
 import entities.Target;
 import entities.TargetWeight;
-
 import java.util.ArrayList;
 /**
  * Usecase to delete the most recently added target weight

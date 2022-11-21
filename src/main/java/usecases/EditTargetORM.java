@@ -2,10 +2,8 @@ package usecases;
 
 import entities.Target;
 import entities.TargetORM;
-import entities.TargetVolume;
-
 import java.util.ArrayList;
-import java.util.Date;
+import java.sql.Date;
 
 /**
  * Usecase to edit the most recently added target ORM

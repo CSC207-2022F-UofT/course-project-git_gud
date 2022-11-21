@@ -4,7 +4,7 @@ import entities.Target;
 import entities.TargetWeight;
 
 import java.util.ArrayList;
-import java.util.Date;
+import java.sql.Date;
 
 /**
  * Usecase to add a target Weight

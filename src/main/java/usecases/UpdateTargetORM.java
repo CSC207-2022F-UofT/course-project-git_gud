@@ -2,11 +2,8 @@ package usecases;
 
 import entities.Target;
 import entities.TargetORM;
-
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.ArrayList;
-import java.util.Date;
+import java.sql.Date;
 
 /**
  * Usecase to add a target ORM

@@ -1,5 +1,4 @@
 package UI;
-
 import javax.swing.*;
 /**
  * UI for when edit Target option is clicked on the HomeUI screen
