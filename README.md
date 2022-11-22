@@ -39,6 +39,7 @@ Moving forward, we expect you to maintain this project structure. You *should* u
 You can create another simple class and try generating a test for this class.
 
 ## Feature 1 and 2 Usage
+Sometimes logging out doesn't work properly? The issue is unknown as it works in other cases.
 To use these features properly, you must change the file 'build.gradle'. Replace the dependencies section with:
 ```
 dependencies {
