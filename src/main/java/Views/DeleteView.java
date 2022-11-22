@@ -61,6 +61,7 @@ public class DeleteView {
                     PresenterViewUpdate updateDeleteLogoutView = new PresenterViewUpdate.UpdateDeleteLogoutView();
                 }
                 if (e.getSource() == backButton){
+                    SettingsPage newPage = new SettingsPage();
                     deleteFrame.dispose();
                 }
 

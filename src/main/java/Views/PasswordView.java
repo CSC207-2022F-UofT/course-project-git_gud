@@ -70,9 +70,9 @@ public class PasswordView {
                         throw new RuntimeException(ex);
                     }
                     PresenterViewUpdate updatePasswordView = new PresenterViewUpdate.UpdatePasswordView(PasswordView.this);
-                    //System.exit(0);
                 }
                 if (e.getSource() == backButton){
+                    SettingsPage newPage = new SettingsPage();
                     passwordFrame.dispose();
                 }
 

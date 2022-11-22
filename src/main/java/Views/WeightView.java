@@ -67,9 +67,9 @@ public class WeightView {
                         throw new RuntimeException(ex);
                     }
                     PresenterViewUpdate updateWeightView = new PresenterViewUpdate.UpdateWeightView(WeightView.this);
-                    //System.exit(0);
                 }
                 if (e.getSource() == backButton){
+                    SettingsPage newPage = new SettingsPage();
                     weightFrame.dispose();
                 }
 

@@ -67,9 +67,9 @@ public class UsernameView {
                         throw new RuntimeException(ex);
                     }
                     PresenterViewUpdate updateUsernameView = new PresenterViewUpdate.UpdateUsernameView(UsernameView.this);
-                    //System.exit(0);
                 }
                 if (e.getSource() == backButton){
+                    SettingsPage newPage = new SettingsPage();
                     usernameFrame.dispose();
                 }
 

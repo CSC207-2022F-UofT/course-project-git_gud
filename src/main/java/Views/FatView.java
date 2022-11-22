@@ -67,9 +67,9 @@ public class FatView {
                         throw new RuntimeException(ex);
                     }
                     PresenterViewUpdate updateFatView = new PresenterViewUpdate.UpdateFatView(FatView.this);
-                    //System.exit(0);
                 }
                 if (e.getSource() == backButton){
+                    SettingsPage newPage = new SettingsPage();
                     fatFrame.dispose();
                 }
 

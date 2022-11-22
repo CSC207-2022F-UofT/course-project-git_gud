@@ -69,6 +69,7 @@ public class EmailView {
                     PresenterViewUpdate updateEmailView = new PresenterViewUpdate.UpdateEmailView(EmailView.this);
                 }
                 if (e.getSource() == backButton){
+                    SettingsPage newPage = new SettingsPage();
                     emailFrame.dispose();
                 }
 
