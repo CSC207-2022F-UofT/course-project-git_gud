@@ -13,14 +13,20 @@ public class WorkoutStartViewManager extends JFrame {
     Workout workout0 = new Workout();
     static ArrayList<String> workoutTest = new ArrayList<String>();
 
-
-    public static void main(String[] args) {
-
+    public void WorkoutStartDisplay(Workout workout, int index){
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                WorkoutStartView frame1 = new WorkoutStartView();
+                WorkoutStartView frame1 = new WorkoutStartView(workout, index);
             }
         });
-
     }
+//    public static void main(String[] args) {
+//
+//        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+//            public void run() {
+//                WorkoutStartView frame1 = new WorkoutStartView();
+//            }
+//        });
+//
+//    }
 }

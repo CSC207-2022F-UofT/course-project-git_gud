@@ -1,8 +1,11 @@
 package WorkoutViewModel;
 
+import RoutineManagerModel.Workout;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import javax.swing.*;
 import java.awt.*;
@@ -30,15 +33,28 @@ public class WorkoutStartView extends JFrame {
     private JButton ghost = new JButton();
     private JButton next = new JButton("Next");
 
-
-
-
-    public WorkoutStartView() {
-
-        initialize();
+    public ArrayList<String> GetWeight() {
+        return weights;
     }
 
-        public void initialize(){
+    public ArrayList<String> GetRep() {
+        return repsNumber;
+    }
+
+
+
+    public WorkoutStartView(Workout workout, int index) {
+
+        initialize(workout, index);
+
+
+    }
+
+    public void nextExercise() {
+        dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
+    }
+
+        public void initialize(Workout workout, int index){
             setSize(500, 400);
             setLocationRelativeTo(null);
             setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -137,16 +153,18 @@ public class WorkoutStartView extends JFrame {
             exercise.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    //Call method to display exercise
+                    //Call method to display exercise information
                 }
             });
 
             next.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    //Call method to go to next exercise in the workout
+                    nextExercise();
                 }
             });
+
+
         }
 
 

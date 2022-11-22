@@ -19,6 +19,7 @@ public class RoutineHistory {
 
     }
 
+
     public void UpdateHistory(String workout) {
 
         this.completedWorkouts.get(workout).add(LocalDate.now());

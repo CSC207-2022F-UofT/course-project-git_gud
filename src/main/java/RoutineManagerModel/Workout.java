@@ -10,9 +10,9 @@ public class Workout {
         this.workout = new ArrayList<String>();
     }
 
-    public void AddExercise(String exercise, int index) {
+    public void AddExercise(Exercise exercise, int index) {
 
-        this.workout.add(index, exercise);
+        //this.workout.add(index, exercise.);
     }
 
 //    public void CustomizeExercise(int index, String sets) {
