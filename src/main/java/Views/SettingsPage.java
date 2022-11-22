@@ -12,6 +12,7 @@ public class SettingsPage {
     /***
      * SettingsPage is called by Main and builds a GUI with all the available settings for the app. From here you can
      * pick what setting to perform which then calls upon other view pages.
+     * @author bdls-jamal
      */
 
     public SettingsPage() {

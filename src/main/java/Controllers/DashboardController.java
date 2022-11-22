@@ -8,6 +8,7 @@ public class DashboardController {
     /**
      * A controller class that handles the usecases for the dashboard. It calls upon usecase classes to perform
      * certain functions and make changes to the sql database
+     * @author bdls-jamal
      */
     public static Connection connection1;
 
@@ -28,6 +29,7 @@ public class DashboardController {
     public static void DeleteAccountUseCase(String userName) throws SQLException {
         /**
          * DeleteAccountUseCase will delete a user account from the SQL database
+         * @params userName is a variable acquired from other parts of the codebase that is inputted from the app user
          */
         PreparedStatement resultDelete = Delete_Account.DeleteAccount();
         resultDelete.setString(1, userName);
@@ -37,6 +39,7 @@ public class DashboardController {
     public static void ChangeEmailUseCase(String oldEmail, String newEmail) throws SQLException {
         /**
          * ChangeEmailUseCase will change the email of a user in the SQL database
+         * @params oldEmail and newEmail are inputted by the app user in the GUI
          */
         PreparedStatement resultEmail = Change_Email.ChangeEmail();
         resultEmail.setString(1, newEmail);
@@ -47,6 +50,7 @@ public class DashboardController {
     public static void ChangeUsernameUseCase(String userName, String newUserName) throws SQLException {
         /**
          * ChangeUsernameUseCase will change the username for a use in the SQL database
+         * @params userName and newUserName are inputted by the app user
          */
         PreparedStatement resultUsername = Change_Username.ChangeUsername();
         resultUsername.setString(1, newUserName);
@@ -57,6 +61,8 @@ public class DashboardController {
     public static void ChangePasswordUseCase(String oldPassword, String newPassword, String username) throws SQLException {
         /**
          * ChangePasswordUseCase will change the password of a user in the SQL database
+         * @params oldPassword, newPassword and username are inputted by the app user in order to change a password
+         * for a specific user
          */
         PreparedStatement resultPassword = Change_Password.ChangePassword();
         resultPassword.setString(1, newPassword);
@@ -68,6 +74,7 @@ public class DashboardController {
     public static void ChangeBodyWeightUseCase(String username1, int newWeight) throws SQLException {
         /**
          * ChangeBodyWeightUseCase will change the weight stat of an associated user in the SQL database
+         * @params username1 and newWeight are inputted by the app user in the GUI
          */
         PreparedStatement resultWeight = Change_Weight.ChangeWeight();
         resultWeight.setInt(1, newWeight);
@@ -78,6 +85,7 @@ public class DashboardController {
     public static void ChangeBodyFatUseCase(String username2, int newFat) throws SQLException {
         /**
          * ChangeBodyFatUseCase will change the fat stat of an associated user in the SQL database
+         * @params username2 and newFat are inputted by the app user
          */
         PreparedStatement resultFat = Change_Fat.ChangeFat();
         resultFat.setInt(1, newFat);

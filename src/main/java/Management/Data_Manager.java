@@ -9,6 +9,7 @@ public class Data_Manager {
      * All the QUERIES updates the SQL database with new information according to old information
      * delete is the exception where instead of updating the database it deletes a row in the database based on
      * provided information
+     *
      */
     public static PreparedStatement email;
     protected static PreparedStatement username;
