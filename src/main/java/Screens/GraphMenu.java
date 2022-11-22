@@ -8,6 +8,10 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.WindowConstants;
 
+/**
+ * Very incomplete, but at the moment it just shows a basic menu with different buttons for different graphing
+ * options. Need to add ActionPerformed methods.
+ */
 
 
 public class GraphMenu extends JFrame{

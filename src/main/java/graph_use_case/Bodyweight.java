@@ -4,7 +4,10 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Date;
 
-// This class will be an instance variable in the class User.
+/**
+ *  This class will be an instance variable in the class User. It's main function is to keep track of the current
+ *  bodyweight as well as a Hashmap of corresponding Dates and bodyweights that are to be plotted.
+ */
 public class Bodyweight {
 
     LinkedHashMap<Date, Float> data;

@@ -3,7 +3,10 @@ package graph_use_case;
 import java.util.Date;
 import java.util.LinkedHashMap;
 
-// Most likely this class will be an instance variable of the exercise class
+/**
+ *  This class will be an instance variable in the class User. It's main function is to keep track of  a Hashmap of
+ *  corresponding Dates and volumes that are to be plotted.
+ */
 public class Volume {
 
     LinkedHashMap<Date, Float> data;

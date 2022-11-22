@@ -1,5 +1,9 @@
 package Entities;
 
+/**
+ * Basic exercise class with variables for the name of the exercise, the reps, weight and sets. There are also
+ * some getters and setters.
+ */
 public class Exercise {
 
     String type;

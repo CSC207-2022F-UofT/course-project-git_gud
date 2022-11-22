@@ -1,6 +1,9 @@
 package graph_use_case;
 
 import Entities.User;
+/**
+ * The input. There are also some setters and getters.
+ */
 
 import java.util.Date;
 import java.util.LinkedHashMap;
