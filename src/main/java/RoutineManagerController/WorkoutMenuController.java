@@ -1,6 +1,7 @@
 package RoutineManagerController;
 
 import RoutineManagerModel.RoutineManager;
+import RoutineManagerView.AddExerciseMenu;
 import RoutineManagerView.RemoveExerciseMenu;
 import RoutineManagerView.WorkoutMenu;
 import RoutineManagerView.WorkoutSelection;
@@ -20,6 +21,7 @@ public class WorkoutMenuController {
         this.theView = theView;
 
         this.theView.addWorkoutSelectionDisplay(new WorkoutSelectionDisplay());
+        this.theView.addAddExerciseDisplay(new AddExerciseDisplay());
         this.theView.addRemoveExerciseDisplay(new RemoveExerciseDisplay());
     }
 
@@ -31,6 +33,60 @@ public class WorkoutMenuController {
             WorkoutSelection workoutSelection = new WorkoutSelection();
 
             WorkoutSelectionController theController = new WorkoutSelectionController(theModel, workoutSelection);
+        }
+    }
+
+    class AddExerciseDisplay implements ActionListener {
+
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+            if (theView.getWorkoutNumber()==1) {
+
+                theView.dispose();
+                AddExerciseMenu addExerciseMenu = new AddExerciseMenu();
+
+                addExerciseMenu.setWorkoutNumber(1);
+
+                AddExerciseController addExerciseController = new AddExerciseController(theModel, addExerciseMenu);
+            }
+            if (theView.getWorkoutNumber()==2) {
+
+                theView.dispose();
+                AddExerciseMenu addExerciseMenu = new AddExerciseMenu();
+
+                addExerciseMenu.setWorkoutNumber(2);
+
+                AddExerciseController addExerciseController = new AddExerciseController(theModel, addExerciseMenu);
+            }
+            if (theView.getWorkoutNumber()==3) {
+
+                theView.dispose();
+                AddExerciseMenu addExerciseMenu = new AddExerciseMenu();
+
+                addExerciseMenu.setWorkoutNumber(3);
+
+                AddExerciseController addExerciseController = new AddExerciseController(theModel, addExerciseMenu);
+            }
+            if (theView.getWorkoutNumber()==4) {
+
+                theView.dispose();
+                AddExerciseMenu addExerciseMenu = new AddExerciseMenu();
+
+                addExerciseMenu.setWorkoutNumber(4);
+
+                AddExerciseController addExerciseController = new AddExerciseController(theModel, addExerciseMenu);
+            }
+            if (theView.getWorkoutNumber()==5) {
+
+                theView.dispose();
+                AddExerciseMenu addExerciseMenu = new AddExerciseMenu();
+
+                addExerciseMenu.setWorkoutNumber(5);
+
+                AddExerciseController addExerciseController = new AddExerciseController(theModel, addExerciseMenu);
+            }
         }
     }
 

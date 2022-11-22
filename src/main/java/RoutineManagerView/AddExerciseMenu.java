@@ -3,41 +3,42 @@ package RoutineManagerView;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
-public class RemoveExerciseMenu extends JFrame {
+public class AddExerciseMenu extends JFrame {
 
     JPanel scrollPanel = new JPanel();
     JLabel confirmationMessage = new JLabel();
     JLabel errorMessage = new JLabel();
     JButton backButton = new JButton("Back");
+    JButton tricepDips = new JButton("Tricep Dips");
+    JButton bicepCurls = new JButton("Bicep Curls");
+    JButton militaryPress = new JButton("Military Press");
 
-    int workoutNumber = 0;
+    JButton[] exercises = {tricepDips, bicepCurls, militaryPress};
 
-    ArrayList<JButton> exercises = new ArrayList<>();
+    public int workoutNumber = 0;
 
-    public RemoveExerciseMenu(){
+    public AddExerciseMenu() {
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(320, 564);
         this.setLayout(null);
-        this.setTitle("Remove Exercise");
+        this.setTitle("Workout Menu");
 
-        JLabel message = new JLabel("Select an exercise to remove from this workout routine.");
-        message.setBounds(10,410,320,20);
+        JLabel message = new JLabel("Select an exercise to add to this workout routine.");
+        message.setBounds(25,410,320,20);
         message.setFont(new Font("Dialog", Font.BOLD, 10));
         message.setVisible(true);
 
         // TEMPORARY until certain features are implemented.
-        String labelText = "<html>These exercises on the list were added manually for testing<BR>purposes, once the " +
-                "Exercise class is implemented, you'll be able to use the add exercise function to add these from scratch.</html>";
+        String labelText = "<html>Once the Exercise class is fully implemented, you'll be<BR>able to choose from a much " +
+                "bigger list of exercises.</html>";
 
         JLabel message2 = new JLabel(labelText);
         message2.setBounds(0,80,320,50);
         message2.setFont(new Font("Dialog", Font.BOLD, 10));
         message2.setForeground(Color.RED);
         message2.setVisible(true);
-
 
         JPanel displayPanel = new JPanel();
         displayPanel.setLocation(0, 250);
@@ -58,57 +59,50 @@ public class RemoveExerciseMenu extends JFrame {
         errorMessage.setBounds(0,430,320,50);
         errorMessage.setFont(new Font("Dialog", Font.BOLD, 12));
 
+
         backButton.setBounds(0,0,100,50);
         backButton.setFocusable(false);
         backButton.setFont(new Font("Dialog", Font.BOLD, 15));
+
+        tricepDips.setFocusable(false);
+        tricepDips.setPreferredSize(new Dimension(190,20));
+        tricepDips.setFont(new Font("Dialog", Font.BOLD, 11));
+        scrollPanel.add(tricepDips);
+
+        bicepCurls.setFocusable(false);
+        bicepCurls.setPreferredSize(new Dimension(190,20));
+        bicepCurls.setFont(new Font("Dialog", Font.BOLD, 11));
+        scrollPanel.add(bicepCurls);
+
+        militaryPress.setFocusable(false);
+        militaryPress.setPreferredSize(new Dimension(190,20));
+        militaryPress.setFont(new Font("Dialog", Font.BOLD, 11));
+        scrollPanel.add(militaryPress);
 
         this.add(backButton);
 
         this.add(message);
         this.add(message2);
-        this.add(errorMessage);
         this.add(confirmationMessage);
+        this.add(errorMessage);
 
         this.add(displayPanel);
-
         this.setVisible(true);
     }
 
-    public void addExercise(String exercise) {
-
-        JButton newExercise = new JButton(exercise);
-        newExercise.setFocusable(false);
-        newExercise.setPreferredSize(new Dimension(190,20));
-        newExercise.setFont(new Font("Dialog", Font.BOLD, 11));
-
-        exercises.add(newExercise);
-        scrollPanel.add(newExercise);
-
-    }
-
-    public ArrayList<JButton> getExercises(){
+    public JButton[] getExercises() {
 
         return exercises;
     }
 
-    public void setWorkoutNumber(int i){
-
-        workoutNumber = i;
-    }
-
     public void setConfirmationMessage(String exercise) {
 
-        confirmationMessage.setText("You removed " + exercise + " from your routine.");
+        confirmationMessage.setText("You added "+ exercise + " to your routine.");
     }
 
     public void setErrorMessage(String exercise) {
 
-        errorMessage.setText("You already removed " + exercise + "!");
-    }
-
-    public int getWorkoutNumber(){
-
-        return workoutNumber;
+        errorMessage.setText("You already added " + exercise + "!");
     }
 
     public JLabel getConfirmationMessage() {
@@ -121,17 +115,26 @@ public class RemoveExerciseMenu extends JFrame {
         return errorMessage;
     }
 
-    public void addRemoveExerciseListener(ActionListener removeListener) {
+    public void setWorkoutNumber(int i) {
 
-        for (JButton exercise : exercises) {
+        workoutNumber = i;
+    }
 
-            exercise.addActionListener(removeListener);
+    public int getWorkoutNumber() {
+
+        return workoutNumber;
+    }
+
+    public void addAddAction(ActionListener actionListener){
+
+        for (JButton exercise : exercises){
+
+            exercise.addActionListener(actionListener);
         }
     }
 
-    public void addBackListener(ActionListener backListener){
+    public void addBackAction(ActionListener displayListener){
 
-        backButton.addActionListener(backListener);
+        backButton.addActionListener(displayListener);
     }
-
 }

@@ -5,6 +5,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Represents the GUI for the menu
+ */
 public class WorkoutMenu extends JFrame {
 
     private JPanel scrollPanel = new JPanel();
@@ -12,7 +15,7 @@ public class WorkoutMenu extends JFrame {
     private JButton addButton = new JButton("Add Exercise");
     private JButton removeButton = new JButton("Remove Exercise");
     private JButton historyButton = new JButton("Workout History");
-    public JButton backButton = new JButton("Back");
+    private JButton backButton = new JButton("Back");
 
     public int workoutNumber = 0;
 
@@ -22,6 +25,28 @@ public class WorkoutMenu extends JFrame {
         this.setSize(320, 564);
         this.setLayout(null);
         this.setTitle("Workout Menu");
+
+        // TEMPORARY until certain features are implemented
+        JLabel message1 = new JLabel("The Start Workout, Workout History, and all the exercise");
+        message1.setBounds(0,40,300,100);
+        message1.setFont(new Font("Dialog", Font.BOLD, 10));
+        message1.setForeground(Color.RED);
+        message1.setVisible(true);
+
+        // TEMPORARY until certain features are implemented
+        JLabel message2 = new JLabel("buttons from THIS menu don't do anything yet as they ");
+        message2.setBounds(0,50,300,100);
+        message2.setFont(new Font("Dialog", Font.BOLD, 10));
+        message2.setForeground(Color.RED);
+        message2.setVisible(true);
+
+        // TEMPORARY until certain features are implemented
+        JLabel message3 = new JLabel("depend on other features that need to be implemented first.");
+        message3.setBounds(0,60,300,100);
+        message3.setFont(new Font("Dialog", Font.BOLD, 10));
+        message3.setForeground(Color.RED);
+        message3.setVisible(true);
+
 
         JPanel displayPanel = new JPanel();
         displayPanel.setLocation(0, 250);
@@ -60,6 +85,10 @@ public class WorkoutMenu extends JFrame {
         backButton.setFocusable(false);
         backButton.setFont(new Font("Dialog", Font.BOLD, 15));
 
+        this.add(message1);
+        this.add(message2);
+        this.add(message3);
+
         this.add(startButton);
         this.add(addButton);
         this.add(historyButton);
@@ -94,6 +123,11 @@ public class WorkoutMenu extends JFrame {
     public void addWorkoutSelectionDisplay(ActionListener displayListener){
 
         backButton.addActionListener(displayListener);
+    }
+
+    public void addAddExerciseDisplay(ActionListener displayListener){
+
+        addButton.addActionListener(displayListener);
     }
 
     public void addRemoveExerciseDisplay(ActionListener displayListener){

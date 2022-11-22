@@ -4,8 +4,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+/**
+ * Represents the GUI for selecting between five workout routines stored in RoutineManager.
+ * @author turne142
+ */
 public class WorkoutSelection extends JFrame{
 
+    /**
+     * Each one of these JButtons represents one of the five workout routines that the user can select.
+     */
     public JButton workout1Button = new JButton("Workout 1");
     public JButton workout2Button = new JButton("Workout 2");
     public JButton workout3Button = new JButton("Workout 3");

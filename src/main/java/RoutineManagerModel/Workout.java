@@ -16,19 +16,18 @@ public class Workout {
     public Workout() {
 
         this.workout = new ArrayList<String>();
-        this.workout.add("hi");
-        this.workout.add("hiiii");
+        this.workout.add("Tricep Dips");
+        this.workout.add("Bicep Curls"); // THESE ARE TEMPORARY UNTIL THE EXERCISE FEATURE IS IMPLEMENTED, FOR TESTING PURPOSES
     }
 
     /**
      * Adds an Exercise object to the workout ArrayList at a specified index.
      * THE exercise PARAMETER SHOULD BE AN Exercise OBJECT BUT I MADE IT A String FOR NOW.
      * @param exercise an Exercise object that will be added to the workout ArrayList.
-     * @param index an int representing the specific index at which exercise is inserted.
      */
-    public void addExercise(String exercise, int index) {
+    public void addExercise(String exercise) {
 
-        this.workout.add(index, exercise);
+        this.workout.add(exercise);
     }
 
     /**
