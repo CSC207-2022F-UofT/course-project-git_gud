@@ -38,6 +38,7 @@ public class TargetTypes {
         return buttonORM;
     }
     /**
+     * returns respective button so UI file can add action or edit the button
      * @return button
      */
     public JButton getButtonVolume() {
@@ -45,7 +46,7 @@ public class TargetTypes {
     }
 
     /**
-     *
+     * returns respective button so UI file can add action or edit the button
      * @return button
      */
 
