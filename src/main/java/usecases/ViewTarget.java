@@ -18,13 +18,14 @@ public class ViewTarget {
         Targets targets = Targets.getInstance();
         ArrayList<Target> targetList = targets.targetList;
         if (targetList.isEmpty()){
-            return "No ORM targets exist";
+            return "No targets of this type exist";
         }
         else{
             StringBuilder t = new StringBuilder("Targets are: ");
             for (Target target : targetList) {
-                String targetStr = target.toString();
-                t.append(targetStr).append(", ");
+                String targetDate = String.valueOf(target.getDate());
+                String targetValue = String.valueOf(target.getValue());
+                t.append("Date: ").append(targetDate).append(" Value: ").append(targetValue).append("     ");
             }
             return t.toString();
         }

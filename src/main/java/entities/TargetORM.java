@@ -41,7 +41,7 @@ public class TargetORM extends Targets{
 
     /**
      *
-     * @return the instance variable target weight of this class
+     * @return the instance variable target ORM of this class
      */
     public static TargetORM getInstance(){
         if (targetORM == null){

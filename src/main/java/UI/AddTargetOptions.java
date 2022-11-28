@@ -1,5 +1,9 @@
 package UI;
 
+import entities.TargetORM;
+import entities.TargetVolume;
+import entities.TargetWeight;
+
 import javax.swing.*;
 
 /**
@@ -28,7 +32,20 @@ public class AddTargetOptions extends JFrame{
         JButton ORM = types.getButtonORM();
         JButton volume = types.getButtonVolume();
         JButton weight = types.getButtonWeight();
-        ORM.addActionListener(e -> AddORMTarget.main());
+        ORM.addActionListener(e -> {
+            AddTargetView viewORM = new AddTargetView(TargetORM.getInstance());
+            viewORM.main();
+        });
+        volume.addActionListener(e -> {
+            AddTargetView viewVolume = new AddTargetView(TargetVolume.getInstance());
+            viewVolume.main();
+        });
+        weight.addActionListener(e -> {
+            AddTargetView viewWeight = new AddTargetView(TargetWeight.getInstance());
+            viewWeight.main();
+        });
+
+
 
 
     }

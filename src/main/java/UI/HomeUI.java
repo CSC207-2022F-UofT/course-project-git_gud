@@ -1,8 +1,7 @@
 package UI;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.Button;
+
 
 /**
  *  Home UI class for targets that extends JFrame
@@ -11,10 +10,6 @@ import java.awt.Button;
  * @author jhalaksaraogi
  */
 public class HomeUI extends JFrame {
-    JButton buttonAdd;
-    JButton buttonView;
-    JButton buttonDelete;
-    JButton buttonEdit;
 
     /**
      * Constructor for the HomeUI class
@@ -29,6 +24,7 @@ public class HomeUI extends JFrame {
         buttonAdd.setBounds(50,150,100, 50);
         JButton buttonView = new JButton("View Targets");
         buttonView.setBounds(170,150,150, 50);
+        buttonView.addActionListener(e -> ViewTargetOptions.main());
         JButton buttonDelete = new JButton("Delete Target");
         buttonDelete.setBounds(340,150,150, 50);
         buttonDelete.addActionListener(e -> DeleteTargetOptions.main());

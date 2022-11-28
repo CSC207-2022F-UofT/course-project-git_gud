@@ -24,6 +24,7 @@ public class ViewTargetOptions extends JFrame{
         ViewTargetOptions frame = new ViewTargetOptions();
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         TargetTypes types = new TargetTypes((JPanel) frame.getContentPane(), "View ");
+        frame.setVisible(true);
 
         JButton ORM = types.getButtonORM();
         JButton volume = types.getButtonVolume();

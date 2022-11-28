@@ -1,48 +1,52 @@
 package usecases;
 
 import entities.Target;
-import entities.TargetORM;
+import entities.Targets;
+
 import java.util.ArrayList;
 import java.util.Date;
-
 /**
- * Usecase to add a target ORM
+ * Usecase to add a target
  * @author jhalaksaraogi
  */
-public class UpdateTargetORM {
+public class AddTarget {
     Date date;
     Float value;
+    Targets targets;
 
     /**
      *
      * @param date Date for the target to be added
      * @param value Value of the target
+     *
      * Constructor for this class
      */
-    public UpdateTargetORM(Date date, Float value) {
+    public AddTarget(Date date, Float value, Targets targets) {
         this.date = date;
         this.value = value;
+        this.targets = targets;
     }
+
 
     /**
      * Adds the most recent target to the end of the list
      * The last else statement removes the oldest target. This ensures that only 3 targets
      * including the current target exist in the ArrayList
-     * Lastly sets the targetWeight object as the final arraylist with the newest/current target
+     * Lastly sets the targets object as the final arraylist with the newest/current target
      * The newest target is the last element of the arraylist
      */
-    public void addTargetVolume(){
+    public void addTarget(){
         Target target = new Target(this.date, this.value);
-        TargetORM targetORM = TargetORM.getInstance();
-        ArrayList<Target> targetORMList = targetORM.targetORMList;
-        if (targetORMList.isEmpty()){
-            targetORMList.add(0,target);
-        } else if (targetORMList.size() == 1 || targetORMList.size() == 2) {
-            targetORMList.add(target);
+        Targets targets = Targets.getInstance();
+        ArrayList<Target> targetList = targets.targetList;
+        if (targetList.isEmpty()){
+            targetList.add(0,target);
+        } else if (targetList.size() == 1 || targetList.size() == 2) {
+            targetList.add(target);
         } else {
-            targetORMList.remove(0);
-            targetORMList.add(target);
+            targetList.remove(0);
+            targetList.add(target);
         }
-        targetORM.setTargetORMList(targetORMList);
+        targets.setTargetList(targetList);
     }
 }

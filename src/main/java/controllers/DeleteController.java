@@ -3,6 +3,10 @@ package controllers;
 import entities.Targets;
 import usecases.DeleteTarget;
 
+/**
+ * Controller to delete a target. Interacts with the UI and usecase to do so
+ * @author jhalaksaraogi
+ */
 public class DeleteController {
     Targets targets;
     public DeleteController(Targets targets){
