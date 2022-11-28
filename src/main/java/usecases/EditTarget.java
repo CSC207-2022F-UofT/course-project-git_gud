@@ -7,6 +7,10 @@ import entities.Targets;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * Class to edit the most recent target
+ * @author jhalaksaraogi
+ */
 public class EditTarget {
     Date date;
     Targets targets;

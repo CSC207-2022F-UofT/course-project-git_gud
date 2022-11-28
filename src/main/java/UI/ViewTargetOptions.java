@@ -1,8 +1,7 @@
 package UI;
 
-import controllers.ViewORMController;
-import controllers.ViewVolumeController;
-import controllers.ViewWeightController;
+import controllers.ViewController;
+import entities.TargetORM;
 
 import javax.swing.*;
 
@@ -30,25 +29,25 @@ public class ViewTargetOptions extends JFrame{
         JButton volume = types.getButtonVolume();
         JButton weight = types.getButtonWeight();
 
-        ViewORMController viewORMController = new ViewORMController();
-        String stringORM = viewORMController.viewORM(); //calls the controller method to view a target
+        ViewController viewORMController = new ViewController(TargetORM.getInstance());
+        String stringORM = viewORMController.view(); //calls the controller method to view a target
         ORM.addActionListener(e -> {
             JOptionPane.showMessageDialog(frame,
                     stringORM);   //displays relevant message indicating whether a target is deleted
         });
 
-        ViewVolumeController viewVolumeController = new ViewVolumeController();
-        String stringVolume = viewVolumeController.viewVolume();  //calls the controller method to delete a target
+        ViewController viewVolumeController = new ViewController(TargetORM.getInstance());
+        String stringVolume = viewVolumeController.view();  //calls the controller method to view a target
         volume.addActionListener(e -> {
             JOptionPane.showMessageDialog(frame,
-                    stringVolume);   //displays relevant message indicating whether a target is deleted
+                    stringVolume);   //displays targets
         });
 
-        ViewWeightController viewWeightController = new ViewWeightController();
-        String stringWeight = viewWeightController.viewWeight();  //calls the controller method to delete a target
+        ViewController viewController = new ViewController(TargetORM.getInstance());
+        String stringWeight = viewController.view();  //calls the controller method to view a target
         weight.addActionListener(e -> {
             JOptionPane.showMessageDialog(frame,
-                    stringWeight);   //displays relevant message indicating whether a target is deleted
+                    stringWeight);   //displays targets
         });
 
         frame.setVisible(true);
