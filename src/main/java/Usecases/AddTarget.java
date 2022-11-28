@@ -37,8 +37,7 @@ public class AddTarget {
      */
     public void addTarget(){
         Target target = new Target(this.date, this.value);
-        Targets targets = Targets.getInstance();
-        ArrayList<Target> targetList = targets.targetList;
+        ArrayList<Target> targetList = this.targets.targetList;
         if (targetList.isEmpty()){
             targetList.add(0,target);
         } else if (targetList.size() == 1 || targetList.size() == 2) {
@@ -47,6 +46,6 @@ public class AddTarget {
             targetList.remove(0);
             targetList.add(target);
         }
-        targets.setTargetList(targetList);
+        this.targets.setTargetList(targetList);
     }
 }

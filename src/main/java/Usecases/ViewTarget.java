@@ -15,8 +15,7 @@ public class ViewTarget {
      * @return a string with the list of targets
      */
     public String view(){
-        Targets targets = Targets.getInstance();
-        ArrayList<Target> targetList = targets.targetList;
+        ArrayList<Target> targetList = this.targets.targetList;
         if (targetList.isEmpty()){
             return "No targets of this type exist";
         }

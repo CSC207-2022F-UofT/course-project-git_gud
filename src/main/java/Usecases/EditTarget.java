@@ -33,8 +33,7 @@ public class EditTarget {
 
     public void makeEdit(){
         Target target = new Target(this.date, this.value);
-        Targets targets = Targets.getInstance();
-        ArrayList<Target> targetList = targets.targetList;
+        ArrayList<Target> targetList = this.targets.targetList;
         if (targetList.isEmpty()){
             targetList.add(0,target); //editing the target if no target exists, adds the target
         } else if (targetList.size() == 1) {
@@ -48,6 +47,6 @@ public class EditTarget {
             targetList.add(target);  //updates with new target
         }
 
-        targets.setTargetList(targetList); //updates class
+        this.targets.setTargetList(targetList); //updates class
     }
 }

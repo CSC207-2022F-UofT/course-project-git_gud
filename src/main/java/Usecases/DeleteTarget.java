@@ -20,11 +20,10 @@ public class DeleteTarget {
      * Deletes most recently added target
      */
     public Boolean deleteTarget() {
-        Targets targets = Targets.getInstance();
         ArrayList<Target> targetList = targets.targetList;
         if (targetList.size() >= 1) {
             targetList.remove(targetList.size() - 1);   // removes current target
-            targets.setTargetList(targetList);
+            this.targets.setTargetList(targetList);
             return true;
         }
         else{
