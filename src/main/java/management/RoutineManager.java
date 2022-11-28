@@ -1,4 +1,4 @@
-package Management;
+package management;
 
 /**
  * Represents the storage and manager of all workout data. Five workout classes will be stored in an array, each workout

@@ -1,7 +1,6 @@
-package Views;
+package Views.dashboard;
 
 import Controllers.DashboardController;
-import Presenters.PresenterViewUpdate;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,7 +11,9 @@ import java.sql.SQLException;
 @SuppressWarnings("Convert2Lambda")
 public class FatView {
     public JPanel fat;
-    public FatView(){
+    public FatView() {}
+
+    public void CreateFatView(){
         JFrame fatFrame = new JFrame();
         fatFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         fatFrame.setSize(320, 564);
@@ -62,14 +63,17 @@ public class FatView {
                     String userName = usernameInput.getText();
                     int newBodyFat = Integer.parseInt(newFatInput.getText());
                     try {
-                        DashboardController.ChangeBodyFatUseCase(userName, newBodyFat);
+                        DashboardController.changeBodyFatUseCase(userName, newBodyFat);
                     } catch (SQLException ex) {
                         throw new RuntimeException(ex);
                     }
-                    PresenterViewUpdate updateFatView = new PresenterViewUpdate.UpdateFatView(FatView.this);
+                    JLabel newInfo = new JLabel("Your Fat Has Been Changed!");
+                    fat.add(newInfo);
+                    fat.revalidate();
                 }
                 if (e.getSource() == backButton){
                     SettingsPage newPage = new SettingsPage();
+                    newPage.CreateSettingsPage();
                     fatFrame.dispose();
                 }
 

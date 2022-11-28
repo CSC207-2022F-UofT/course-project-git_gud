@@ -1,4 +1,4 @@
-package Management;
+package management;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

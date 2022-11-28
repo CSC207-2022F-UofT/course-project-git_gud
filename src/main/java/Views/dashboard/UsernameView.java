@@ -1,7 +1,6 @@
-package Views;
+package Views.dashboard;
 
 import Controllers.DashboardController;
-import Presenters.PresenterViewUpdate;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,7 +11,9 @@ import java.sql.SQLException;
 @SuppressWarnings("Convert2Lambda")
 public class UsernameView {
     public JPanel username;
-    public UsernameView(){
+    public UsernameView(){}
+
+    public void CreateUsernameView(){
         JFrame usernameFrame = new JFrame();
         usernameFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         usernameFrame.setSize(320, 564);
@@ -62,14 +63,17 @@ public class UsernameView {
                     String userName = usernameInput.getText();
                     String newUserName = newUsernameInput.getText();
                     try {
-                        DashboardController.ChangeUsernameUseCase(userName, newUserName);
+                        DashboardController.changeUsernameUseCase(userName, newUserName);
                     } catch (SQLException ex) {
                         throw new RuntimeException(ex);
                     }
-                    PresenterViewUpdate updateUsernameView = new PresenterViewUpdate.UpdateUsernameView(UsernameView.this);
+                    JLabel newInfo = new JLabel("Your Username Has Been Changed!");
+                    username.add(newInfo);
+                    username.revalidate();
                 }
                 if (e.getSource() == backButton){
                     SettingsPage newPage = new SettingsPage();
+                    newPage.CreateSettingsPage();
                     usernameFrame.dispose();
                 }
 

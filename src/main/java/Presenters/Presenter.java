@@ -2,7 +2,7 @@
  * This presenter class contains methods to be called for different use cases which updates the view
  */
 package Presenters;
-import Views.SettingsPage;
+import Views.dashboard.SettingsPage;
 import Views.ViewLoginPage;
 
 public class Presenter {
@@ -33,6 +33,7 @@ public class Presenter {
     public static void login(ViewLoginPage x){
         x.frame.dispose();
         SettingsPage dashboardViewer = new SettingsPage();
+        dashboardViewer.CreateSettingsPage();
     }
 
     /**

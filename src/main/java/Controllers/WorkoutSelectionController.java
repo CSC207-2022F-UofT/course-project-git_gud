@@ -1,6 +1,6 @@
 package Controllers;
 
-import Management.RoutineManager;
+import management.RoutineManager;
 import Views.WorkoutSelection;
 import Views.WorkoutMenu;
 

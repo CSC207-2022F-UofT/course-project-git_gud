@@ -1,7 +1,6 @@
-package Views;
+package Views.dashboard;
 
 import Controllers.DashboardController;
-import Presenters.PresenterViewUpdate;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,7 +11,9 @@ import java.sql.SQLException;
 @SuppressWarnings("Convert2Lambda")
 public class PasswordView {
     public JPanel password;
-    public PasswordView(){
+    public PasswordView(){}
+
+    public void CreatePasswordView(){
         JFrame passwordFrame = new JFrame();
         passwordFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         passwordFrame.setSize(320, 564);
@@ -62,17 +63,20 @@ public class PasswordView {
             public void actionPerformed(ActionEvent e) {
                 //once button submit is pressed, send to query changer
                 if (e.getSource() == submitButton){
-                    String oldPassword = passwordInput.getText();
-                    String newPassword = newPasswordInput.getText();
+                    String oldPassword = String.valueOf(passwordInput.getPassword());
+                    String newPassword = String.valueOf(newPasswordInput.getPassword());
                     try {
-                        DashboardController.ChangePasswordUseCase(oldPassword, newPassword);
+                        DashboardController.changePasswordUseCase(oldPassword, newPassword);
                     } catch (SQLException ex) {
                         throw new RuntimeException(ex);
                     }
-                    PresenterViewUpdate updatePasswordView = new PresenterViewUpdate.UpdatePasswordView(PasswordView.this);
+                    JLabel newInfo = new JLabel("Your Password Has Been Changed!");
+                    password.add(newInfo);
+                    password.revalidate();
                 }
                 if (e.getSource() == backButton){
                     SettingsPage newPage = new SettingsPage();
+                    newPage.CreateSettingsPage();
                     passwordFrame.dispose();
                 }
 

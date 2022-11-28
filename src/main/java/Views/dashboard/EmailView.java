@@ -1,7 +1,6 @@
-package Views;
+package Views.dashboard;
 
 import Controllers.DashboardController;
-import Presenters.PresenterViewUpdate;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,7 +11,8 @@ import java.sql.SQLException;
 @SuppressWarnings("Convert2Lambda")
 public class EmailView {
     public JPanel email;
-    public EmailView(){
+    public EmailView(){}
+    public void CreateEmailView(){
         JFrame emailFrame = new JFrame();
         emailFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         emailFrame.setSize(320, 564);
@@ -62,14 +62,17 @@ public class EmailView {
                     String oldEmail = emailInput.getText();
                     String newEmail = newEmailInput.getText();
                     try {
-                        DashboardController.ChangeEmailUseCase(oldEmail, newEmail);
+                        DashboardController.changeEmailUseCase(oldEmail, newEmail);
                     } catch (SQLException ex) {
                         throw new RuntimeException(ex);
                     }
-                    PresenterViewUpdate updateEmailView = new PresenterViewUpdate.UpdateEmailView(EmailView.this);
+                    JLabel newInfo = new JLabel("Your Email Has Been Changed!");
+                    email.add(newInfo);
+                    email.revalidate();
                 }
                 if (e.getSource() == backButton){
                     SettingsPage newPage = new SettingsPage();
+                    newPage.CreateSettingsPage();
                     emailFrame.dispose();
                 }
 

@@ -1,11 +1,11 @@
 package Views;
 
 import Controllers.WorkoutSelectionController;
-import Management.RoutineManager;
+import management.RoutineManager;
 
 public class RoutineManagerView {
 
-    public static void main(String[] args) {
+    public RoutineManagerView() {
 
         WorkoutSelection theView = new WorkoutSelection();
 
