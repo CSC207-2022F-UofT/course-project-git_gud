@@ -37,3 +37,40 @@ Moving forward, we expect you to maintain this project structure. You *should* u
 ![image](https://user-images.githubusercontent.com/5333020/196066655-d3c97bf4-fdbd-46b0-b6ae-aeb8dbcf351d.png)
 
 You can create another simple class and try generating a test for this class.
+
+## Feature 1 and 2 Usage
+Sometimes logging out doesn't work properly? The issue is unknown as it works in other cases.
+To use these features properly, you must change the file 'build.gradle'. Replace the dependencies section with:
+```
+dependencies {
+    implementation 'junit:junit:4.13.1'
+    implementation 'mysql:mysql-connector-java:8.0.28'
+    testImplementation('org.junit.jupiter:junit-jupiter:5.6.0')
+    implementation 'com.mysql:mysql-connector-j:8.0.31'
+ ```
+A local SQL database must be used until an online one is formed. The steps are as follows:
+1) Download MySQL Workbench.
+2) Set your user and password and remember these as you will need to change the code with them accordingly.
+3) Add a MySQL connection, hostname should be 127.0.0.1, port 3306, username and password is whatever you setup in the previous step.
+4) Open you connection and create a new schema with the name 'JDBC'.
+5) From within the schema create a new table called 'USER'.
+6) Within table 'USER' open a new query and run the following:
+```
+ALTER TABLE `jdbct`.`USER` 
+ADD COLUMN `username` VARCHAR(45),
+ADD COLUMN `password` VARCHAR(45),
+ADD COLUMN `email` VARCHAR(45),
+ADD COLUMN `bodyfat` INT NOT NULL,
+ADD COLUMN `bodyweight` INT NOT NULL;
+```
+7) Make changes to the code where it says TODO. 
+
+## Feature 6 (Graphing)
+The graphing feature produces output on the right input(A LinkedHashMap of Dates and Floats), but a lot still needs to be done to make the graphs look better. At the moment, the axes aren't labeled and only points are plotted. 
+
+Can you also provide feedback on whether the flow of the usecase (from controller to interactor to presenter etc.) had too many classes for this particular use case, and if the GraphResponseModel and GraphRequestModel were necessary.
+
+Also a lot of the latest changes I made (for example the inclusion of JAVADOC) are in the last commit I made and not in the last pull request on the document.
+
+![Screenshot (786)](https://user-images.githubusercontent.com/96087837/203178755-40d391e2-d651-4e50-a318-faa0f36ba13c.png)
+
