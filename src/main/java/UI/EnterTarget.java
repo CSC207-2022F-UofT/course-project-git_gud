@@ -1,8 +1,6 @@
 package UI;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionListener;
 
 /**
  * UI to add enter a target
@@ -17,26 +15,32 @@ public class EnterTarget {
 
     /**
      *
-     * @param panel Jpanel to which the fields and labels should be added
-     * Constructor to create fields for value and date
      */
     public EnterTarget(JPanel panel){
 
-        this.dateLabel = new JLabel("Date");
+        this.dateLabel = new JLabel("Date", JLabel.CENTER);
+        dateLabel.setHorizontalTextPosition(JLabel.CENTER);
+        dateLabel.setVerticalTextPosition(JLabel.BOTTOM);
+        dateLabel.setOpaque(true);
         this.dateLabel.setBounds(50, 150, 150, 50);
         panel.add(dateLabel);
-        this.valueLabel = new JLabel("Value");
+
+
+        this.valueLabel = new JLabel("Value", JLabel.CENTER);
+        valueLabel.setHorizontalTextPosition(JLabel.CENTER);
+        valueLabel.setVerticalTextPosition(JLabel.BOTTOM);
         this.valueLabel.setBounds(50, 50, 150, 50);
-        panel.add(dateField);
+        panel.add(valueLabel);
 
         this.valueField = new JTextField();
-        this.valueField.setBounds(50, 250, 250, 50);
+        this.valueField.setBounds(250, 50, 250, 50);
         panel.add(valueField);
+
         this.dateField = new JTextField();
-        this.dateField.setBounds(50, 250, 250, 50);
+        this.dateField.setBounds(250, 150, 250, 50);
         panel.add(dateField);
 
-        this.confirmButton = new JButton();
+        this.confirmButton = new JButton("Confirm");
         this.confirmButton.setBounds(100, 350, 200, 50);
         panel.add(confirmButton);
 
@@ -52,5 +56,13 @@ public class EnterTarget {
 
     public JButton getConfirmButton() {
         return confirmButton;
+    }
+
+    public JLabel getDateLabel() {
+        return dateLabel;
+    }
+
+    public JLabel getValueLabel() {
+        return valueLabel;
     }
 }

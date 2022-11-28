@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * the list of Targets.
  * @author jhalaksaraogi
  */
-public class TargetWeight {
+public class TargetWeight extends Targets{
     static TargetWeight targetWeight = null;
     public ArrayList<Target> targetWeightList;
 

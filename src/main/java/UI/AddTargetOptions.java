@@ -25,6 +25,12 @@ public class AddTargetOptions extends JFrame{
         // has buttons for Volume, Weight and ORM. These buttons are added to the panel. types is initialised to access
         // these buttons for when an action should be performed
         frame.setVisible(true);
+        JButton ORM = types.getButtonORM();
+        JButton volume = types.getButtonVolume();
+        JButton weight = types.getButtonWeight();
+        ORM.addActionListener(e -> AddORMTarget.main());
+
+
     }
 
 }

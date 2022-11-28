@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * the list of Targets.
  * @author jhalaksaraogi
  */
-public class TargetORM {
+public class TargetORM extends Targets{
     static TargetORM targetORM = null;
     public ArrayList<Target> targetORMList;
 

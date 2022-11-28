@@ -1,8 +1,8 @@
 package UI;
 
-import controllers.DeleteORMController;
-import controllers.DeleteVolumeController;
-import controllers.DeleteWeightController;
+import controllers.DeleteController;
+import entities.TargetORM;
+
 import javax.swing.*;
 /**
  * UI for when delete Target option is clicked on the HomeUI screen
@@ -30,22 +30,22 @@ public class DeleteTargetOptions extends JFrame{
         JButton DelVolume = types.getButtonVolume();
         JButton DelWeight = types.getButtonWeight();
 
-        DeleteORMController deleteORMController = new DeleteORMController();
-        String stringORM = deleteORMController.delete(); //calls the controller method to delete a target
+        DeleteController deleteControllerORM = new DeleteController(TargetORM.getInstance());
+        String stringORM = deleteControllerORM.delete(); //calls the controller method to delete a target
         DelORM.addActionListener(e -> {
             JOptionPane.showMessageDialog(frame,
                     stringORM);   //displays relevant message indicating whether a target is deleted
         });
 
-        DeleteVolumeController deleteVolumeController = new DeleteVolumeController();
-        String stringVolume = deleteVolumeController.delete();  //calls the controller method to delete a target
+        DeleteController deleteControllerVolume = new DeleteController(TargetORM.getInstance());
+        String stringVolume = deleteControllerVolume.delete();  //calls the controller method to delete a target
         DelVolume.addActionListener(e -> {
             JOptionPane.showMessageDialog(frame,
                     stringVolume);   //displays relevant message indicating whether a target is deleted
         });
 
-        DeleteWeightController deleteWeightController = new DeleteWeightController();
-        String stringWeight = deleteWeightController.delete();  //calls the controller method to delete a target
+        DeleteController deleteControllerWeight = new DeleteController(TargetORM.getInstance());
+        String stringWeight = deleteControllerWeight.delete();  //calls the controller method to delete a target
         DelWeight.addActionListener(e -> {
             JOptionPane.showMessageDialog(frame,
                     stringWeight);   //displays relevant message indicating whether a target is deleted

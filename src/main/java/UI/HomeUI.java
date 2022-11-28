@@ -23,7 +23,7 @@ public class HomeUI extends JFrame {
      */
     public HomeUI(){
         this.setTitle("Home Target");
-        this.setSize(710,400);
+        this.setSize(710,500);
         JButton buttonAdd = new JButton("Add Target");
         buttonAdd.addActionListener(e -> AddTargetOptions.main());
         buttonAdd.setBounds(50,150,100, 50);

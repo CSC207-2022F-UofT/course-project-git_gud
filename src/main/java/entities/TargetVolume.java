@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * the list of Targets.
  * @author jhalaksaraogi
  */
-public class TargetVolume {
+public class TargetVolume extends Targets{
     static TargetVolume targetVolume = null;
     public ArrayList<Target> targetVolumeList;
 
@@ -32,11 +32,11 @@ public class TargetVolume {
 
     /**
      *
-     * @param targetWeightList an array list of target weights
+     * @param targetVolumeList an array list of target weights
      * setter method
      */
-    public void setTargetVolumeList(ArrayList<Target> targetWeightList) {
-        this.targetVolumeList = targetWeightList;
+    public void setTargetVolumeList(ArrayList<Target> targetVolumeList) {
+        this.targetVolumeList = targetVolumeList;
     }
 
     /**
