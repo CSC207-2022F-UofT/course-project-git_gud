@@ -1,24 +1,21 @@
-package Management;
+package management;
 
 import java.sql.*;
 import Controllers.DashboardController;
 
-public class Data_Manager {
+public class DataManager {
     /***
      * Data_Manager is a class that
      */
-    public static PreparedStatement email;
-    protected static PreparedStatement username;
-    protected static PreparedStatement password;
-    public static PreparedStatement weight;
-    public static PreparedStatement fat;
-    public static PreparedStatement delete;
+    public static final PreparedStatement email;
+    protected static final PreparedStatement username;
+    protected static final PreparedStatement password;
+    public static final PreparedStatement weight;
+    public static final PreparedStatement fat;
+    public static final PreparedStatement delete;
 
     static {
         try {
-            /** TODO
-             Change dashtest to whatever your chosen table name is. Change this is every location you see it.
-             */
             email = DashboardController.connection1.prepareStatement(
                     "UPDATE dashtest SET email = ? WHERE email = ?");
             password = DashboardController.connection1.prepareStatement(

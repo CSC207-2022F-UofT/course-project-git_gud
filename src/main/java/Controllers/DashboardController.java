@@ -5,15 +5,10 @@ import Usecases.*;
 import java.sql.*;
 
 public class DashboardController {
-    public static Connection connection1;
+    public static final Connection connection1;
 
     static {
         try {
-            /** TODO
-             Change the connection variable to match your personal database, localhost should be fine to leave,
-             JDBCT should be changed to JDBC or whatever you setup the database as, user and password
-             should be what you initially setup with your workbench program.
-             */
             connection1 = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/JDBCT?allowMultiQueries=true", "root", "root");
         } catch (SQLException e) {
@@ -21,42 +16,42 @@ public class DashboardController {
         }
     }
 
-    public static void DeleteAccountUseCase(String userName) throws SQLException {
-        PreparedStatement resultDelete = Delete_Account.DeleteAccount();
+    public static void deleteAccountUseCase(String userName) throws SQLException {
+        PreparedStatement resultDelete = DeleteAccount.deleteAccount();
         resultDelete.setString(1, userName);
         resultDelete.executeUpdate();
     }
 
-    public static void ChangeEmailUseCase(String oldEmail, String newEmail) throws SQLException {
-        PreparedStatement resultEmail = Change_Email.ChangeEmail();
+    public static void changeEmailUseCase(String oldEmail, String newEmail) throws SQLException {
+        PreparedStatement resultEmail = ChangeEmail.changeEmail();
         resultEmail.setString(1, newEmail);
         resultEmail.setString(2, oldEmail);
         resultEmail.executeUpdate();
     }
 
-    public static void ChangeUsernameUseCase(String userName, String newUserName) throws SQLException {
-        PreparedStatement resultUsername = Change_Username.ChangeUsername();
+    public static void changeUsernameUseCase(String userName, String newUserName) throws SQLException {
+        PreparedStatement resultUsername = ChangeUsername.changeUsername();
         resultUsername.setString(1, newUserName);
         resultUsername.setString(2, userName);
         resultUsername.executeUpdate();
     }
 
-    public static void ChangePasswordUseCase(String oldPassword, String newPassword) throws SQLException {
-        PreparedStatement resultPassword = Change_Password.ChangePassword();
+    public static void changePasswordUseCase(String oldPassword, String newPassword) throws SQLException {
+        PreparedStatement resultPassword = ChangePassword.changePassword();
         resultPassword.setString(1, newPassword);
         resultPassword.setString(2, oldPassword);
         resultPassword.executeUpdate();
     }
 
-    public static void ChangeBodyWeightUseCase(String username1, int newWeight) throws SQLException {
-        PreparedStatement resultWeight = Change_Weight.ChangeWeight();
+    public static void changeBodyWeightUseCase(String username1, int newWeight) throws SQLException {
+        PreparedStatement resultWeight = ChangeWeight.changeWeight();
         resultWeight.setInt(1, newWeight);
         resultWeight.setString(2, username1);
         resultWeight.executeUpdate();
     }
 
-    public static void ChangeBodyFatUseCase(String username2, int newFat) throws SQLException {
-        PreparedStatement resultFat = Change_Fat.ChangeFat();
+    public static void changeBodyFatUseCase(String username2, int newFat) throws SQLException {
+        PreparedStatement resultFat = ChangeFat.changeFat();
         resultFat.setInt(1, newFat);
         resultFat.setString(2, username2);
         resultFat.executeUpdate();

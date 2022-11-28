@@ -1,6 +1,7 @@
-package Views;
+package Views.dashboard;
 
-import Presenters.PresenterViewUpdate;
+
+import Views.ViewLoginPage;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,7 +15,9 @@ public class SettingsPage {
      * pick what setting to perform which then calls upon other view pages.
      */
 
-    public SettingsPage() {
+    public SettingsPage() {}
+
+    public void CreateSettingsPage(){
         JFrame settingsFrame = new JFrame();
         settingsFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         settingsFrame.setSize(320, 564);
@@ -34,6 +37,10 @@ public class SettingsPage {
         JButton logOut = new JButton();
         JButton changeWeight = new JButton();
         JButton changeFat = new JButton();
+        JSeparator horizontalLine = new JSeparator();
+        JButton goToGraphs = new JButton();
+        JButton goToGoals = new JButton();
+        JButton goToWorkouts = new JButton();
 
         changeUsername.setText("Change Username");
         changeEmail.setText("Change Email");
@@ -42,6 +49,9 @@ public class SettingsPage {
         logOut.setText("Log Out");
         changeWeight.setText("Change Weight");
         changeFat.setText("Change Fat");
+        goToGraphs.setText("Graphs");
+        goToGoals.setText("Goals");
+        goToWorkouts.setText("Workouts");
 
         changeUsername.setFocusable(false);
         changeEmail.setFocusable(false);
@@ -50,6 +60,12 @@ public class SettingsPage {
         logOut.setFocusable(false);
         changeWeight.setFocusable(false);
         changeFat.setFocusable(false);
+        goToGraphs.setFocusable(false);
+        goToWorkouts.setFocusable(false);
+        goToGoals.setFocusable(false);
+        horizontalLine.setFocusable(false);
+
+        horizontalLine.setOrientation(SwingConstants.HORIZONTAL);
 
         changeUsername.setFont(new Font("Dialog", Font.BOLD, 10));
         changeEmail.setFont(new Font("Dialog", Font.BOLD, 10));
@@ -58,6 +74,9 @@ public class SettingsPage {
         logOut.setFont(new Font("Dialog", Font.BOLD, 10));
         changeWeight.setFont(new Font("Dialog", Font.BOLD, 10));
         changeFat.setFont(new Font("Dialog", Font.BOLD, 10));
+        goToGraphs.setFont(new Font("Dialog", Font.BOLD, 10));
+        goToGoals.setFont(new Font("Dialog", Font.BOLD, 10));
+        goToWorkouts.setFont(new Font("Dialog", Font.BOLD, 10));
 
         dashboard.add(changeUsername);
         dashboard.add(changeEmail);
@@ -66,7 +85,12 @@ public class SettingsPage {
         dashboard.add(changeFat);
         dashboard.add(deleteAccount);
         dashboard.add(logOut);
+        dashboard.add(horizontalLine);
+        dashboard.add(goToGraphs);
+        dashboard.add(goToGoals);
+        dashboard.add(goToWorkouts);
 
+        dashboard.setLayout(new GridLayout(0,1));
 
         settingsFrame.add(dashboard);
         settingsFrame.setVisible(true);
@@ -77,30 +101,49 @@ public class SettingsPage {
                 if (e.getSource() == changeUsername) {
                     settingsFrame.dispose();
                     UsernameView usernameViewer = new UsernameView();
+                    usernameViewer.CreateUsernameView();
                 }
                 if (e.getSource() == changeEmail) {
                     settingsFrame.dispose();
                     EmailView emailViewer = new EmailView();
+                    emailViewer.CreateEmailView();
                 }
                 if (e.getSource() == changePassword) {
                     settingsFrame.dispose();
                     PasswordView passwordViewer = new PasswordView();
+                    passwordViewer.CreatePasswordView();
                 }
                 if (e.getSource() == deleteAccount) {
                     settingsFrame.dispose();
                     DeleteView deleteViewer = new DeleteView();
+                    deleteViewer.CreateDeleteView();
                 }
                 if (e.getSource() == logOut) {
                     settingsFrame.dispose();
-                    PresenterViewUpdate updateDeleteLogoutView = new PresenterViewUpdate.UpdateDeleteLogoutView();
+                    ViewLoginPage newLoginPage = new ViewLoginPage();
+                    //newLoginPage.CreateLoginPage();
                 }
                 if (e.getSource() == changeWeight) {
                     settingsFrame.dispose();
                     WeightView weightViewer = new WeightView();
+                    weightViewer.CreateWeightView();
                 }
                 if (e.getSource() == changeFat) {
                     settingsFrame.dispose();
                     FatView fatViewer = new FatView();
+                    fatViewer.CreateFatView();
+                }
+                if (e.getSource() == goToGraphs){
+                    settingsFrame.dispose();
+                    //view from Tej goes here
+                }
+                if (e.getSource() == goToGoals){
+                    settingsFrame.dispose();
+                    //view from Jhalak goes here
+                }
+                if (e.getSource() == goToWorkouts){
+                    settingsFrame.dispose();
+                    //view from Prahlad goes here
                 }
             }
         };

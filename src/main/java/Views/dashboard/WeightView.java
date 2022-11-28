@@ -1,7 +1,6 @@
-package Views;
+package Views.dashboard;
 
 import Controllers.DashboardController;
-import Presenters.PresenterViewUpdate;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,7 +11,9 @@ import java.sql.SQLException;
 @SuppressWarnings("Convert2Lambda")
 public class WeightView {
     public JPanel weight;
-    public WeightView(){
+    public WeightView(){}
+
+    public void CreateWeightView(){
         JFrame weightFrame = new JFrame();
         weightFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         weightFrame.setSize(320, 564);
@@ -62,14 +63,17 @@ public class WeightView {
                     String userName = userNameInput.getText();
                     int newBodyWeight = Integer.parseInt(weightInput.getText());
                     try {
-                        DashboardController.ChangeBodyWeightUseCase(userName, newBodyWeight);
+                        DashboardController.changeBodyWeightUseCase(userName, newBodyWeight);
                     } catch (SQLException ex) {
                         throw new RuntimeException(ex);
                     }
-                    PresenterViewUpdate updateWeightView = new PresenterViewUpdate.UpdateWeightView(WeightView.this);
+                    JLabel newInfo = new JLabel("Your Weight Has Been Changed!");
+                    weight.add(newInfo);
+                    weight.revalidate();
                 }
                 if (e.getSource() == backButton){
                     SettingsPage newPage = new SettingsPage();
+                    newPage.CreateSettingsPage();
                     weightFrame.dispose();
                 }
 

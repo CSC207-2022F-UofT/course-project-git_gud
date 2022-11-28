@@ -1,7 +1,7 @@
-package Views;
+package Views.dashboard;
 
 import Controllers.DashboardController;
-import Presenters.PresenterViewUpdate;
+import Views.ViewLoginPage;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,7 +13,9 @@ import java.sql.SQLException;
 public class DeleteView {
     public JPanel delete;
     public static JFrame deleteFrame;
-    public DeleteView(){
+    public DeleteView(){}
+
+    public void CreateDeleteView(){
         deleteFrame = new JFrame();
         deleteFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         deleteFrame.setSize(320, 564);
@@ -54,14 +56,17 @@ public class DeleteView {
                 if (e.getSource() == deleteButton){
                     String userName = usernameInput.getText();
                     try {
-                        DashboardController.DeleteAccountUseCase(userName);
+                        DashboardController.deleteAccountUseCase(userName);
                     } catch (SQLException ex) {
                         throw new RuntimeException(ex);
                     }
-                    PresenterViewUpdate updateDeleteLogoutView = new PresenterViewUpdate.UpdateDeleteLogoutView();
+                    deleteFrame.dispose();
+                    ViewLoginPage newLoginPage = new ViewLoginPage();
+                    //newLoginPage.CreateLoginPage();
                 }
                 if (e.getSource() == backButton){
                     SettingsPage newPage = new SettingsPage();
+                    newPage.CreateSettingsPage();
                     deleteFrame.dispose();
                 }
 
