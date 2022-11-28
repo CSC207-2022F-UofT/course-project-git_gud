@@ -48,7 +48,7 @@ public class AddTargetView extends JFrame{
                 throw new RuntimeException(ex);
             }
         });
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         frame.setLayout(null);
         frame.setVisible(true);
     }

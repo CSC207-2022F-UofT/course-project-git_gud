@@ -21,7 +21,7 @@ public class EditTargetOptions extends JFrame{
      */
     public static void main(){
         EditTargetOptions frame = new EditTargetOptions();
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         TargetTypes types = new TargetTypes((JPanel) frame.getContentPane(), "Edit ");
         frame.setVisible(true);
         frame.setVisible(true);

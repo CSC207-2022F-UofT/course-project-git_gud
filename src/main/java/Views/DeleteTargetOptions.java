@@ -23,7 +23,7 @@ public class DeleteTargetOptions extends JFrame{
      */
     public static void main(){
         DeleteTargetOptions frame = new DeleteTargetOptions();
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         TargetTypes types = new TargetTypes((JPanel) frame.getContentPane(), "Delete "); // the Target types class
         // has buttons for Volume, Weight and ORM. These buttons are added to the panel. types is initialised to access
         // these buttons and perform actions

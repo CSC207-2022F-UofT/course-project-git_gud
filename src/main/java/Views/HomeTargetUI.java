@@ -37,7 +37,6 @@ public class HomeTargetUI extends JFrame {
         this.getContentPane().add(buttonDelete);
         this.getContentPane().add(buttonEdit);
         this.setVisible(true);
-
     }
 
     /**
