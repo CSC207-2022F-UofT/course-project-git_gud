@@ -1,6 +1,6 @@
-package Controllers;
+package controllers;
 
-import Usecases.*;
+import usecases.*;
 
 import java.sql.*;
 

@@ -1,6 +1,6 @@
-package Views;
+package views;
 
-import Controllers.WorkoutSelectionController;
+import controllers.WorkoutSelectionController;
 import management.RoutineManager;
 
 public class RoutineManagerView {
