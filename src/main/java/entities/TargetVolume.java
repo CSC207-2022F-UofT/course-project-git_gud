@@ -26,7 +26,7 @@ public class TargetVolume extends Targets{
      * setter method
      */
 
-    public void setTargetVolume(TargetVolume targetVolume) {
+    public void setTargets(TargetVolume targetVolume) {
         TargetVolume.targetVolume = targetVolume;
     }
 
@@ -35,7 +35,7 @@ public class TargetVolume extends Targets{
      * @param targetVolumeList an array list of target weights
      * setter method
      */
-    public void setTargetVolumeList(ArrayList<Target> targetVolumeList) {
+    public void setTargetList(ArrayList<Target> targetVolumeList) {
         this.targetVolumeList = targetVolumeList;
     }
 
@@ -44,7 +44,7 @@ public class TargetVolume extends Targets{
      * @return the instance variable target volume of this class
      */
 
-    public static TargetVolume getInstance(){
+    public static Targets getInstance(){
         if (targetVolume == null){
             targetVolume = new TargetVolume();
         }

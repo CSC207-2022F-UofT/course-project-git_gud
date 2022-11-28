@@ -2,6 +2,8 @@ package UI;
 
 import controllers.ViewController;
 import entities.TargetORM;
+import entities.TargetVolume;
+import entities.TargetWeight;
 
 import javax.swing.*;
 
@@ -37,14 +39,14 @@ public class ViewTargetOptions extends JFrame{
                     stringORM);   //displays relevant message indicating whether a target is deleted
         });
 
-        ViewController viewVolumeController = new ViewController(TargetORM.getInstance());
+        ViewController viewVolumeController = new ViewController(TargetVolume.getInstance());
         String stringVolume = viewVolumeController.view();  //calls the controller method to view a target
         volume.addActionListener(e -> {
             JOptionPane.showMessageDialog(frame,
                     stringVolume);   //displays targets
         });
 
-        ViewController viewController = new ViewController(TargetORM.getInstance());
+        ViewController viewController = new ViewController(TargetWeight.getInstance());
         String stringWeight = viewController.view();  //calls the controller method to view a target
         weight.addActionListener(e -> {
             JOptionPane.showMessageDialog(frame,

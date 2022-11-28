@@ -40,9 +40,6 @@ public class EditTargetOptions extends JFrame{
             EditTargetView viewWeight = new EditTargetView(TargetWeight.getInstance());
             viewWeight.main();
         });
-
-
-
     }
 
 

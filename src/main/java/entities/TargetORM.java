@@ -26,7 +26,7 @@ public class TargetORM extends Targets{
      * setter method
      */
 
-    public void setTargetORM(TargetORM targetORM) {
+    public void setTargets(TargetORM targetORM) {
         TargetORM.targetORM = targetORM;
     }
 
@@ -35,7 +35,7 @@ public class TargetORM extends Targets{
      * @param targetORMList An arraylist of ORM targets
      * setter method
      */
-    public void setTargetORMList(ArrayList<Target> targetORMList) {
+    public void setTargetList(ArrayList<Target> targetORMList) {
         this.targetORMList = targetORMList;
     }
 
@@ -43,7 +43,7 @@ public class TargetORM extends Targets{
      *
      * @return the instance variable target ORM of this class
      */
-    public static TargetORM getInstance(){
+    public static Targets getInstance(){
         if (targetORM == null){
             targetORM = new TargetORM();
         }

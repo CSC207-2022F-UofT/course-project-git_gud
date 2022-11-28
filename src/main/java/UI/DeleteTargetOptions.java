@@ -2,6 +2,8 @@ package UI;
 
 import controllers.DeleteController;
 import entities.TargetORM;
+import entities.TargetVolume;
+import entities.TargetWeight;
 
 import javax.swing.*;
 /**
@@ -37,14 +39,14 @@ public class DeleteTargetOptions extends JFrame{
                     stringORM);   //displays relevant message indicating whether a target is deleted
         });
 
-        DeleteController deleteControllerVolume = new DeleteController(TargetORM.getInstance());
+        DeleteController deleteControllerVolume = new DeleteController(TargetVolume.getInstance());
         String stringVolume = deleteControllerVolume.delete();  //calls the controller method to delete a target
         DelVolume.addActionListener(e -> {
             JOptionPane.showMessageDialog(frame,
                     stringVolume);   //displays relevant message indicating whether a target is deleted
         });
 
-        DeleteController deleteControllerWeight = new DeleteController(TargetORM.getInstance());
+        DeleteController deleteControllerWeight = new DeleteController(TargetWeight.getInstance());
         String stringWeight = deleteControllerWeight.delete();  //calls the controller method to delete a target
         DelWeight.addActionListener(e -> {
             JOptionPane.showMessageDialog(frame,

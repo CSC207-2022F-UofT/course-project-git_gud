@@ -20,7 +20,7 @@ public class Targets {
      * setter method
      */
 
-    public void setTargetVolume(Targets targets) {
+    public void setTargets(Targets targets) {
         Targets.targets = targets;
     }
 
