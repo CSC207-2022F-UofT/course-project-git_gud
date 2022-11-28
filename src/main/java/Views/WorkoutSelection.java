@@ -1,17 +1,20 @@
-package RoutineManagerView;
+package Views;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
 /**
- * Represents the GUI for selecting between five workout routines stored in RoutineManager.
+ * Represents the GUI for selecting between five workout routines stored in RoutineManager with the purpose of
+ * customizing and/or starting a workout.
  * @author turne142
  */
 public class WorkoutSelection extends JFrame{
 
     /**
-     * Each one of these JButtons represents one of the five workout routines that the user can select.
+     * Each one of these JButtons represents one of the five workout routines that the user can select. Clicking on one
+     * will take you to the Workout Menu where you'll be able to start, add/remove exercises, or view the workout
+     * history.
      */
     public JButton workout1Button = new JButton("Workout 1");
     public JButton workout2Button = new JButton("Workout 2");
@@ -19,6 +22,9 @@ public class WorkoutSelection extends JFrame{
     public JButton workout4Button = new JButton("Workout 4");
     public JButton workout5Button = new JButton("Workout 5");
 
+    /**
+     * Represents the view for the Workout Selection window.
+     */
     public WorkoutSelection() {
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -53,6 +59,7 @@ public class WorkoutSelection extends JFrame{
         this.setVisible(true);
     }
 
+    // Add Action Listener Method
     public void addWorkoutMenuDisplay(ActionListener displayListener){
 
         workout1Button.addActionListener(displayListener);

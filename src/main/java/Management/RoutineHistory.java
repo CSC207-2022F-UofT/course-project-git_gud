@@ -1,4 +1,4 @@
-package RoutineManagerModel;
+package Management;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

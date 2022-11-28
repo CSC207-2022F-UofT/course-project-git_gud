@@ -1,15 +1,25 @@
-package RoutineManagerView;
+package Views;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Represents the GUI for the menu
+ * Represents the GUI for the Workout Menu, here you'll be able to view your workout routine, add or remove exercises to
+ * your liking, view your workout history with that workout, and start the workout!
  */
 public class WorkoutMenu extends JFrame {
 
+    /**
+     * scrollPanel: represents the scroll pane in which you'll be able to view your exercises in your workout.
+     * startButton: represents the Start Workout button, where you'll be able to start a workout.
+     * addButton: represents the Add Exercise button in which you'll be able to choose from a list of exercises to add
+     * to your workout routine.
+     * removeButton: represents the Remove Exercise button in which you'll be able to choose which exercise from your
+     * workout you want removed.
+     * historyButton: represents the Workout History, where you can view your workout data.
+     * backButton: will take you back to the Workout Selection Menu.
+     */
     private JPanel scrollPanel = new JPanel();
     private JButton startButton = new JButton("Start Workout");
     private JButton addButton = new JButton("Add Exercise");
@@ -17,8 +27,17 @@ public class WorkoutMenu extends JFrame {
     private JButton historyButton = new JButton("Workout History");
     private JButton backButton = new JButton("Back");
 
+    /**
+     * Each workout has a workout number, which is set by WorkoutSelectionController after selecting a workout. The
+     * number is set depending on which Workout is selected, e.g. Workout 1 = 1, Workout 2 = 2, etc. This helps the code
+     * identify which workout we're currently on and will carry through each View code related to that workout, so if
+     * we select "Add Exercise" the new window that pops up will also have the workout number set.
+     */
     public int workoutNumber = 0;
 
+    /**
+     * Represents the view for the Workout Menu.
+     */
     public WorkoutMenu() {
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -99,6 +118,12 @@ public class WorkoutMenu extends JFrame {
         this.setVisible(true);
     }
 
+    /**
+     * This method adds all exercises currently stored in the workout routine to the scroll pane as JButtons and
+     * displays them as a list of exercises for the user.
+     * This method is called by WorkoutSelectionController when a Workout is selected in the Workout Selection Menu.
+     * @param exercise a String representing the exercise name that would be displayed in the view.
+     */
     public void addExercise(String exercise) {
 
         JButton newExercise = new JButton(exercise);
@@ -110,16 +135,25 @@ public class WorkoutMenu extends JFrame {
 
     }
 
+    /**
+     * Returns the Workout Number related to the current workout selected, which is used for setting the workout number
+     * in the next window.
+     * @return an int representing the current workout number
+     */
     public int getWorkoutNumber() {
 
         return workoutNumber;
     }
 
+    /**
+     * This method sets the workout number in WorkoutSelectionController for the workout that was selected.
+     * @param i an int representing the number which the workout number will be set to.
+     */
     public void setWorkoutNumber(int i) {
 
         workoutNumber = i;
     }
-
+//  --------------- Add Action Listener Methods ------------------------------
     public void addWorkoutSelectionDisplay(ActionListener displayListener){
 
         backButton.addActionListener(displayListener);

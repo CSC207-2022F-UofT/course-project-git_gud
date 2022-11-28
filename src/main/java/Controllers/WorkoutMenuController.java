@@ -1,10 +1,10 @@
-package RoutineManagerController;
+package Controllers;
 
-import RoutineManagerModel.RoutineManager;
-import RoutineManagerView.AddExerciseMenu;
-import RoutineManagerView.RemoveExerciseMenu;
-import RoutineManagerView.WorkoutMenu;
-import RoutineManagerView.WorkoutSelection;
+import Management.RoutineManager;
+import Views.AddExerciseMenu;
+import Views.RemoveExerciseMenu;
+import Views.WorkoutMenu;
+import Views.WorkoutSelection;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

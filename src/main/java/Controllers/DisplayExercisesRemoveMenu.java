@@ -1,7 +1,7 @@
-package RoutineManagerController;
+package Controllers;
 
-import RoutineManagerModel.RoutineManager;
-import RoutineManagerView.RemoveExerciseMenu;
+import Management.RoutineManager;
+import Views.RemoveExerciseMenu;
 
 public interface DisplayExercisesRemoveMenu {
 

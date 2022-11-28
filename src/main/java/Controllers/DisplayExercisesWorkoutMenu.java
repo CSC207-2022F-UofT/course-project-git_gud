@@ -1,7 +1,7 @@
-package RoutineManagerController;
+package Controllers;
 
-import RoutineManagerModel.RoutineManager;
-import RoutineManagerView.WorkoutMenu;
+import Management.RoutineManager;
+import Views.WorkoutMenu;
 
 public interface DisplayExercisesWorkoutMenu {
 

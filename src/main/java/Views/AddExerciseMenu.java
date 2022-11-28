@@ -1,29 +1,54 @@
-package RoutineManagerView;
+package Views;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+/**
+ * Represents the GUI for the Add Exercise Menu, here the user will be able to select from a list of our catalogue
+ * of exercises to add them to the current workout routine.
+ */
 public class AddExerciseMenu extends JFrame {
-
+    /**
+     * scrollPanel: represents the scroll pane in which our catalogue of exercises will be displayed to the user.
+     */
     JPanel scrollPanel = new JPanel();
+
+    /**
+     * confirmationMessage: a message that tells the user they successfully added an exercise to their workout routine.
+     * errorMessage: a message that tells the user that they already added the specific exercise to their routine.
+     */
     JLabel confirmationMessage = new JLabel();
     JLabel errorMessage = new JLabel();
+
+    /**
+     * backButton: takes you back to the Workout Menu
+     * All other buttons are temporary, these exercises will be pulled from our catalogue.
+     */
     JButton backButton = new JButton("Back");
     JButton tricepDips = new JButton("Tricep Dips");
     JButton bicepCurls = new JButton("Bicep Curls");
     JButton militaryPress = new JButton("Military Press");
 
+    /**
+     * exercises: an Array representing all exercises to be displayed on the scroll panel.
+     */
     JButton[] exercises = {tricepDips, bicepCurls, militaryPress};
 
+    /**
+     * workoutNumber: an int representing the workout identifier for the specific workout we are currently customizing.
+     */
     public int workoutNumber = 0;
 
+    /**
+     * This represents the view for the Add Exercise Menu.
+     */
     public AddExerciseMenu() {
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(320, 564);
         this.setLayout(null);
-        this.setTitle("Workout Menu");
+        this.setTitle("Add Exercise Menu");
 
         JLabel message = new JLabel("Select an exercise to add to this workout routine.");
         message.setBounds(25,410,320,20);
@@ -90,16 +115,29 @@ public class AddExerciseMenu extends JFrame {
         this.setVisible(true);
     }
 
+    /**
+     * This method serves to get our Array of exercises which will be used by AddExerciseController to identify which
+     * exercise to be added.
+     * @return an Array representing all exercises to be added to our routine.
+     */
     public JButton[] getExercises() {
 
         return exercises;
     }
 
+    /**
+     * Sets the confirmation message with a specific exercise to let the user know which exercise was added.
+     * @param exercise a String representing the exercise that was added.
+     */
     public void setConfirmationMessage(String exercise) {
 
         confirmationMessage.setText("You added "+ exercise + " to your routine.");
     }
 
+    /**
+     * Sets the error message with a specific exercise to let the user know that that exercise was already added.
+     * @param exercise a String representing the exercise that was already added.
+     */
     public void setErrorMessage(String exercise) {
 
         errorMessage.setText("You already added " + exercise + "!");

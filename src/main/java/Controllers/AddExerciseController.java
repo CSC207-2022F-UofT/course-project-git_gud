@@ -1,8 +1,8 @@
-package RoutineManagerController;
+package Controllers;
 
-import RoutineManagerModel.RoutineManager;
-import RoutineManagerView.AddExerciseMenu;
-import RoutineManagerView.WorkoutMenu;
+import Management.RoutineManager;
+import Views.AddExerciseMenu;
+import Views.WorkoutMenu;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
