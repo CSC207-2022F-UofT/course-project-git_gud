@@ -1,7 +1,10 @@
 package Views.dashboard;
 
 
+import Controllers.WorkoutSelectionController;
+import Views.RoutineManagerView;
 import Views.ViewLoginPage;
+import Views.WorkoutSelection;
 
 import javax.swing.*;
 import java.awt.*;
@@ -143,7 +146,8 @@ public class SettingsPage {
                 }
                 if (e.getSource() == goToWorkouts){
                     settingsFrame.dispose();
-                    //view from Prahlad goes here
+                    RoutineManagerView routineView = new RoutineManagerView();
+                    //routineView.CreateRoutineView();
                 }
             }
         };
@@ -154,5 +158,8 @@ public class SettingsPage {
         logOut.addActionListener(action);
         changeWeight.addActionListener(action);
         changeFat.addActionListener(action);
+        goToGoals.addActionListener(action);
+        goToGraphs.addActionListener(action);
+        goToWorkouts.addActionListener(action);
     }
 }
