@@ -4,7 +4,7 @@ import Entities.Targets;
 import Usecases.ViewTarget;
 
 /**
- * UI for when view Target option is clicked on the HomeUI screen
+ * UI for when view Target option is clicked on the HomeTargetUI screen
  * @author jhalaksaraogi
  */
 public class ViewController {

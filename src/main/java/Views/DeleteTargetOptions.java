@@ -7,7 +7,7 @@ import Entities.TargetWeight;
 
 import javax.swing.*;
 /**
- * UI for when delete Target option is clicked on the HomeUI screen
+ * UI for when delete Target option is clicked on the HomeTargetUI screen
  * @author jhalaksaraogi
  */
 public class DeleteTargetOptions extends JFrame{

@@ -9,14 +9,14 @@ import javax.swing.*;
  *  Run the main function in this class to run this feature of the project
  * @author jhalaksaraogi
  */
-public class HomeUI extends JFrame {
+public class HomeTargetUI extends JFrame {
 
     /**
-     * Constructor for the HomeUI class
+     * Constructor for the HomeTargetUI class
      * sets size, title and visibility of the frame
      * adds the four required buttons to the panel of the frame
      */
-    public HomeUI(){
+    public HomeTargetUI(){
         this.setTitle("Home Target");
         this.setSize(710,500);
         JButton buttonAdd = new JButton("Add Target");
@@ -45,7 +45,7 @@ public class HomeUI extends JFrame {
      * running this function creates new homeFrame and displays it
      */
     public static void main(String args[]){
-        HomeUI homeFrame = new HomeUI();
+        HomeTargetUI homeFrame = new HomeTargetUI();
         homeFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         homeFrame.setVisible(true);
     }

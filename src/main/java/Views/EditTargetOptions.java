@@ -5,7 +5,7 @@ import Entities.TargetWeight;
 
 import javax.swing.*;
 /**
- * UI for when edit Target option is clicked on the HomeUI screen
+ * UI for when edit Target option is clicked on the HomeTargetUI screen
  * @author jhalaksaraogi
  */
 public class EditTargetOptions extends JFrame{

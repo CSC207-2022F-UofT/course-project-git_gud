@@ -58,11 +58,4 @@ public class EnterTarget {
         return confirmButton;
     }
 
-    public JLabel getDateLabel() {
-        return dateLabel;
-    }
-
-    public JLabel getValueLabel() {
-        return valueLabel;
-    }
 }

@@ -8,7 +8,7 @@ import Entities.TargetWeight;
 import javax.swing.*;
 
 /**
- * UI for when view Target option is clicked on the HomeUI screen
+ * UI for when view Target option is clicked on the HomeTargetUI screen
  * @author jhalaksaraogi
  */
 public class ViewTargetOptions extends JFrame{
