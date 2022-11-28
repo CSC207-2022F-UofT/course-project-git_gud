@@ -44,10 +44,6 @@ public class AddTargetOptions extends JFrame{
             AddTargetView viewWeight = new AddTargetView(TargetWeight.getInstance());
             viewWeight.main();
         });
-
-
-
-
     }
 
 }

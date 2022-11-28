@@ -13,6 +13,10 @@ public class DeleteController {
         this.targets = targets;
     }
 
+    /**
+     *
+     * @return whether a target is deleted
+     */
     public String delete(){
         DeleteTarget deleteTarget = new DeleteTarget(targets);
         if(deleteTarget.deleteTarget()){

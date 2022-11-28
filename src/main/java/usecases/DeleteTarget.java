@@ -1,11 +1,13 @@
 package usecases;
-
 import entities.Target;
-import entities.TargetORM;
 import entities.Targets;
 
 import java.util.ArrayList;
 
+/**
+ * usecase to delete target
+ * @author jhalaksarogi
+ */
 public class DeleteTarget {
     public Targets targets;
 
