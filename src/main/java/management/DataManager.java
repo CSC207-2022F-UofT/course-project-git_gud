@@ -1,7 +1,7 @@
 package management;
 
 import java.sql.*;
-import Controllers.DashboardController;
+import controllers.DashboardController;
 
 public class DataManager {
     /***
