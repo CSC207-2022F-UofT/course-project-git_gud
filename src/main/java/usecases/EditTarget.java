@@ -34,7 +34,7 @@ public class EditTarget {
 
     public void makeEdit(){
         Target target = new Target(this.date, this.value);
-        Targets targets = TargetORM.getInstance();
+        Targets targets = Targets.getInstance();
         ArrayList<Target> targetList = targets.targetList;
         if (targetList.isEmpty()){
             targetList.add(0,target); //editing the target if no target exists, adds the target
