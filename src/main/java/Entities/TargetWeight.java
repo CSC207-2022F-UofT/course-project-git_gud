@@ -13,7 +13,6 @@ public class TargetWeight extends Targets{
     public ArrayList<Target> targetWeightList;
 
     /**
-     *
      * constructor for class TargetWeight
      */
     private TargetWeight(){
