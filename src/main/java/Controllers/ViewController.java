@@ -1,11 +1,8 @@
-package controllers;
+package Controllers;
 
-import entities.Target;
-import entities.TargetORM;
-import entities.Targets;
-import usecases.ViewTarget;
+import Entities.Targets;
+import Usecases.ViewTarget;
 
-import java.util.ArrayList;
 /**
  * UI for when view Target option is clicked on the HomeUI screen
  * @author jhalaksaraogi

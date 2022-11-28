@@ -1,14 +1,18 @@
-package UI;
-import controllers.EditController;
-import entities.Targets;
+package Views;
 
+import Controllers.AddController;
+import Entities.Targets;
 
 import javax.swing.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class EditTargetView extends JFrame{
+/**
+ * @author jhalaksaraogi
+ * Class to display screen for Adding a target and saving the entered value
+ */
+public class AddTargetView extends JFrame{
     public static float value;
     public static Date date;
     Targets targets;
@@ -16,16 +20,16 @@ public class EditTargetView extends JFrame{
     /**
      * Constructor for this class
      */
-    public EditTargetView(Targets targets){
+    public AddTargetView(Targets targets){
         this.targets = targets;
-        this.setTitle("View Target");
+        this.setTitle("Add Target");
         this.setSize(700,500);
         this.setVisible(true);
 
     }
     public void main(){
 
-        EditTargetView frame = new EditTargetView(this.targets);
+        AddTargetView frame = new AddTargetView(this.targets);
         EnterTarget enterUI = new EnterTarget((JPanel) frame.getContentPane());
         JTextField valueField = enterUI.getValueField();
         JTextField dateField = enterUI.getDateField();
@@ -38,8 +42,8 @@ public class EditTargetView extends JFrame{
             try {
                 date = new SimpleDateFormat("dd/MM/yyyy").parse(dateField.getText());
                 frame.dispose();
-                EditController EditController = new EditController(targets, date, value);
-                EditController.callEdit();
+                AddController addController = new AddController(targets, date, value);
+                addController.callAdd();
             } catch (ParseException ex) {
                 throw new RuntimeException(ex);
             }

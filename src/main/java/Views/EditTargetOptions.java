@@ -1,7 +1,7 @@
-package UI;
-import entities.TargetORM;
-import entities.TargetVolume;
-import entities.TargetWeight;
+package Views;
+import Entities.TargetORM;
+import Entities.TargetVolume;
+import Entities.TargetWeight;
 
 import javax.swing.*;
 /**

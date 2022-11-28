@@ -1,7 +1,7 @@
-package usecases;
+package Usecases;
 
-import entities.Target;
-import entities.Targets;
+import Entities.Target;
+import Entities.Targets;
 
 import java.util.ArrayList;
 import java.util.Date;

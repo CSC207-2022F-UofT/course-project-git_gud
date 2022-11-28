@@ -1,7 +1,7 @@
-package controllers;
+package Controllers;
 
-import entities.Targets;
-import usecases.DeleteTarget;
+import Entities.Targets;
+import Usecases.DeleteTarget;
 
 /**
  * Controller to delete a target. Interacts with the UI and usecase to do so

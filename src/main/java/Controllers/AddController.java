@@ -1,7 +1,7 @@
-package controllers;
+package Controllers;
 
-import entities.Targets;
-import usecases.AddTarget;
+import Entities.Targets;
+import Usecases.AddTarget;
 
 import java.util.Date;
 

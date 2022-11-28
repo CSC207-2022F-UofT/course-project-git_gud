@@ -1,9 +1,9 @@
-package UI;
+package Views;
 
-import controllers.ViewController;
-import entities.TargetORM;
-import entities.TargetVolume;
-import entities.TargetWeight;
+import Controllers.ViewController;
+import Entities.TargetORM;
+import Entities.TargetVolume;
+import Entities.TargetWeight;
 
 import javax.swing.*;
 
