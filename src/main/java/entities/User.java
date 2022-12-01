@@ -1,4 +1,4 @@
-package Entities;
+package entities;
 
 public interface User {
     //We'll keep the interface ,so we can use the open closed principle? In the future if we add different types of users

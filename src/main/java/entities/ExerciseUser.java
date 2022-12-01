@@ -1,4 +1,4 @@
-package Entities;
+package entities;
 import graph_use_case.Bodyweight;
 import graph_use_case.Volume;
 

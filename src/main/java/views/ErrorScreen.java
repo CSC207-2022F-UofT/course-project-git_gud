@@ -1,9 +1,9 @@
-package Screens;
+package views;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-public class ErrorScreen {
+public class ErrorScreen extends JFrame {
 
     public ErrorScreen(){
 

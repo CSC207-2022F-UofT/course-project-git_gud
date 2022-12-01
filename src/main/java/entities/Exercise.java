@@ -1,4 +1,4 @@
-package Entities;
+package entities;
 
 /**
  * Basic exercise class with variables for the name of the exercise, the reps, weight and sets. There are also

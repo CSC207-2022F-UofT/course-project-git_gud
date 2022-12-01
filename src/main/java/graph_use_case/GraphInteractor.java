@@ -42,10 +42,11 @@ public class GraphInteractor implements GraphInputBoundary {
         }
 
         if (requestModel.getButtontext() == "Bodyweight"){
-            GraphResponseModel responseModel = new GraphResponseModel(database.bodyweightdata.get(requestModel.getUsername()));
+            GraphResponseModel responseModel = new GraphResponseModel(database.bodyweightdata.get(requestModel.getUsername()),
+                    requestModel.getButtontext());
             return graphPresenter.prepareSuccessView(responseModel);
         }
-        return null;
+        return graphPresenter.prepareFailView();
     }
 
 

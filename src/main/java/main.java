@@ -1,4 +1,4 @@
-import Screens.GraphMenu;
+import views.GraphMenu;
 import controllers.GraphController;
 import graph_use_case.GraphInteractor;
 import graph_use_case.GraphResponseFormatter;

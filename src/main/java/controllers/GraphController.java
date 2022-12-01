@@ -1,12 +1,8 @@
 package controllers;
-import Screens.GraphMenu;
 
 import graph_use_case.GraphInputBoundary;
 import graph_use_case.GraphRequestModel;
 import graph_use_case.GraphResponseModel;
-
-import java.util.Date;
-import java.util.LinkedHashMap;
 
 /**
  *When an action is performed on the GraphMenu screen, the controller, GraphController will be called. This class then

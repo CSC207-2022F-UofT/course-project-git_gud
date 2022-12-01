@@ -12,8 +12,13 @@ public class GraphResponseModel {
 
     private LinkedHashMap<Date, Float> Data;
 
-    public GraphResponseModel(LinkedHashMap<Date, Float> bodyweightData){
+    private String buttontext;
+
+
+
+    public GraphResponseModel(LinkedHashMap<Date, Float> bodyweightData, String buttontext){
         this.Data = bodyweightData;
+        this.buttontext = buttontext;
     }
 
     public void setBodyweightData(LinkedHashMap<Date, Float> bodyweightData) {
@@ -22,5 +27,9 @@ public class GraphResponseModel {
 
     public LinkedHashMap<Date, Float> getBodyweightData(){
         return this.Data;
+    }
+
+    public String getButtontext(){
+        return this.buttontext;
     }
 }

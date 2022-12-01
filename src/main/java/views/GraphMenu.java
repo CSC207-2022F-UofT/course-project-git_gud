@@ -1,12 +1,10 @@
-package Screens;
+package views;
 
 import controllers.GraphController;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Date;
-import java.util.LinkedHashMap;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
@@ -44,14 +42,17 @@ public class GraphMenu extends JFrame implements ActionListener{
 
         final JButton button2 = new JButton("Volume");
         button2.setBounds(80, 30, 30, 10);
+        button2.addActionListener(this);
         frame.add(button2);
 
         final JButton button3 = new JButton("ORM");
         button3.setBounds(3, 3, 3, 1);
+        button3.addActionListener(this);
         frame.add(button3);
 
         final JButton button4 = new JButton("Targets");
         button4.setBounds(80, 30, 30, 10);
+        button4.addActionListener(this);
         frame.add(button4);
 
         frame.setVisible(true);

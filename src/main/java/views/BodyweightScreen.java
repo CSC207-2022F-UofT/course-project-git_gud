@@ -1,16 +1,13 @@
-package Screens;
+package views;
 
 /**
  * This class is responsible for what is displayed when the user wants to graph bodyweight. I believe I have to
  * move the functionality(like the for loop) into the GraphResponseFormatter class.
  */
 
-import Entities.*;
-
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
-import java.awt.event.ActionListener;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 import java.util.*;
