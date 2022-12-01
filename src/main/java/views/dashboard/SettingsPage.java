@@ -1,8 +1,11 @@
 package views.dashboard;
 
 
+
+
+import views.HomeTargetUI;
 import views.RoutineManagerView;
-import views.*;
+import views.ViewLoginPage;
 
 import javax.swing.*;
 import java.awt.*;
@@ -141,6 +144,7 @@ public class SettingsPage {
                 if (e.getSource() == goToGoals){
                     settingsFrame.dispose();
                     //view from Jhalak goes here
+                    HomeTargetUI homeFrame = new HomeTargetUI();
                 }
                 if (e.getSource() == goToWorkouts){
                     settingsFrame.dispose();
