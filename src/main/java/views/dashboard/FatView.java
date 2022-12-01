@@ -73,7 +73,7 @@ public class FatView {
                 }
                 if (e.getSource() == backButton){
                     SettingsPage newPage = new SettingsPage();
-                    newPage.CreateSettingsPage();
+                    newPage.CreateSettingsPage(null);
                     fatFrame.dispose();
                 }
 

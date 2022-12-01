@@ -5,12 +5,16 @@ import management.RoutineManager;
 
 public class RoutineManagerView {
 
-    public RoutineManagerView() {
+    public RoutineManagerView(RoutineManager userWorkout) {
+
         WorkoutSelectionView theView = new WorkoutSelectionView();
-
-        RoutineManager theModel = new RoutineManager();
-
-        new WorkoutSelectionController(theModel, theView);
-
+        RoutineManager theModel;
+        if (userWorkout == null) {
+            theModel = new RoutineManager();
+        } else {
+            theModel = userWorkout;
+        }
+        WorkoutSelectionController theController = new WorkoutSelectionController(theModel, theView);
     }
 }
+

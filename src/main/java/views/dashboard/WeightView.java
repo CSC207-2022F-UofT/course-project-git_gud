@@ -73,7 +73,7 @@ public class WeightView {
                 }
                 if (e.getSource() == backButton){
                     SettingsPage newPage = new SettingsPage();
-                    newPage.CreateSettingsPage();
+                    newPage.CreateSettingsPage(null);
                     weightFrame.dispose();
                 }
 
