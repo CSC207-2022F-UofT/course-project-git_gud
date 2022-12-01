@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 
 /**
  * A controller class for WorkoutMenuView.
+ * @author turne142
  */
 public class WorkoutMenuController {
 

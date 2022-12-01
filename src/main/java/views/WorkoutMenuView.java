@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 /**
  * Represents the GUI for the Workout Menu, here you'll be able to view your workout routine, add or remove exercises to
  * your liking, view your workout history with that workout, and start the workout!
+ * @author turne142
  */
 public class WorkoutMenuView extends JFrame {
 

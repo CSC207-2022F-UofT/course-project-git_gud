@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 
 /**
  * A controller class for WorkoutSelectionView.
+ * @author turne142
  */
 public class WorkoutSelectionController {
 

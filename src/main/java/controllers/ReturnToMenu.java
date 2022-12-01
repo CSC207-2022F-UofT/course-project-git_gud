@@ -4,6 +4,9 @@ import management.RoutineManager;
 import views.RemoveExerciseMenuView;
 import views.WorkoutMenuView;
 
+/**
+ * @author turne142
+ */
 public interface ReturnToMenu {
 
     /**

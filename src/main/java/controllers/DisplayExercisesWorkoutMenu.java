@@ -3,6 +3,9 @@ package controllers;
 import management.RoutineManager;
 import views.WorkoutMenuView;
 
+/**
+ * @author turne142
+ */
 public interface DisplayExercisesWorkoutMenu {
 
     /**

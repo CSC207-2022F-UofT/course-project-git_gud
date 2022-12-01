@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 /**
  * Represents the GUI for the Add Exercise Menu, here the user will be able to select from a list of our catalogue
  * of exercises to add them to the current workout routine.
+ * @author turne142
  */
 public class AddExerciseMenuView extends JFrame {
     /**

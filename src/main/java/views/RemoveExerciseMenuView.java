@@ -8,6 +8,7 @@ import java.util.ArrayList;
 /**
  * Represents the GUI for the Remove Exercise Menu, here the user will be able to remove an exercise from one of their
  * workouts.
+ * @author turne142
  */
 public class RemoveExerciseMenuView extends JFrame {
 
