@@ -54,7 +54,7 @@ When you work on a feature, you are always required to create a **branch** for t
 ![](images/link_branch.png)
 
 
-## Merge Feature Branch to Main Branch
+## Merge Feature Branch to DashboardMain Branch
 When you finish working on a feature, you are required to merge the feature branch back to the main branch with a **pull request**.
 
 1. After you make changes to the code and commit them to the feature branch, you will see a **Compare & pull request** button on the repository page. Click it to create a pull request.
@@ -87,7 +87,7 @@ must be reviewed and approved by other team members before merging.** :warning: 
 7. (Optional) If the feature is not completed or you want to continue working on the feature, you can reopen the issue and create new pull requests. Remember to change the status of the issue to **In Progress**.
 
 
-## More Project Management and Other Resoruces (Optional)
+## More Project management and Other Resoruces (Optional)
 
 - Use issues to keep track of bugs, tasks and other things that need to be done by selecting the appropriate labels.
 
