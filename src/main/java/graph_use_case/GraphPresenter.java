@@ -8,6 +8,6 @@ public interface GraphPresenter {
 
     GraphResponseModel prepareSuccessView(GraphResponseModel graphResponseModel);
 
-    GraphResponseModel prepareFailView(String message);
+    GraphResponseModel prepareFailView();
 
 }

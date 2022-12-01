@@ -31,6 +31,20 @@ public class GraphInteractor implements GraphInputBoundary {
 
 //        GraphResponseModel responseModel = new GraphResponseModel( the required LinkedHashmap from the database goes here);
 //        return graphPresenter.prepareSuccessView(responseModel);
+
+
+// below is not the actual code... its just to test using an example database called ExampleDatabase
+// but the actual code must do the same thing, just from the real database
+        ExampleDatabase database = new ExampleDatabase();
+
+        if (!database.bodyweightdata.containsKey(requestModel.getUsername())){
+            return graphPresenter.prepareFailView();
+        }
+
+        if (requestModel.getButtontext() == "Bodyweight"){
+            GraphResponseModel responseModel = new GraphResponseModel(database.bodyweightdata.get(requestModel.getUsername()));
+            return graphPresenter.prepareSuccessView(responseModel);
+        }
         return null;
     }
 
