@@ -10,7 +10,7 @@ public class RoutineManagerView {
 
         RoutineManager theModel = new RoutineManager();
 
-        WorkoutSelectionController theController = new WorkoutSelectionController(theModel, theView);
+        new WorkoutSelectionController(theModel, theView);
     }
 }
 

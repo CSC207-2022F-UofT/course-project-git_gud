@@ -32,7 +32,7 @@ public class WorkoutSelectionController {
                 WorkoutMenuView workout1Menu = new WorkoutMenuView();
                 workout1Menu.setWorkoutNumber(1);
 
-                WorkoutMenuController theController = new WorkoutMenuController(theModel, workout1Menu);
+                new WorkoutMenuController(theModel, workout1Menu);
 
                 displayExercises(theModel, workout1Menu, 1);
             }
@@ -41,7 +41,7 @@ public class WorkoutSelectionController {
                 WorkoutMenuView workout2Menu = new WorkoutMenuView();
                 workout2Menu.setWorkoutNumber(2);
 
-                WorkoutMenuController theController = new WorkoutMenuController(theModel, workout2Menu);
+                new WorkoutMenuController(theModel, workout2Menu);
 
                 displayExercises(theModel, workout2Menu, 2);
             }
@@ -50,7 +50,7 @@ public class WorkoutSelectionController {
                 WorkoutMenuView workout3Menu = new WorkoutMenuView();
                 workout3Menu.setWorkoutNumber(3);
 
-                WorkoutMenuController theController = new WorkoutMenuController(theModel, workout3Menu);
+                new WorkoutMenuController(theModel, workout3Menu);
 
                 displayExercises(theModel, workout3Menu, 3);
             }
@@ -59,7 +59,7 @@ public class WorkoutSelectionController {
                 WorkoutMenuView workout4Menu = new WorkoutMenuView();
                 workout4Menu.setWorkoutNumber(4);
 
-                WorkoutMenuController theController = new WorkoutMenuController(theModel, workout4Menu);
+                new WorkoutMenuController(theModel, workout4Menu);
 
                 displayExercises(theModel, workout4Menu, 4);
             }
@@ -68,7 +68,7 @@ public class WorkoutSelectionController {
                 WorkoutMenuView workout5Menu = new WorkoutMenuView();
                 workout5Menu.setWorkoutNumber(5);
 
-                WorkoutMenuController theController = new WorkoutMenuController(theModel, workout5Menu);
+                new WorkoutMenuController(theModel, workout5Menu);
 
                 displayExercises(theModel, workout5Menu, 5);
             }

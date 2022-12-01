@@ -11,8 +11,8 @@ import java.awt.event.ActionListener;
 
 public class WorkoutMenuController {
 
-    private RoutineManager theModel;
-    private WorkoutMenuView theView;
+    private final RoutineManager theModel;
+    private final WorkoutMenuView theView;
 
     public WorkoutMenuController(RoutineManager theModel, WorkoutMenuView theView){
 
@@ -32,7 +32,7 @@ public class WorkoutMenuController {
             theView.dispose();
             WorkoutSelectionView workoutSelectionView = new WorkoutSelectionView();
 
-            WorkoutSelectionController theController = new WorkoutSelectionController(theModel, workoutSelectionView);
+            new WorkoutSelectionController(theModel, workoutSelectionView);
         }
     }
 
@@ -49,7 +49,7 @@ public class WorkoutMenuController {
 
                 addExerciseMenuView.setWorkoutNumber(1);
 
-                AddExerciseController addExerciseController = new AddExerciseController(theModel, addExerciseMenuView);
+                new AddExerciseController(theModel, addExerciseMenuView);
             }
             if (theView.getWorkoutNumber()==2) {
 
@@ -58,7 +58,7 @@ public class WorkoutMenuController {
 
                 addExerciseMenuView.setWorkoutNumber(2);
 
-                AddExerciseController addExerciseController = new AddExerciseController(theModel, addExerciseMenuView);
+                new AddExerciseController(theModel, addExerciseMenuView);
             }
             if (theView.getWorkoutNumber()==3) {
 
@@ -67,7 +67,7 @@ public class WorkoutMenuController {
 
                 addExerciseMenuView.setWorkoutNumber(3);
 
-                AddExerciseController addExerciseController = new AddExerciseController(theModel, addExerciseMenuView);
+                new AddExerciseController(theModel, addExerciseMenuView);
             }
             if (theView.getWorkoutNumber()==4) {
 
@@ -76,7 +76,7 @@ public class WorkoutMenuController {
 
                 addExerciseMenuView.setWorkoutNumber(4);
 
-                AddExerciseController addExerciseController = new AddExerciseController(theModel, addExerciseMenuView);
+                new AddExerciseController(theModel, addExerciseMenuView);
             }
             if (theView.getWorkoutNumber()==5) {
 
@@ -85,7 +85,7 @@ public class WorkoutMenuController {
 
                 addExerciseMenuView.setWorkoutNumber(5);
 
-                AddExerciseController addExerciseController = new AddExerciseController(theModel, addExerciseMenuView);
+                new AddExerciseController(theModel, addExerciseMenuView);
             }
         }
     }
@@ -104,7 +104,7 @@ public class WorkoutMenuController {
 
                 removeExerciseMenuView.setWorkoutNumber(1);
 
-                RemoveExerciseMenuController theController = new RemoveExerciseMenuController(theModel, removeExerciseMenuView);
+                new RemoveExerciseMenuController(theModel, removeExerciseMenuView);
 
             }
             if (theView.getWorkoutNumber()==2) {
@@ -116,7 +116,7 @@ public class WorkoutMenuController {
 
                 removeExerciseMenuView.setWorkoutNumber(2);
 
-                RemoveExerciseMenuController theController = new RemoveExerciseMenuController(theModel, removeExerciseMenuView);
+                new RemoveExerciseMenuController(theModel, removeExerciseMenuView);
 
             }
             if (theView.getWorkoutNumber()==3) {
@@ -128,7 +128,7 @@ public class WorkoutMenuController {
 
                 removeExerciseMenuView.setWorkoutNumber(3);
 
-                RemoveExerciseMenuController theController = new RemoveExerciseMenuController(theModel, removeExerciseMenuView);
+                new RemoveExerciseMenuController(theModel, removeExerciseMenuView);
 
             }
             if (theView.getWorkoutNumber()==4) {
@@ -140,7 +140,7 @@ public class WorkoutMenuController {
 
                 removeExerciseMenuView.setWorkoutNumber(4);
 
-                RemoveExerciseMenuController theController = new RemoveExerciseMenuController(theModel, removeExerciseMenuView);
+                new RemoveExerciseMenuController(theModel, removeExerciseMenuView);
 
             }
             if (theView.getWorkoutNumber()==5) {
@@ -152,7 +152,7 @@ public class WorkoutMenuController {
 
                 removeExerciseMenuView.setWorkoutNumber(5);
 
-                RemoveExerciseMenuController theController = new RemoveExerciseMenuController(theModel, removeExerciseMenuView);
+                new RemoveExerciseMenuController(theModel, removeExerciseMenuView);
             }
         }
 

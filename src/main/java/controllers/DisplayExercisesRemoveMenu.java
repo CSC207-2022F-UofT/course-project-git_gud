@@ -5,5 +5,5 @@ import views.RemoveExerciseMenuView;
 
 public interface DisplayExercisesRemoveMenu {
 
-    public void displayExercises(RoutineManager theModel, RemoveExerciseMenuView removeExerciseMenuView, int workoutNumber);
+    void displayExercises(RoutineManager theModel, RemoveExerciseMenuView removeExerciseMenuView, int workoutNumber);
 }

@@ -5,5 +5,5 @@ import views.AddExerciseMenuView;
 
 public interface ReturnToMenuAdd {
 
-   public void returnToMenu(RoutineManager theModel, AddExerciseMenuView theView);
+   void returnToMenu(RoutineManager theModel, AddExerciseMenuView theView);
 }

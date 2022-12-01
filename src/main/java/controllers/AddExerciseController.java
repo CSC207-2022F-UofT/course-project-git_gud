@@ -41,7 +41,7 @@ public class AddExerciseController {
                 WorkoutMenuView workoutMenuView = new WorkoutMenuView();
                 workoutMenuView.setWorkoutNumber(1);
 
-                WorkoutMenuController workoutMenuController = new WorkoutMenuController(theModel, workoutMenuView);
+                new WorkoutMenuController(theModel, workoutMenuView);
 
                 if (!theModel.getWorkouts()[0].getWorkout().isEmpty()) {
                     for (int i = 0; i < theModel.getWorkouts()[0].getWorkout().size(); i++) {
@@ -55,7 +55,7 @@ public class AddExerciseController {
                 WorkoutMenuView workoutMenuView = new WorkoutMenuView();
                 workoutMenuView.setWorkoutNumber(2);
 
-                WorkoutMenuController workoutMenuController = new WorkoutMenuController(theModel, workoutMenuView);
+                new WorkoutMenuController(theModel, workoutMenuView);
 
                 if (!theModel.getWorkouts()[1].getWorkout().isEmpty()) {
                     for (int i = 0; i < theModel.getWorkouts()[1].getWorkout().size(); i++) {
@@ -69,7 +69,7 @@ public class AddExerciseController {
                 WorkoutMenuView workoutMenuView = new WorkoutMenuView();
                 workoutMenuView.setWorkoutNumber(3);
 
-                WorkoutMenuController workoutMenuController = new WorkoutMenuController(theModel, workoutMenuView);
+                new WorkoutMenuController(theModel, workoutMenuView);
 
                 if (!theModel.getWorkouts()[2].getWorkout().isEmpty()) {
                     for (int i = 0; i < theModel.getWorkouts()[2].getWorkout().size(); i++) {
@@ -83,7 +83,7 @@ public class AddExerciseController {
                 WorkoutMenuView workoutMenuView = new WorkoutMenuView();
                 workoutMenuView.setWorkoutNumber(4);
 
-                WorkoutMenuController workoutMenuController = new WorkoutMenuController(theModel, workoutMenuView);
+                new WorkoutMenuController(theModel, workoutMenuView);
 
                 if (!theModel.getWorkouts()[3].getWorkout().isEmpty()) {
                     for (int i = 0; i < theModel.getWorkouts()[3].getWorkout().size(); i++) {
@@ -97,7 +97,7 @@ public class AddExerciseController {
                 WorkoutMenuView workoutMenuView = new WorkoutMenuView();
                 workoutMenuView.setWorkoutNumber(5);
 
-                WorkoutMenuController workoutMenuController = new WorkoutMenuController(theModel, workoutMenuView);
+                new WorkoutMenuController(theModel, workoutMenuView);
 
                 if (!theModel.getWorkouts()[4].getWorkout().isEmpty()) {
                     for (int i = 0; i < theModel.getWorkouts()[4].getWorkout().size(); i++) {

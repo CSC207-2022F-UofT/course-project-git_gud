@@ -20,12 +20,10 @@ public class WorkoutMenuView extends JFrame {
      * historyButton: represents the Workout History, where you can view your workout data.
      * backButton: will take you back to the Workout Selection Menu.
      */
-    private JPanel scrollPanel = new JPanel();
-    private JButton startButton = new JButton("Start Workout");
-    private JButton addButton = new JButton("Add Exercise");
-    private JButton removeButton = new JButton("Remove Exercise");
-    private JButton historyButton = new JButton("Workout History");
-    private JButton backButton = new JButton("Back");
+    private final JPanel scrollPanel = new JPanel();
+    private final JButton addButton = new JButton("Add Exercise");
+    private final JButton removeButton = new JButton("Remove Exercise");
+    private final JButton backButton = new JButton("Back");
 
     /**
      * Each workout has a workout number, which is set by WorkoutSelectionController after selecting a workout. The
@@ -80,6 +78,7 @@ public class WorkoutMenuView extends JFrame {
         scrollPane.setPreferredSize(new Dimension(230, 240));
         displayPanel.add(scrollPane);
 
+        JButton startButton = new JButton("Start Workout");
         startButton.setFocusable(false);
         startButton.setSize(new Dimension(200,30));
         startButton.setLocation(52,120);
@@ -90,6 +89,7 @@ public class WorkoutMenuView extends JFrame {
         addButton.setLocation(52,420);
         addButton.setFont(new Font("Dialog", Font.BOLD, 13));
 
+        JButton historyButton = new JButton("Workout History");
         historyButton.setFocusable(false);
         historyButton.setSize(new Dimension(200,30));
         historyButton.setLocation(52,480);
