@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
  * Represents the GUI for the Workout Menu, here you'll be able to view your workout routine, add or remove exercises to
  * your liking, view your workout history with that workout, and start the workout!
  */
-public class WorkoutMenu extends JFrame {
+public class WorkoutMenuView extends JFrame {
 
     /**
      * scrollPanel: represents the scroll pane in which you'll be able to view your exercises in your workout.
@@ -38,7 +38,7 @@ public class WorkoutMenu extends JFrame {
     /**
      * Represents the view for the Workout Menu.
      */
-    public WorkoutMenu() {
+    public WorkoutMenuView() {
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(320, 564);

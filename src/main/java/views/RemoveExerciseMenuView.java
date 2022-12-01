@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class RemoveExerciseMenu extends JFrame {
+public class RemoveExerciseMenuView extends JFrame {
 
     JPanel scrollPanel = new JPanel();
     JLabel confirmationMessage = new JLabel();
@@ -16,7 +16,7 @@ public class RemoveExerciseMenu extends JFrame {
 
     ArrayList<JButton> exercises = new ArrayList<>();
 
-    public RemoveExerciseMenu(){
+    public RemoveExerciseMenuView(){
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(320, 564);

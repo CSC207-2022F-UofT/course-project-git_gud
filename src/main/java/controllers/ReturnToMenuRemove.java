@@ -1,9 +1,9 @@
 package controllers;
 
 import management.RoutineManager;
-import views.RemoveExerciseMenu;
+import views.RemoveExerciseMenuView;
 
 public interface ReturnToMenuRemove {
 
-    public void returnToMenu(RoutineManager theModel, RemoveExerciseMenu theView);
+    public void returnToMenu(RoutineManager theModel, RemoveExerciseMenuView theView);
 }

@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
  * customizing and/or starting a workout.
  * @author turne142
  */
-public class WorkoutSelection extends JFrame{
+public class WorkoutSelectionView extends JFrame{
 
     /**
      * Each one of these JButtons represents one of the five workout routines that the user can select. Clicking on one
@@ -22,10 +22,12 @@ public class WorkoutSelection extends JFrame{
     public JButton workout4Button = new JButton("Workout 4");
     public JButton workout5Button = new JButton("Workout 5");
 
+    public JButton backButton = new JButton("Back");
+
     /**
      * Represents the view for the Workout Selection window.
      */
-    public WorkoutSelection() {
+    public WorkoutSelectionView() {
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(320, 564);
@@ -49,6 +51,10 @@ public class WorkoutSelection extends JFrame{
         workout4Button.setFont(new Font("Dialog", Font.BOLD, 30));
         workout5Button.setFont(new Font("Dialog", Font.BOLD, 30));
 
+        backButton.setBounds(0,0,100,50);
+        backButton.setFocusable(false);
+        backButton.setFont(new Font("Dialog", Font.BOLD, 15));
+
         workoutsPanel.add(workout1Button);
         workoutsPanel.add(workout2Button);
         workoutsPanel.add(workout3Button);
@@ -56,6 +62,7 @@ public class WorkoutSelection extends JFrame{
         workoutsPanel.add(workout5Button);
 
         this.add(workoutsPanel);
+        this.add(backButton);
         this.setVisible(true);
     }
 
@@ -69,4 +76,8 @@ public class WorkoutSelection extends JFrame{
         workout5Button.addActionListener(displayListener);
     }
 
+    public void addSettingsDisplay(ActionListener displayListener){
+
+        backButton.addActionListener(displayListener);
+    }
 }

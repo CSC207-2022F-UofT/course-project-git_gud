@@ -1,9 +1,9 @@
 package controllers;
 
 import management.RoutineManager;
-import views.WorkoutMenu;
+import views.WorkoutMenuView;
 
 public interface DisplayExercisesWorkoutMenu {
 
-    public void displayExercises(RoutineManager theModel, WorkoutMenu workoutMenu, int workoutNumber);
+    public void displayExercises(RoutineManager theModel, WorkoutMenuView workoutMenuView, int workoutNumber);
 }

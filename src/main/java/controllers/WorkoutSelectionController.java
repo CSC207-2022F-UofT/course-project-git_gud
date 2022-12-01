@@ -1,23 +1,25 @@
 package controllers;
 
 import management.RoutineManager;
-import views.WorkoutSelection;
-import views.WorkoutMenu;
+import views.WorkoutSelectionView;
+import views.WorkoutMenuView;
+import views.dashboard.SettingsPage;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class WorkoutSelectionController {
 
-    private RoutineManager theModel;
-    private WorkoutSelection theView;
+    private final RoutineManager theModel;
+    private final WorkoutSelectionView theView;
 
-    public WorkoutSelectionController(RoutineManager theModel, WorkoutSelection theView){
+    public WorkoutSelectionController(RoutineManager theModel, WorkoutSelectionView theView){
 
         this.theModel = theModel;
         this.theView = theView;
 
         this.theView.addWorkoutMenuDisplay(new WorkoutMenuDisplay());
+        this.theView.addSettingsDisplay(new SettingsDisplay());
     }
 
     class WorkoutMenuDisplay implements ActionListener, DisplayExercisesWorkoutMenu {
@@ -27,7 +29,7 @@ public class WorkoutSelectionController {
 
             if (e.getSource() == theView.workout1Button) {
                 theView.dispose();
-                WorkoutMenu workout1Menu = new WorkoutMenu();
+                WorkoutMenuView workout1Menu = new WorkoutMenuView();
                 workout1Menu.setWorkoutNumber(1);
 
                 WorkoutMenuController theController = new WorkoutMenuController(theModel, workout1Menu);
@@ -36,7 +38,7 @@ public class WorkoutSelectionController {
             }
             if (e.getSource() == theView.workout2Button) {
                 theView.dispose();
-                WorkoutMenu workout2Menu = new WorkoutMenu();
+                WorkoutMenuView workout2Menu = new WorkoutMenuView();
                 workout2Menu.setWorkoutNumber(2);
 
                 WorkoutMenuController theController = new WorkoutMenuController(theModel, workout2Menu);
@@ -45,7 +47,7 @@ public class WorkoutSelectionController {
             }
             if (e.getSource() == theView.workout3Button) {
                 theView.dispose();
-                WorkoutMenu workout3Menu = new WorkoutMenu();
+                WorkoutMenuView workout3Menu = new WorkoutMenuView();
                 workout3Menu.setWorkoutNumber(3);
 
                 WorkoutMenuController theController = new WorkoutMenuController(theModel, workout3Menu);
@@ -54,7 +56,7 @@ public class WorkoutSelectionController {
             }
             if (e.getSource() == theView.workout4Button) {
                 theView.dispose();
-                WorkoutMenu workout4Menu = new WorkoutMenu();
+                WorkoutMenuView workout4Menu = new WorkoutMenuView();
                 workout4Menu.setWorkoutNumber(4);
 
                 WorkoutMenuController theController = new WorkoutMenuController(theModel, workout4Menu);
@@ -63,7 +65,7 @@ public class WorkoutSelectionController {
             }
             if (e.getSource() == theView.workout5Button) {
                 theView.dispose();
-                WorkoutMenu workout5Menu = new WorkoutMenu();
+                WorkoutMenuView workout5Menu = new WorkoutMenuView();
                 workout5Menu.setWorkoutNumber(5);
 
                 WorkoutMenuController theController = new WorkoutMenuController(theModel, workout5Menu);
@@ -73,11 +75,25 @@ public class WorkoutSelectionController {
         }
 
         @Override
-        public void displayExercises(RoutineManager theModel, WorkoutMenu workoutMenu, int workoutNumber) {
+        public void displayExercises(RoutineManager theModel, WorkoutMenuView workoutMenuView, int workoutNumber) {
             if (!theModel.getWorkouts()[workoutNumber-1].getWorkout().isEmpty()){
                 for (int i=0; i<theModel.getWorkouts()[workoutNumber-1].getWorkout().size(); i++){
-                    workoutMenu.addExercise(theModel.getWorkouts()[workoutNumber-1].getWorkout().get(i));
+                    workoutMenuView.addExercise(theModel.getWorkouts()[workoutNumber-1].getWorkout().get(i));
                 }
+            }
+        }
+    }
+
+    class SettingsDisplay implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+            if (e.getSource()==theView.backButton){
+
+                theView.dispose();
+                SettingsPage dashboardViewer = new SettingsPage();
+                dashboardViewer.CreateSettingsPage();
             }
         }
     }

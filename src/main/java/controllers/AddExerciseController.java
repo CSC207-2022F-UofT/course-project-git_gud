@@ -1,8 +1,8 @@
 package controllers;
 
 import management.RoutineManager;
-import views.AddExerciseMenu;
-import views.WorkoutMenu;
+import views.AddExerciseMenuView;
+import views.WorkoutMenuView;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -11,9 +11,9 @@ import java.awt.event.ActionListener;
 public class AddExerciseController {
 
     RoutineManager theModel;
-    AddExerciseMenu theView;
+    AddExerciseMenuView theView;
 
-    public AddExerciseController(RoutineManager theModel, AddExerciseMenu theView){
+    public AddExerciseController(RoutineManager theModel, AddExerciseMenuView theView){
 
         this.theModel = theModel;
 
@@ -33,75 +33,75 @@ public class AddExerciseController {
         }
 
         @Override
-        public void returnToMenu(RoutineManager theModel, AddExerciseMenu theView) {
+        public void returnToMenu(RoutineManager theModel, AddExerciseMenuView theView) {
 
             if (theView.getWorkoutNumber()==1){
                 theView.dispose();
 
-                WorkoutMenu workoutMenu = new WorkoutMenu();
-                workoutMenu.setWorkoutNumber(1);
+                WorkoutMenuView workoutMenuView = new WorkoutMenuView();
+                workoutMenuView.setWorkoutNumber(1);
 
-                WorkoutMenuController workoutMenuController = new WorkoutMenuController(theModel, workoutMenu);
+                WorkoutMenuController workoutMenuController = new WorkoutMenuController(theModel, workoutMenuView);
 
                 if (!theModel.getWorkouts()[0].getWorkout().isEmpty()) {
                     for (int i = 0; i < theModel.getWorkouts()[0].getWorkout().size(); i++) {
-                        workoutMenu.addExercise(theModel.getWorkouts()[0].getWorkout().get(i));
+                        workoutMenuView.addExercise(theModel.getWorkouts()[0].getWorkout().get(i));
                     }
                 }
             }
             if (theView.getWorkoutNumber()==2){
                 theView.dispose();
 
-                WorkoutMenu workoutMenu = new WorkoutMenu();
-                workoutMenu.setWorkoutNumber(2);
+                WorkoutMenuView workoutMenuView = new WorkoutMenuView();
+                workoutMenuView.setWorkoutNumber(2);
 
-                WorkoutMenuController workoutMenuController = new WorkoutMenuController(theModel, workoutMenu);
+                WorkoutMenuController workoutMenuController = new WorkoutMenuController(theModel, workoutMenuView);
 
                 if (!theModel.getWorkouts()[1].getWorkout().isEmpty()) {
                     for (int i = 0; i < theModel.getWorkouts()[1].getWorkout().size(); i++) {
-                        workoutMenu.addExercise(theModel.getWorkouts()[1].getWorkout().get(i));
+                        workoutMenuView.addExercise(theModel.getWorkouts()[1].getWorkout().get(i));
                     }
                 }
             }
             if (theView.getWorkoutNumber()==3){
                 theView.dispose();
 
-                WorkoutMenu workoutMenu = new WorkoutMenu();
-                workoutMenu.setWorkoutNumber(3);
+                WorkoutMenuView workoutMenuView = new WorkoutMenuView();
+                workoutMenuView.setWorkoutNumber(3);
 
-                WorkoutMenuController workoutMenuController = new WorkoutMenuController(theModel, workoutMenu);
+                WorkoutMenuController workoutMenuController = new WorkoutMenuController(theModel, workoutMenuView);
 
                 if (!theModel.getWorkouts()[2].getWorkout().isEmpty()) {
                     for (int i = 0; i < theModel.getWorkouts()[2].getWorkout().size(); i++) {
-                        workoutMenu.addExercise(theModel.getWorkouts()[2].getWorkout().get(i));
+                        workoutMenuView.addExercise(theModel.getWorkouts()[2].getWorkout().get(i));
                     }
                 }
             }
             if (theView.getWorkoutNumber()==4){
                 theView.dispose();
 
-                WorkoutMenu workoutMenu = new WorkoutMenu();
-                workoutMenu.setWorkoutNumber(4);
+                WorkoutMenuView workoutMenuView = new WorkoutMenuView();
+                workoutMenuView.setWorkoutNumber(4);
 
-                WorkoutMenuController workoutMenuController = new WorkoutMenuController(theModel, workoutMenu);
+                WorkoutMenuController workoutMenuController = new WorkoutMenuController(theModel, workoutMenuView);
 
                 if (!theModel.getWorkouts()[3].getWorkout().isEmpty()) {
                     for (int i = 0; i < theModel.getWorkouts()[3].getWorkout().size(); i++) {
-                        workoutMenu.addExercise(theModel.getWorkouts()[3].getWorkout().get(i));
+                        workoutMenuView.addExercise(theModel.getWorkouts()[3].getWorkout().get(i));
                     }
                 }
             }
             if (theView.getWorkoutNumber()==5){
                 theView.dispose();
 
-                WorkoutMenu workoutMenu = new WorkoutMenu();
-                workoutMenu.setWorkoutNumber(5);
+                WorkoutMenuView workoutMenuView = new WorkoutMenuView();
+                workoutMenuView.setWorkoutNumber(5);
 
-                WorkoutMenuController workoutMenuController = new WorkoutMenuController(theModel, workoutMenu);
+                WorkoutMenuController workoutMenuController = new WorkoutMenuController(theModel, workoutMenuView);
 
                 if (!theModel.getWorkouts()[4].getWorkout().isEmpty()) {
                     for (int i = 0; i < theModel.getWorkouts()[4].getWorkout().size(); i++) {
-                        workoutMenu.addExercise(theModel.getWorkouts()[4].getWorkout().get(i));
+                        workoutMenuView.addExercise(theModel.getWorkouts()[4].getWorkout().get(i));
                     }
                 }
             }

@@ -1,6 +1,8 @@
 package views.dashboard;
 
 
+import controllers.WorkoutSelectionController;
+import management.RoutineManager;
 import views.RoutineManagerView;
 import views.*;
 
@@ -144,7 +146,11 @@ public class SettingsPage {
                 }
                 if (e.getSource() == goToWorkouts){
                     settingsFrame.dispose();
-                    RoutineManagerView routineView = new RoutineManagerView();
+                    WorkoutSelectionView theView = new WorkoutSelectionView();
+
+                    RoutineManager theModel = new RoutineManager();
+
+                    new WorkoutSelectionController(theModel, theView);
                     //routineView.CreateRoutineView();
                 }
             }
