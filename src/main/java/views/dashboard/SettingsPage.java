@@ -3,6 +3,10 @@ package views.dashboard;
 
 
 
+import controllers.GraphController;
+import graph_use_case.GraphInteractor;
+import graph_use_case.GraphResponseFormatter;
+import views.GraphMenu;
 import views.HomeTargetUI;
 import views.RoutineManagerView;
 import views.ViewLoginPage;
@@ -139,7 +143,10 @@ public class SettingsPage {
                 }
                 if (e.getSource() == goToGraphs){
                     settingsFrame.dispose();
-                    //view from Tej goes here
+                    GraphResponseFormatter p = new GraphResponseFormatter();
+                    GraphInteractor interactor = new GraphInteractor(p);
+                    GraphController controller = new GraphController(interactor);
+                    GraphMenu graphMenu = new GraphMenu(controller, "abc");
                 }
                 if (e.getSource() == goToGoals){
                     settingsFrame.dispose();
