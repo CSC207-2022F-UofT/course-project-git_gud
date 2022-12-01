@@ -1,7 +1,6 @@
 package entities;
 
 public interface UserDetails {
-    public String getUsername();
-    public String getPassword();
-    public String getEmail();
+    String getUsername();
+    String getPassword();
 }

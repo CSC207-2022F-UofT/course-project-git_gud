@@ -10,14 +10,16 @@ public class ViewLoginPage implements ActionListener {
      * This is a UI class that instantiates the JFrame and all other components the user will first
      * see when the program runs
      */
-    public JButton loginButton;
+    public final JButton loginButton;
 
-    public JFrame frame;
-    public JTextField usernameField;
-    public JPasswordField passwordField;
-    public JTextField emailField;
-    public JLabel message;
-    public JButton signupButton;
+    public final JFrame frame;
+    public final JTextField usernameField;
+    public final JPasswordField passwordField;
+    public final JTextField emailField;
+    public final JLabel message;
+    public final JButton signupButton;
+
+
     public ViewLoginPage(){
         frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
