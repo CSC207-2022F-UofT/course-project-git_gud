@@ -21,7 +21,5 @@ public class EntitiyAppUser implements UserDetails {
     }
 
     @Override
-    public String getEmail() {
-        return this.email;
-    }
+    public String getEmail(){return this.email;}
 }

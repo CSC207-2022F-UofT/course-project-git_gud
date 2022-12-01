@@ -81,9 +81,11 @@ public class ViewLoginPage implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == loginButton){
-            LogInController.loginButton(this);
+            LogInController x = new LogInController();
+            x.loginButton(this);
         } else if (e.getSource()== signupButton) {
-            LogInController.signupButton(this);
+            LogInController y = new LogInController();
+            y.signupButton(this);
         }
     }
 }
