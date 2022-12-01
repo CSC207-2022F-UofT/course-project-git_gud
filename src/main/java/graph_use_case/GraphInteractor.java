@@ -18,14 +18,20 @@ public class GraphInteractor implements GraphInputBoundary {
         this.graphPresenter = graphPresenter;
     }
 
+
+    //will need to check for the corresponding LinkedHashmap that is saved in our database that corresp. to username.
     @Override
     public GraphResponseModel plot(GraphRequestModel requestModel) {
-        if (requestModel.getBodyweightData().isEmpty()){
-            return graphPresenter.prepareFailView("There is no data to display");
-        }
+//        if (we check and the requestModel.getbuttontext is empty for the user in the database)
+//            return graphPresenter.prepareFailView("There is no data to display");
+//        }
 
-        GraphResponseModel responseModel = new GraphResponseModel(requestModel.getBodyweightData());
-        return graphPresenter.prepareSuccessView(responseModel);
+// if buttontext== bodyweight, we get the bodyweight Hashmap from the database
+// if buttontext== volume, we get volume Hashmap etc...
+
+//        GraphResponseModel responseModel = new GraphResponseModel( the required LinkedHashmap from the database goes here);
+//        return graphPresenter.prepareSuccessView(responseModel);
+        return null;
     }
 
 

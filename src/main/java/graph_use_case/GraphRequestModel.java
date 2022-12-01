@@ -11,17 +11,19 @@ import java.util.LinkedHashMap;
 public class GraphRequestModel {
 
     private String username;
+    private String buttontext;
 
-    private LinkedHashMap<Date, Float> bodyweightData;
+//    private LinkedHashMap<Date, Float> bodyweightData;
+//
+//    private LinkedHashMap<Date, Float> volumeData;
 
-    private LinkedHashMap<Date, Float> volumeData;
 
 
-
-    public GraphRequestModel(String username, LinkedHashMap<Date, Float> bodyweightData, LinkedHashMap<Date, Float> volumeData){
+    public GraphRequestModel(String username, String buttontext){
         this.username = username;
-        this.bodyweightData = bodyweightData;
-        this.volumeData = volumeData;
+        this.buttontext = buttontext;
+//        this.bodyweightData = bodyweightData;
+//        this.volumeData = volumeData;
     }
 
     public String getUsername() {
@@ -32,11 +34,17 @@ public class GraphRequestModel {
         this.username = username;
     }
 
-    public LinkedHashMap<Date, Float> getBodyweightData(){
-        return this.bodyweightData;
+    public String getButtontext(){return this.buttontext; }
+
+    public void setButtontext(String buttontext) {
+        this.buttontext = buttontext;
     }
 
-    public LinkedHashMap<Date, Float> getVolumeData() {
-        return this.volumeData;
-    }
+    //    public LinkedHashMap<Date, Float> getBodyweightData(){
+//        return this.bodyweightData;
+//    }
+//
+//    public LinkedHashMap<Date, Float> getVolumeData() {
+//        return this.volumeData;
+//    }
 }

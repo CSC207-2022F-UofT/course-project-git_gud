@@ -1,4 +1,9 @@
-package graph_use_case;
+package controllers;
+import Screens.GraphMenu;
+
+import graph_use_case.GraphInputBoundary;
+import graph_use_case.GraphRequestModel;
+import graph_use_case.GraphResponseModel;
 
 import java.util.Date;
 import java.util.LinkedHashMap;
@@ -11,8 +16,6 @@ public class GraphController {
 
 
     final GraphInputBoundary interactor;
-//This is the Graph Interactor
-
 
 
     public GraphController(GraphInputBoundary inputBoundary){
@@ -20,8 +23,8 @@ public class GraphController {
 
     }
 
-    GraphResponseModel plot(String name, LinkedHashMap<Date, Float> bodyweightdata, LinkedHashMap<Date, Float> volumedata){
-        GraphRequestModel requestModel = new GraphRequestModel(name, bodyweightdata, volumedata );
+    public GraphResponseModel plot(String username, String buttondata){
+        GraphRequestModel requestModel = new GraphRequestModel(username, buttondata);
 
         return interactor.plot(requestModel);
 

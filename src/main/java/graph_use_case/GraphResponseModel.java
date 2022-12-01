@@ -10,17 +10,17 @@ import java.util.LinkedHashMap;
 
 public class GraphResponseModel {
 
-    private LinkedHashMap<Date, Float> bodyweightData;
+    private LinkedHashMap<Date, Float> Data;
 
     public GraphResponseModel(LinkedHashMap<Date, Float> bodyweightData){
-        this.bodyweightData = bodyweightData;
+        this.Data = bodyweightData;
     }
 
     public void setBodyweightData(LinkedHashMap<Date, Float> bodyweightData) {
-        this.bodyweightData = bodyweightData;
+        this.Data = bodyweightData;
     }
 
     public LinkedHashMap<Date, Float> getBodyweightData(){
-        return this.bodyweightData;
+        return this.Data;
     }
 }
