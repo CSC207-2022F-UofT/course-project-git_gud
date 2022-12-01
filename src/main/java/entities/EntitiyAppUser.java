@@ -1,9 +1,9 @@
 package entities;
 public class EntitiyAppUser implements UserDetails {
 
-    public String username;
-    public String password;
-    public String email;
+    public final String username;
+    public final String password;
+    public final String email;
 
     public EntitiyAppUser(String name, String password, String email){
         this.username = name;
@@ -21,7 +21,5 @@ public class EntitiyAppUser implements UserDetails {
     }
 
     @Override
-    public String getEmail() {
-        return this.email;
-    }
+    public String getEmail(){return this.email;}
 }

@@ -17,20 +17,23 @@ public class LogInController {
      * The Controller for the loginButton takes in inputs from the text fields
      * of the given UI page, and determine which use case to select.
      */
-    public static void loginButton(ViewLoginPage page) {
+    public void loginButton(ViewLoginPage page) {
         String username = page.usernameField.getText();
         String password = String.valueOf(page.passwordField.getPassword());
 
         if(existsInDatabase(username)){
             if(passwordCorrectness(password)){
-                UseCaseLogin.login(page);
+                UseCaseLogin login = new UseCaseLogin();
+                login.login(page);
             }
             else{
-                UseCaseFalseLogin.falseLogin(page);
+                UseCaseFalseLogin login = new UseCaseFalseLogin();
+                login.falseLogin(page);
             }
         }
         else{
-            UseCaseRegister.pleaseSignup(page);
+            UseCaseRegister register = new UseCaseRegister();
+            register.pleaseSignup(page);
         }
     }
 
@@ -38,17 +41,19 @@ public class LogInController {
      * The Controller for the signupButton takes in inputs from the text fields
      * of the given UI page, and determine which use case to select.
      */
-    public static void signupButton(ViewLoginPage page){
+    public void signupButton(ViewLoginPage page){
         String username = page.usernameField.getText();
         String password = String.valueOf(page.passwordField.getPassword());
         String email = page.emailField.getText();
 
         if(existsInDatabase(username)){
-            UseCaseRegister.usernameExists(page);
+            UseCaseRegister register = new UseCaseRegister();
+            register.usernameExists(page);
         }
         else{
-            UseCaseRegister.newUser(username, password, email);
-            UseCaseRegister.Registered(page);
+            UseCaseRegister register = new UseCaseRegister();
+            register.newUser(username, password, email);
+            register.Registered(page);
         }
     }
 
@@ -57,15 +62,8 @@ public class LogInController {
      * text field exists in the database
      *
      */
-    public static Boolean existsInDatabase(String username){
+    public Boolean existsInDatabase(String username){
         try {
-            /** TODO
-             Change the connection variable to match your personal database, localhost should be fine to leave,
-             JDBCT should be changed to JDBC or whatever you setup the database as, user and password
-             should be what you initially setup with your workbench program.
-             Change dashtest to whatever your chosen table name is. Change this is every location you see it.
-             */
-            //Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBC", "root", "root1234");
             Connection connection = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/JDBCT?allowMultiQueries=true", "root", "root");
             Statement statement = connection.createStatement();
@@ -81,7 +79,7 @@ public class LogInController {
         }
         return false;
     }
-    public static Boolean passwordCorrectness(String password){
+    public Boolean passwordCorrectness(String password){
         try {
             //Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBC", "root", "root1234");
             Connection connection = DriverManager.getConnection(
