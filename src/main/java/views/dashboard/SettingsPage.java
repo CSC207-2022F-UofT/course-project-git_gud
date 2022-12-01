@@ -1,6 +1,7 @@
 package views.dashboard;
 
 
+import management.RoutineManager;
 import views.RoutineManagerView;
 import views.*;
 
@@ -18,7 +19,7 @@ public class SettingsPage {
 
     public SettingsPage() {}
 
-    public void CreateSettingsPage(){
+    public void CreateSettingsPage(RoutineManager userWorkout){
         JFrame settingsFrame = new JFrame();
         settingsFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         settingsFrame.setSize(320, 564);
@@ -144,8 +145,13 @@ public class SettingsPage {
                 }
                 if (e.getSource() == goToWorkouts){
                     settingsFrame.dispose();
-                    RoutineManagerView routineView = new RoutineManagerView();
-                    //routineView.CreateRoutineView();
+                    if (userWorkout == null) {
+                        RoutineManagerView routineView = new RoutineManagerView(null);
+                        //routineView.CreateRoutineView();
+                    }
+                    else {
+                        RoutineManagerView routineView = new RoutineManagerView(userWorkout);
+                    }
                 }
             }
         };
