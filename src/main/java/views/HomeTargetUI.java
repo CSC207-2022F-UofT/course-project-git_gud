@@ -43,9 +43,9 @@ public class HomeTargetUI extends JFrame {
      * @param args
      * running this function creates new homeFrame and displays it
      */
-    public static void main(String args[]){
-        HomeTargetUI homeFrame = new HomeTargetUI();
-        homeFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        homeFrame.setVisible(true);
-    }
+//    public static void main(String args[]){
+//        HomeTargetUI homeFrame = new HomeTargetUI();
+//        homeFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+//        homeFrame.setVisible(true);
+//    }
 }
