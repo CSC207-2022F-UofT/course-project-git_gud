@@ -1,6 +1,6 @@
-package Views;
-import Controllers.EditController;
-import Entities.Targets;
+package views;
+import controllers.EditController;
+import entities.Targets;
 
 
 import javax.swing.*;

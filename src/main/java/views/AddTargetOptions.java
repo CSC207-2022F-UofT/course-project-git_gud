@@ -1,8 +1,8 @@
-package Views;
+package views;
 
-import Entities.TargetORM;
-import Entities.TargetVolume;
-import Entities.TargetWeight;
+import entities.TargetORM;
+import entities.TargetVolume;
+import entities.TargetWeight;
 
 import javax.swing.*;
 

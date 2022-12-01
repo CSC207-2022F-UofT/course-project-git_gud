@@ -1,7 +1,7 @@
-package Controllers;
+package controllers;
 
-import Entities.Targets;
-import Usecases.ViewTarget;
+import entities.Targets;
+import usecases.ViewTarget;
 
 /**
  * UI for when view Target option is clicked on the HomeTargetUI screen

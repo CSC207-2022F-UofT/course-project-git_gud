@@ -1,6 +1,6 @@
-package Usecases;
-import Entities.Target;
-import Entities.Targets;
+package usecases;
+import entities.Target;
+import entities.Targets;
 
 import java.util.ArrayList;
 

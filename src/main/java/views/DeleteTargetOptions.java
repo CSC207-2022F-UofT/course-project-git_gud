@@ -1,9 +1,9 @@
-package Views;
+package views;
 
-import Controllers.DeleteController;
-import Entities.TargetORM;
-import Entities.TargetVolume;
-import Entities.TargetWeight;
+import controllers.DeleteController;
+import entities.TargetORM;
+import entities.TargetVolume;
+import entities.TargetWeight;
 
 import javax.swing.*;
 /**

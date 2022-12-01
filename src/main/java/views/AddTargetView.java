@@ -1,7 +1,7 @@
-package Views;
+package views;
 
-import Controllers.AddController;
-import Entities.Targets;
+import controllers.AddController;
+import entities.Targets;
 
 import javax.swing.*;
 import java.text.ParseException;
