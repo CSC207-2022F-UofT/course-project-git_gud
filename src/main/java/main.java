@@ -3,12 +3,13 @@ import controllers.GraphController;
 import graph_use_case.GraphInteractor;
 import graph_use_case.GraphResponseFormatter;
 
-import java.text.ParseException;
+
+
 
 public class main {
 
 
-    public static void main(String[] args) throws ParseException {
+    public static void main(String[] args)  {
 
 //        Date d1 = new Date(2022, 10,2);
 //        Date d2 = new Date(2022, 19,2);
