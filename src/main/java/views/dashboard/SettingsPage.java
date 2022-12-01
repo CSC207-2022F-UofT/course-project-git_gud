@@ -1,8 +1,5 @@
 package views.dashboard;
 
-
-
-
 import controllers.GraphController;
 import graph_use_case.GraphInteractor;
 import graph_use_case.GraphResponseFormatter;
