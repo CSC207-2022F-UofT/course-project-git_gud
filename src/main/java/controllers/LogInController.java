@@ -13,6 +13,7 @@ import usecases.UseCaseLogin;
 import usecases.UseCaseRegister;
 
 public class LogInController {
+
     /**
      * The Controller for the loginButton takes in inputs from the text fields
      * of the given UI page, and determine which use case to select.
@@ -64,10 +65,11 @@ public class LogInController {
      */
     public Boolean existsInDatabase(String username){
         try {
-            Connection connection = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/JDBCT?allowMultiQueries=true", "root", "root");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBC", "root", "root1234");
+//            Connection connection = DriverManager.getConnection(
+//                    "jdbc:mysql://localhost:3306/JDBCT?allowMultiQueries=true", "root", "root");
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("Select * From dashtest");//USER for Adrian's comp
+            ResultSet resultSet = statement.executeQuery("Select * From USER");//USER for Adrian's comp
 
             while (resultSet.next()) {
                 if (resultSet.getString(1).equals(username)){
@@ -81,11 +83,11 @@ public class LogInController {
     }
     public Boolean passwordCorrectness(String password){
         try {
-            //Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBC", "root", "root1234");
-            Connection connection = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/JDBCT?allowMultiQueries=true", "root", "root");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBC", "root", "root1234");
+//            Connection connection = DriverManager.getConnection(
+//                    "jdbc:mysql://localhost:3306/JDBCT?allowMultiQueries=true", "root", "root");
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("Select * From dashtest");//USER for Adrian's comp
+            ResultSet resultSet = statement.executeQuery("Select * From USER");//USER for Adrian's comp
             while (resultSet.next()) {
                 if (resultSet.getString(2).equals(password)) {
                     return true;

@@ -9,8 +9,9 @@ public class DashboardController {
 
     static {
         try {
-            connection1 = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/JDBCT?allowMultiQueries=true", "root", "root");
+            connection1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBC", "root", "root1234");
+//            connection1 = DriverManager.getConnection(
+//                    "jdbc:mysql://localhost:3306/JDBCT?allowMultiQueries=true", "root", "root");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

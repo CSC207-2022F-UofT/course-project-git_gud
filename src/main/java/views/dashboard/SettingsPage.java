@@ -1,10 +1,15 @@
 package views.dashboard;
 
 
-import controllers.WorkoutSelectionController;
-import management.RoutineManager;
+
+
+import controllers.GraphController;
+import graph_use_case.GraphInteractor;
+import graph_use_case.GraphResponseFormatter;
+import views.GraphMenu;
+import views.HomeTargetUI;
 import views.RoutineManagerView;
-import views.*;
+import views.ViewLoginPage;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,7 +19,7 @@ import java.awt.event.ActionListener;
 @SuppressWarnings("Convert2Lambda")
 public class SettingsPage {
     /***
-     * SettingsPage is called by Main and builds a GUI with all the available settings for the app. From here you can
+     * SettingsPage is called by Main.java and builds a GUI with all the available settings for the app. From here you can
      * pick what setting to perform which then calls upon other view pages.
      */
 
@@ -139,18 +144,20 @@ public class SettingsPage {
                 if (e.getSource() == goToGraphs){
                     settingsFrame.dispose();
                     //view from Tej goes here
+                    GraphResponseFormatter presenter = new GraphResponseFormatter();
+                    GraphInteractor interactor = new GraphInteractor(presenter);
+                    GraphController controller = new GraphController(interactor);
+                    GraphMenu graphMenu = new GraphMenu(controller, "abc");
+
                 }
                 if (e.getSource() == goToGoals){
                     settingsFrame.dispose();
                     //view from Jhalak goes here
+                    HomeTargetUI homeFrame = new HomeTargetUI();
                 }
                 if (e.getSource() == goToWorkouts){
                     settingsFrame.dispose();
-                    WorkoutSelectionView theView = new WorkoutSelectionView();
-
-                    RoutineManager theModel = new RoutineManager();
-
-                    new WorkoutSelectionController(theModel, theView);
+                    RoutineManagerView routineView = new RoutineManagerView();
                     //routineView.CreateRoutineView();
                 }
             }
