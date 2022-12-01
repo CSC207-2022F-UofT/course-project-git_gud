@@ -113,7 +113,7 @@ public class WorkoutSelectionController {
 
                 theView.dispose();
                 SettingsPage dashboardViewer = new SettingsPage();
-                dashboardViewer.CreateSettingsPage();
+                dashboardViewer.CreateSettingsPage(theModel);
             }
         }
     }

@@ -35,7 +35,7 @@ public class Presenter {
     public void login(ViewLoginPage x){
         x.frame.dispose();
         SettingsPage dashboardViewer = new SettingsPage();
-        dashboardViewer.CreateSettingsPage();
+        dashboardViewer.CreateSettingsPage(null);
     }
 
     /**

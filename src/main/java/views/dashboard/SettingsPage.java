@@ -1,12 +1,9 @@
 package views.dashboard;
 
-import controllers.GraphController;
-import graph_use_case.GraphInteractor;
-import graph_use_case.GraphResponseFormatter;
-import views.GraphMenu;
-import views.HomeTargetUI;
+
+import management.RoutineManager;
 import views.RoutineManagerView;
-import views.ViewLoginPage;
+import views.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,13 +13,13 @@ import java.awt.event.ActionListener;
 @SuppressWarnings("Convert2Lambda")
 public class SettingsPage {
     /***
-     * SettingsPage is called by Main.java and builds a GUI with all the available settings for the app. From here you can
+     * SettingsPage is called by Main and builds a GUI with all the available settings for the app. From here you can
      * pick what setting to perform which then calls upon other view pages.
      */
 
     public SettingsPage() {}
 
-    public void CreateSettingsPage(){
+    public void CreateSettingsPage(RoutineManager userWorkout){
         JFrame settingsFrame = new JFrame();
         settingsFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         settingsFrame.setSize(320, 564);
@@ -141,21 +138,20 @@ public class SettingsPage {
                 if (e.getSource() == goToGraphs){
                     settingsFrame.dispose();
                     //view from Tej goes here
-                    GraphResponseFormatter presenter = new GraphResponseFormatter();
-                    GraphInteractor interactor = new GraphInteractor(presenter);
-                    GraphController controller = new GraphController(interactor);
-                    GraphMenu graphMenu = new GraphMenu(controller, "abc");
-
                 }
                 if (e.getSource() == goToGoals){
                     settingsFrame.dispose();
                     //view from Jhalak goes here
-                    HomeTargetUI homeFrame = new HomeTargetUI();
                 }
                 if (e.getSource() == goToWorkouts){
                     settingsFrame.dispose();
-                    RoutineManagerView routineView = new RoutineManagerView();
-                    //routineView.CreateRoutineView();
+                    if (userWorkout == null) {
+                        RoutineManagerView routineView = new RoutineManagerView(null);
+                        //routineView.CreateRoutineView();
+                    }
+                    else {
+                        RoutineManagerView routineView = new RoutineManagerView(userWorkout);
+                    }
                 }
             }
         };
