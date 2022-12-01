@@ -7,8 +7,9 @@ import java.awt.event.ActionListener;
 /**
  * Represents the GUI for the Workout Menu, here you'll be able to view your workout routine, add or remove exercises to
  * your liking, view your workout history with that workout, and start the workout!
+ * @author turne142
  */
-public class WorkoutMenu extends JFrame {
+public class WorkoutMenuView extends JFrame {
 
     /**
      * scrollPanel: represents the scroll pane in which you'll be able to view your exercises in your workout.
@@ -20,25 +21,23 @@ public class WorkoutMenu extends JFrame {
      * historyButton: represents the Workout History, where you can view your workout data.
      * backButton: will take you back to the Workout Selection Menu.
      */
-    private JPanel scrollPanel = new JPanel();
-    private JButton startButton = new JButton("Start Workout");
-    private JButton addButton = new JButton("Add Exercise");
-    private JButton removeButton = new JButton("Remove Exercise");
-    private JButton historyButton = new JButton("Workout History");
-    private JButton backButton = new JButton("Back");
+    private final JPanel scrollPanel = new JPanel();
+    private final JButton addButton = new JButton("Add Exercise");
+    private final JButton removeButton = new JButton("Remove Exercise");
+    private final JButton backButton = new JButton("Back");
 
     /**
      * Each workout has a workout number, which is set by WorkoutSelectionController after selecting a workout. The
      * number is set depending on which Workout is selected, e.g. Workout 1 = 1, Workout 2 = 2, etc. This helps the code
      * identify which workout we're currently on and will carry through each View code related to that workout, so if
-     * we select "Add Exercise" the new window that pops up will also have the workout number set.
+     * we select "Add Exercise" the new window that pops up will also have the workout number set to the current one.
      */
     public int workoutNumber = 0;
 
     /**
      * Represents the view for the Workout Menu.
      */
-    public WorkoutMenu() {
+    public WorkoutMenuView() {
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(320, 564);
@@ -80,6 +79,7 @@ public class WorkoutMenu extends JFrame {
         scrollPane.setPreferredSize(new Dimension(230, 240));
         displayPanel.add(scrollPane);
 
+        JButton startButton = new JButton("Start Workout");
         startButton.setFocusable(false);
         startButton.setSize(new Dimension(200,30));
         startButton.setLocation(52,120);
@@ -90,6 +90,7 @@ public class WorkoutMenu extends JFrame {
         addButton.setLocation(52,420);
         addButton.setFont(new Font("Dialog", Font.BOLD, 13));
 
+        JButton historyButton = new JButton("Workout History");
         historyButton.setFocusable(false);
         historyButton.setSize(new Dimension(200,30));
         historyButton.setLocation(52,480);
