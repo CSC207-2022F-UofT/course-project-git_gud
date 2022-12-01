@@ -13,6 +13,7 @@ import usecases.UseCaseLogin;
 import usecases.UseCaseRegister;
 
 public class LogInController {
+
     /**
      * The Controller for the loginButton takes in inputs from the text fields
      * of the given UI page, and determine which use case to select.
