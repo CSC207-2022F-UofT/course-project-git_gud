@@ -7,7 +7,7 @@ public class RoutineManagerView {
 
     public RoutineManagerView(RoutineManager userWorkout) {
 
-        WorkoutSelection theView = new WorkoutSelection();
+        WorkoutSelectionView theView = new WorkoutSelectionView();
         RoutineManager theModel;
         if (userWorkout == null) {
             theModel = new RoutineManager();
