@@ -8,11 +8,19 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * A controller class for AddExerciseMenuView.
+ */
 public class AddExerciseController {
 
     RoutineManager theModel;
     AddExerciseMenuView theView;
 
+    /**
+     * The constructor adds action listeners to all exercise buttons on the display and to the back button.
+     * @param theModel a RoutineManager instance where all the data is stored.
+     * @param theView an AddExerciseMenuView instance representing the current display.
+     */
     public AddExerciseController(RoutineManager theModel, AddExerciseMenuView theView){
 
         this.theModel = theModel;
@@ -23,22 +31,32 @@ public class AddExerciseController {
         this.theView.addBackAction(new BackActionAddExercise());
     }
 
-    class BackActionAddExercise implements ActionListener, ReturnToMenuAdd{
+    /**
+     * An action listener class in charge of returning to WorkoutMenuView once the back button is pressed.
+     */
+    class BackActionAddExercise implements ActionListener, ReturnToMenu{
 
         @Override
         public void actionPerformed(ActionEvent e) {
 
-            returnToMenu(theModel, theView);
+            theView.dispose();
+
+            WorkoutMenuView workoutMenuView = new WorkoutMenuView();
+
+            returnToMenu(theModel, workoutMenuView);
 
         }
 
+        /**
+         * A method overridden from the ReturnToMenu interface, see the JavaDoc over there for more info.
+         * @param theModel a RoutineManager instance where all the data is stored.
+         * @param workoutMenuView a WorkoutMenuView instance representing the display that we're returning to.
+         */
         @Override
-        public void returnToMenu(RoutineManager theModel, AddExerciseMenuView theView) {
+        public void returnToMenu(RoutineManager theModel, WorkoutMenuView workoutMenuView) {
 
             if (theView.getWorkoutNumber()==1){
-                theView.dispose();
 
-                WorkoutMenuView workoutMenuView = new WorkoutMenuView();
                 workoutMenuView.setWorkoutNumber(1);
 
                 new WorkoutMenuController(theModel, workoutMenuView);
@@ -50,9 +68,7 @@ public class AddExerciseController {
                 }
             }
             if (theView.getWorkoutNumber()==2){
-                theView.dispose();
 
-                WorkoutMenuView workoutMenuView = new WorkoutMenuView();
                 workoutMenuView.setWorkoutNumber(2);
 
                 new WorkoutMenuController(theModel, workoutMenuView);
@@ -64,9 +80,7 @@ public class AddExerciseController {
                 }
             }
             if (theView.getWorkoutNumber()==3){
-                theView.dispose();
 
-                WorkoutMenuView workoutMenuView = new WorkoutMenuView();
                 workoutMenuView.setWorkoutNumber(3);
 
                 new WorkoutMenuController(theModel, workoutMenuView);
@@ -78,9 +92,7 @@ public class AddExerciseController {
                 }
             }
             if (theView.getWorkoutNumber()==4){
-                theView.dispose();
 
-                WorkoutMenuView workoutMenuView = new WorkoutMenuView();
                 workoutMenuView.setWorkoutNumber(4);
 
                 new WorkoutMenuController(theModel, workoutMenuView);
@@ -92,9 +104,7 @@ public class AddExerciseController {
                 }
             }
             if (theView.getWorkoutNumber()==5){
-                theView.dispose();
 
-                WorkoutMenuView workoutMenuView = new WorkoutMenuView();
                 workoutMenuView.setWorkoutNumber(5);
 
                 new WorkoutMenuController(theModel, workoutMenuView);

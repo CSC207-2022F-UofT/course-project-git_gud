@@ -29,7 +29,7 @@ public class WorkoutMenuView extends JFrame {
      * Each workout has a workout number, which is set by WorkoutSelectionController after selecting a workout. The
      * number is set depending on which Workout is selected, e.g. Workout 1 = 1, Workout 2 = 2, etc. This helps the code
      * identify which workout we're currently on and will carry through each View code related to that workout, so if
-     * we select "Add Exercise" the new window that pops up will also have the workout number set.
+     * we select "Add Exercise" the new window that pops up will also have the workout number set to the current one.
      */
     public int workoutNumber = 0;
 

@@ -26,14 +26,14 @@ public class AddExerciseMenuView extends JFrame {
      * All other buttons are temporary, these exercises will be pulled from our catalogue.
      */
     JButton backButton = new JButton("Back");
-    JButton tricepDips = new JButton("Tricep Dips");
+    JButton tricepsDips = new JButton("Triceps Dips");
     JButton bicepCurls = new JButton("Bicep Curls");
     JButton militaryPress = new JButton("Military Press");
 
     /**
      * exercises: an Array representing all exercises to be displayed on the scroll panel.
      */
-    JButton[] exercises = {tricepDips, bicepCurls, militaryPress};
+    JButton[] exercises = {tricepsDips, bicepCurls, militaryPress};
 
     /**
      * workoutNumber: an int representing the workout identifier for the specific workout we are currently customizing.
@@ -89,10 +89,10 @@ public class AddExerciseMenuView extends JFrame {
         backButton.setFocusable(false);
         backButton.setFont(new Font("Dialog", Font.BOLD, 15));
 
-        tricepDips.setFocusable(false);
-        tricepDips.setPreferredSize(new Dimension(190,20));
-        tricepDips.setFont(new Font("Dialog", Font.BOLD, 11));
-        scrollPanel.add(tricepDips);
+        tricepsDips.setFocusable(false);
+        tricepsDips.setPreferredSize(new Dimension(190,20));
+        tricepsDips.setFont(new Font("Dialog", Font.BOLD, 11));
+        scrollPanel.add(tricepsDips);
 
         bicepCurls.setFocusable(false);
         bicepCurls.setPreferredSize(new Dimension(190,20));
@@ -143,21 +143,38 @@ public class AddExerciseMenuView extends JFrame {
         errorMessage.setText("You already added " + exercise + "!");
     }
 
+    /**
+     * This method is used to display the confirmation message to the user.
+     * @return a String representing the message to be displayed.
+     */
     public JLabel getConfirmationMessage() {
 
         return confirmationMessage;
     }
 
+    /**
+     * This method is used to display the error message to the user.
+     * @return a String representing the message to be displayed
+     */
     public JLabel getErrorMessage() {
 
         return errorMessage;
     }
 
+    /**
+     * This will set the Workout Number to the Workout we are currently editing.
+     * @param i an int representing the current workout number.
+     */
     public void setWorkoutNumber(int i) {
 
         workoutNumber = i;
     }
 
+    /**
+     * This will return the Workout Number of the current Workout we are on, which is useful for identifying which
+     * Workout we'll be modifying.
+     * @return an int representing this Workout's id number.
+     */
     public int getWorkoutNumber() {
 
         return workoutNumber;

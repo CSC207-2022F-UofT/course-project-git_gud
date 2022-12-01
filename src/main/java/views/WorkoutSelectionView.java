@@ -15,6 +15,7 @@ public class WorkoutSelectionView extends JFrame{
      * Each one of these JButtons represents one of the five workout routines that the user can select. Clicking on one
      * will take you to the Workout Menu where you'll be able to start, add/remove exercises, or view the workout
      * history.
+     * The backButton will take you back to SettingsPage.
      */
     public JButton workout1Button = new JButton("Workout 1");
     public JButton workout2Button = new JButton("Workout 2");

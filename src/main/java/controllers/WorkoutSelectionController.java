@@ -8,11 +8,20 @@ import views.dashboard.SettingsPage;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * A controller class for WorkoutSelectionView.
+ */
 public class WorkoutSelectionController {
 
     private final RoutineManager theModel;
     private final WorkoutSelectionView theView;
 
+    /**
+     * The constructor adds action listeners to the back button and to each of the five workout buttons.
+     * @param theModel a RoutineManager instance representing the data stored and business methods
+     *                 regarding workout routines.
+     * @param theView a WorkoutSelectionView instance representing the current display show.
+     */
     public WorkoutSelectionController(RoutineManager theModel, WorkoutSelectionView theView){
 
         this.theModel = theModel;
@@ -22,6 +31,10 @@ public class WorkoutSelectionController {
         this.theView.addSettingsDisplay(new SettingsDisplay());
     }
 
+    /**
+     * An action listener class in charge of displaying the WorkoutMenuView once one of the five Workout buttons is
+     * pressed.
+     */
     class WorkoutMenuDisplay implements ActionListener, DisplayExercisesWorkoutMenu {
 
         @Override
@@ -74,6 +87,9 @@ public class WorkoutSelectionController {
             }
         }
 
+        /**
+         * A method overridden from the DisplayExercisesWorkoutMenu interface, check the JavaDoc there for more details.
+         */
         @Override
         public void displayExercises(RoutineManager theModel, WorkoutMenuView workoutMenuView, int workoutNumber) {
             if (!theModel.getWorkouts()[workoutNumber-1].getWorkout().isEmpty()){
@@ -84,6 +100,9 @@ public class WorkoutSelectionController {
         }
     }
 
+    /**
+     * An action listener class in charge of displaying the SettingsPage once tha backButton is pressed by the user.
+     */
     class SettingsDisplay implements ActionListener {
 
         @Override

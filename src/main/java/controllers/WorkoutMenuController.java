@@ -9,11 +9,20 @@ import views.WorkoutSelectionView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * A controller class for WorkoutMenuView.
+ */
 public class WorkoutMenuController {
 
     private final RoutineManager theModel;
     private final WorkoutMenuView theView;
 
+    /**
+     * The constructor adds action listeners to the back, start exercise, add exercise, remove exercise, and workout
+     * history buttons.
+     * @param theModel a RoutineManager instance where all the data is stored.
+     * @param theView a WorkoutMenuView instance representing the current display.
+     */
     public WorkoutMenuController(RoutineManager theModel, WorkoutMenuView theView){
 
         this.theModel = theModel;
@@ -25,6 +34,9 @@ public class WorkoutMenuController {
         this.theView.addRemoveExerciseDisplay(new RemoveExerciseDisplay());
     }
 
+    /**
+     * An action listener class in charge of returning to WorkoutSelectionView once the back button is pressed.
+     */
     class WorkoutSelectionDisplay implements ActionListener {
 
         @Override
@@ -36,6 +48,9 @@ public class WorkoutMenuController {
         }
     }
 
+    /**
+     * An action listener class in charge of displaying AddExerciseMenuView once the add exercise button is pressed.
+     */
     class AddExerciseDisplay implements ActionListener {
 
 
@@ -90,6 +105,10 @@ public class WorkoutMenuController {
         }
     }
 
+    /**
+     * An action listener class in charge of displaying RemoveExerciseMenuView once the remove exercise button is
+     * pressed.
+     */
     class RemoveExerciseDisplay implements ActionListener, DisplayExercisesRemoveMenu {
 
         @Override
@@ -156,6 +175,9 @@ public class WorkoutMenuController {
             }
         }
 
+        /**
+         * A method overridden from the DisplayExercisesRemoveMenu interface, check the JavaDoc there for more details.
+         */
         @Override
         public void displayExercises(RoutineManager theModel, RemoveExerciseMenuView removeExerciseMenuView, int workoutNumber) {
             if (!theModel.getWorkouts()[workoutNumber-1].getWorkout().isEmpty()) {
