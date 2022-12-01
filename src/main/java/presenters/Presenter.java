@@ -2,8 +2,9 @@
  * This presenter class contains methods to be called for different use cases which updates the view
  */
 package presenters;
+import views.ViewLoginPage;
 import views.dashboard.*;
-import views.*;
+
 
 public class Presenter {
 

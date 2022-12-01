@@ -74,8 +74,8 @@ public class ViewLoginPage implements ActionListener {
         frame.add(loginButton);
         frame.add(signupButton);
         frame.setVisible(true);
-
     }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == loginButton){
