@@ -65,6 +65,7 @@ public class LogInController {
      */
     public Boolean existsInDatabase(String username){
         try {
+//            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBC", "root", "root1234");
             Connection connection = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/JDBCT?allowMultiQueries=true", "root", "root");
             Statement statement = connection.createStatement();
@@ -82,7 +83,7 @@ public class LogInController {
     }
     public Boolean passwordCorrectness(String password){
         try {
-            //Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBC", "root", "root1234");
+//            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBC", "root", "root1234");
             Connection connection = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/JDBCT?allowMultiQueries=true", "root", "root");
             Statement statement = connection.createStatement();

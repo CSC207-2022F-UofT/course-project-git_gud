@@ -14,7 +14,7 @@ public class UseCaseRegister {
     public void newUser(String username, String password, String email) {
         EntitiyAppUser x = new EntitiyAppUser(username, password, email);
         try {
-            //Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBC", "root", "root1234");
+//            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBC", "root", "root1234");
             Connection connection = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/JDBCT?allowMultiQueries=true", "root", "root");
             String SQL = "INSERT into dashtest(username, password, email)" + "VALUES (?, ?, ?)";
