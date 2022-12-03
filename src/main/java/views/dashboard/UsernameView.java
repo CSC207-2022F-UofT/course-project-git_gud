@@ -73,7 +73,7 @@ public class UsernameView {
                 }
                 if (e.getSource() == backButton){
                     SettingsPage newPage = new SettingsPage();
-                    newPage.CreateSettingsPage();
+                    newPage.CreateSettingsPage(null);
                     usernameFrame.dispose();
                 }
 

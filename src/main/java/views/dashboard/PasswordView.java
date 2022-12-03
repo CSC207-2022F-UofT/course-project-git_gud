@@ -76,7 +76,7 @@ public class PasswordView {
                 }
                 if (e.getSource() == backButton){
                     SettingsPage newPage = new SettingsPage();
-                    newPage.CreateSettingsPage();
+                    newPage.CreateSettingsPage(null);
                     passwordFrame.dispose();
                 }
 

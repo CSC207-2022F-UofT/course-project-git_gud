@@ -66,7 +66,7 @@ public class DeleteView {
                 }
                 if (e.getSource() == backButton){
                     SettingsPage newPage = new SettingsPage();
-                    newPage.CreateSettingsPage();
+                    newPage.CreateSettingsPage(null);
                     deleteFrame.dispose();
                 }
 
