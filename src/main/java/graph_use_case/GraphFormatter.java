@@ -1,9 +1,6 @@
 package graph_use_case;
 
-import views.BodyweightScreen;
-import views.ErrorScreen;
-import views.ORMScreen;
-import views.VolumeScreen;
+import views.*;
 
 import java.util.LinkedHashMap;
 
@@ -19,22 +16,8 @@ public class GraphFormatter implements GraphPresenter{
 // Need to figure out how to make the presenter do different things depending on the button clicked.
     @Override
     public GraphResponseModel prepareSuccessView(GraphResponseModel graphResponseModel) {
-        if(graphResponseModel.getButtontext() == "Bodyweight") {
-            BodyweightScreen b = new BodyweightScreen(graphResponseModel.getData());
-            b.setVisible(true);
-        }
 
-        if(graphResponseModel.getButtontext() == "Volume"){
-            VolumeScreen v = new VolumeScreen(graphResponseModel.getData());
-            v.setVisible(true);
-
-        }
-
-        if(graphResponseModel.getButtontext() == "ORM") {
-            ORMScreen o = new ORMScreen(graphResponseModel.getData());
-            o.setVisible(true);
-        }
-
+    // any formatting can be done here before the response model is returned.
 
         return graphResponseModel;
     }
@@ -47,5 +30,8 @@ public class GraphFormatter implements GraphPresenter{
         LinkedHashMap l = new LinkedHashMap<>();
         GraphResponseModel g = new GraphResponseModel(l, "abc");
         return g;
+
+
+
     }
 }

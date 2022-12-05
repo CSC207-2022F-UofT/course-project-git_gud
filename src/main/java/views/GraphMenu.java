@@ -1,6 +1,7 @@
 package views;
 
 import controllers.GraphController;
+import graph_use_case.GraphResponseModel;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -71,7 +72,24 @@ public class GraphMenu extends JFrame implements ActionListener{
 
 
        // have to call the View controller here
-        controller.plot(username, e.getActionCommand());
+       GraphResponseModel graphResponseModel = controller.plot(username, e.getActionCommand());
+
+        if(graphResponseModel.getButtontext() == "Bodyweight") {
+            BodyweightScreen b = new BodyweightScreen(graphResponseModel.getData());
+            b.setVisible(true);
+        }
+
+        if(graphResponseModel.getButtontext() == "Volume"){
+            VolumeScreen v = new VolumeScreen(graphResponseModel.getData());
+            v.setVisible(true);
+
+        }
+
+        if(graphResponseModel.getButtontext() == "ORM") {
+            ORMScreen o = new ORMScreen(graphResponseModel.getData());
+            o.setVisible(true);
+        }
+
 
 
 
