@@ -46,6 +46,20 @@ public class GraphInteractor implements GraphInputBoundary {
                     requestModel.getButtontext());
             return graphPresenter.prepareSuccessView(responseModel);
         }
+
+        if (requestModel.getButtontext() == "Volume") {
+            GraphResponseModel responseModel = new GraphResponseModel(database.volumedata.get(requestModel.getUsername()),
+                    requestModel.getButtontext());
+            return graphPresenter.prepareSuccessView(responseModel);
+        }
+
+            if (requestModel.getButtontext() == "ORM"){
+                GraphResponseModel responseModel = new GraphResponseModel(database.ormdata.get(requestModel.getUsername()),
+                        requestModel.getButtontext());
+                return graphPresenter.prepareSuccessView(responseModel);
+
+
+        }
         return graphPresenter.prepareFailView();
     }
 
