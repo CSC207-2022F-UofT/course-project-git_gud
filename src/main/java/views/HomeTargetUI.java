@@ -48,4 +48,7 @@ public class HomeTargetUI extends JFrame {
         homeFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         homeFrame.setVisible(true);
     }
+
+    // SettingsPage name = new SettingsPage();
+    // dispose.
 }
