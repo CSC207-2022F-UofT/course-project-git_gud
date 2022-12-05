@@ -25,8 +25,8 @@ class EditTargetTest {
         addTarget.addTarget();
         EditTarget editTarget = new EditTarget(targets, new Date(), (float) 25.4);
         editTarget.makeEdit();
-        Float valueTarget = targets.targetList.get(0).getValue();
-        assertEquals(25.4, Optional.ofNullable(valueTarget)); //asserts that the target's value
+        Double valueTarget = Double.valueOf(targets.targetList.get(0).getValue());
+        assertEquals(25.4, Optional.of(valueTarget)); //asserts that the target's value
         // has been changed to 25.4
     }
 
