@@ -44,28 +44,6 @@ public class WorkoutMenuView extends JFrame {
         this.setLayout(null);
         this.setTitle("Workout Menu");
 
-        // TEMPORARY until certain features are implemented
-        JLabel message1 = new JLabel("The Start Workout, Workout History, and all the exercise");
-        message1.setBounds(0,40,300,100);
-        message1.setFont(new Font("Dialog", Font.BOLD, 10));
-        message1.setForeground(Color.RED);
-        message1.setVisible(true);
-
-        // TEMPORARY until certain features are implemented
-        JLabel message2 = new JLabel("buttons from THIS menu don't do anything yet as they ");
-        message2.setBounds(0,50,300,100);
-        message2.setFont(new Font("Dialog", Font.BOLD, 10));
-        message2.setForeground(Color.RED);
-        message2.setVisible(true);
-
-        // TEMPORARY until certain features are implemented
-        JLabel message3 = new JLabel("depend on other features that need to be implemented first.");
-        message3.setBounds(0,60,300,100);
-        message3.setFont(new Font("Dialog", Font.BOLD, 10));
-        message3.setForeground(Color.RED);
-        message3.setVisible(true);
-
-
         JPanel displayPanel = new JPanel();
         displayPanel.setLocation(0, 250);
         displayPanel.setBounds(22, 157, 260, 250);
@@ -104,10 +82,6 @@ public class WorkoutMenuView extends JFrame {
         backButton.setBounds(0,0,100,50);
         backButton.setFocusable(false);
         backButton.setFont(new Font("Dialog", Font.BOLD, 15));
-
-        this.add(message1);
-        this.add(message2);
-        this.add(message3);
 
         this.add(startButton);
         this.add(addButton);

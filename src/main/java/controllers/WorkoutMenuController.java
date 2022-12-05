@@ -183,7 +183,7 @@ public class WorkoutMenuController {
         public void displayExercises(RoutineManager theModel, RemoveExerciseMenuView removeExerciseMenuView, int workoutNumber) {
             if (!theModel.getWorkouts()[workoutNumber-1].getWorkout().isEmpty()) {
                 for (int i = 0; i < theModel.getWorkouts()[workoutNumber - 1].getWorkout().size(); i++) {
-                    removeExerciseMenuView.addExercise(theModel.getWorkouts()[workoutNumber - 1].getWorkout().get(i));
+                    removeExerciseMenuView.addExercise(theModel.getWorkouts()[workoutNumber - 1].getWorkout().get(i).getType());
                 }
             }
         }

@@ -95,7 +95,7 @@ public class WorkoutSelectionController {
         public void displayExercises(RoutineManager theModel, WorkoutMenuView workoutMenuView, int workoutNumber) {
             if (!theModel.getWorkouts()[workoutNumber-1].getWorkout().isEmpty()){
                 for (int i=0; i<theModel.getWorkouts()[workoutNumber-1].getWorkout().size(); i++){
-                    workoutMenuView.addExercise(theModel.getWorkouts()[workoutNumber-1].getWorkout().get(i));
+                    workoutMenuView.addExercise(theModel.getWorkouts()[workoutNumber-1].getWorkout().get(i).getType());
                 }
             }
         }
