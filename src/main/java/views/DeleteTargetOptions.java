@@ -31,6 +31,10 @@ public class DeleteTargetOptions extends JFrame{
         JButton DelORM = types.getButtonORM();
         JButton DelVolume = types.getButtonVolume();
         JButton DelWeight = types.getButtonWeight();
+        JButton backButton = new JButton("Back");
+        backButton.addActionListener(e -> frame.dispose());
+        backButton.setBounds(0,0,100, 50);
+        frame.add(backButton);
 
         DeleteController deleteControllerORM = new DeleteController(TargetORM.getInstance());
         String stringORM = deleteControllerORM.delete(); //calls the controller method to delete a target

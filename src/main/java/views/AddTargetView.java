@@ -34,7 +34,6 @@ public class AddTargetView extends JFrame{
         JTextField valueField = enterUI.getValueField();
         JTextField dateField = enterUI.getDateField();
         JButton confirmButton = enterUI.getConfirmButton();
-
         // action listener for when the confirm button is clicked. The action listener stores the target value
         // and date entered by the user as instance variables of this class
         confirmButton.addActionListener(e -> {
