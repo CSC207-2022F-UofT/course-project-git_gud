@@ -44,6 +44,7 @@ public class AddTargetView extends JFrame{
                 frame.dispose();
                 AddController addController = new AddController(targets, date, value);
                 addController.callAdd();
+                dispose();
             } catch (ParseException ex) {
                 throw new RuntimeException(ex);
             }
