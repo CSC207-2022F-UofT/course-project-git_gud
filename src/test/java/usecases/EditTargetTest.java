@@ -4,12 +4,11 @@ import entities.Targets;
 import org.junit.jupiter.api.Test;
 
 import java.util.Date;
-import java.util.Optional;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class EditTargetTest {
     Targets targets = Targets.getInstance();
+    private static final double TOLERANCE = 0.00001;
     @Test
     public void editTargetEmptyTargetList() {
         assertEquals(0, targets.targetList.size());
@@ -25,8 +24,8 @@ class EditTargetTest {
         addTarget.addTarget();
         EditTarget editTarget = new EditTarget(targets, new Date(), (float) 25.4);
         editTarget.makeEdit();
-        Double valueTarget = Double.valueOf(targets.targetList.get(0).getValue());
-        assertEquals(25.4, Optional.of(valueTarget)); //asserts that the target's value
+        float valueOfExistingTarget = targets.targetList.get(0).getValue();
+        assertTrue((25.4 - valueOfExistingTarget) < TOLERANCE); //asserts that the target's value
         // has been changed to 25.4
     }
 

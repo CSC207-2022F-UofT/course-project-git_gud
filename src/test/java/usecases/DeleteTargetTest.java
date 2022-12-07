@@ -8,6 +8,7 @@ import java.util.Date;
 import static org.junit.jupiter.api.Assertions.*;
 
 class DeleteTargetTest {
+    private static final double TOLERANCE = 0.00001;
         Targets targets = Targets.getInstance();
         @Test
         public void deleteOneTarget() {
@@ -31,10 +32,11 @@ class DeleteTargetTest {
             deleteTarget.deleteTarget();
             float valueOfExistingTarget = targets.targetList.get(0).getValue();
             assertEquals(1, targets.targetList.size()); // there is only one target in the list
-            assertEquals(25.4 , valueOfExistingTarget); //the most recently added target was deleted and the
+            assertTrue((25.4 - valueOfExistingTarget) < TOLERANCE); //the most recently added target was deleted and the
             // old target still exists in the target list
 
         }
+
 
 
 }
