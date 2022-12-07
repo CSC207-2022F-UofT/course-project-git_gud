@@ -10,6 +10,10 @@ import java.sql.SQLException;
 
 @SuppressWarnings("Convert2Lambda")
 public class WeightView {
+    /**
+     * WeightView holds a constructor that instantiates a new view model for the usecase of changing a USER's weight
+     * stats
+     */
     public JPanel weight;
     public WeightView(){}
 

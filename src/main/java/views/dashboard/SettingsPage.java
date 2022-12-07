@@ -1,6 +1,9 @@
 package views.dashboard;
 
 
+import controllers.GraphController;
+import graph_use_case.GraphInteractor;
+import graph_use_case.GraphResponseFormatter;
 import management.RoutineManager;
 import views.RoutineManagerView;
 import views.*;
@@ -15,6 +18,7 @@ public class SettingsPage {
     /***
      * SettingsPage is called by Main and builds a GUI with all the available settings for the app. From here you can
      * pick what setting to perform which then calls upon other view pages.
+     * @author bdls-jamal
      */
 
     public SettingsPage() {}
@@ -138,10 +142,13 @@ public class SettingsPage {
                 if (e.getSource() == goToGraphs){
                     settingsFrame.dispose();
                     //view from Tej goes here
+                    GraphMenu graphView = new GraphMenu(new GraphController(new GraphInteractor(new GraphResponseFormatter())), "abc");
+
                 }
                 if (e.getSource() == goToGoals){
                     settingsFrame.dispose();
                     //view from Jhalak goes here
+                    HomeTargetUI targetView = new HomeTargetUI();
                 }
                 if (e.getSource() == goToWorkouts){
                     settingsFrame.dispose();
