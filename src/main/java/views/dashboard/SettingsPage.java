@@ -142,7 +142,7 @@ public class SettingsPage {
                 if (e.getSource() == goToGraphs){
                     settingsFrame.dispose();
                     //view from Tej goes here
-                    GraphMenu graphView = new GraphMenu(new GraphController(new GraphInteractor(new GraphResponseFormatter())), "test");
+                    GraphMenu graphView = new GraphMenu(new GraphController(new GraphInteractor(new GraphResponseFormatter())), "abc");
 
                 }
                 if (e.getSource() == goToGoals){
