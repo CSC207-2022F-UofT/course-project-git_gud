@@ -1,8 +1,7 @@
 package controllers;
 
 import management.RoutineManager;
-import views.AddExerciseMenuView;
-import views.WorkoutMenuView;
+import views.*;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

@@ -4,6 +4,7 @@ import usecases.*;
 
 import java.sql.*;
 
+@SuppressWarnings("ALL")
 public class DashboardController {
     public static final Connection connection1;
 
