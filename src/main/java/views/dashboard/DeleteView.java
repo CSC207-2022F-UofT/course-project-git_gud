@@ -65,7 +65,6 @@ public class DeleteView {
                     }
                     deleteFrame.dispose();
                     ViewLoginPage newLoginPage = new ViewLoginPage();
-                    //newLoginPage.CreateLoginPage();
                 }
                 if (e.getSource() == backButton){
                     SettingsPage newPage = new SettingsPage();

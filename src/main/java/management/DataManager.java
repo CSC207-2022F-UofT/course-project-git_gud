@@ -3,6 +3,7 @@ package management;
 import java.sql.*;
 import controllers.DashboardController;
 
+@SuppressWarnings("ALL")
 public class DataManager {
     /***
      * Data_Manager is a class that

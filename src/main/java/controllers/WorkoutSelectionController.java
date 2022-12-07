@@ -1,8 +1,7 @@
 package controllers;
 
 import management.RoutineManager;
-import views.WorkoutSelectionView;
-import views.WorkoutMenuView;
+import views.*;
 import views.dashboard.SettingsPage;
 
 import java.awt.event.ActionEvent;
