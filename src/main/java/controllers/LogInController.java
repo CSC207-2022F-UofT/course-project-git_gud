@@ -17,9 +17,9 @@ public class LogInController {
      * of the given UI page, and determine which use case to select.
      */
     public void loginButton(ViewLoginPage page) throws SQLException {
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBC", "root", "root1234");
-//        Connection connection = DriverManager.getConnection(
-//                "jdbc:mysql://localhost:3306/JDBCT?allowMultiQueries=true", "root", "root");
+//        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBC", "root", "root1234");
+        Connection connection = DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/JDBCT?allowMultiQueries=true", "root", "root");
         String username = page.usernameField.getText();
         String password = String.valueOf(page.passwordField.getPassword());
 
@@ -44,6 +44,7 @@ public class LogInController {
      * of the given UI page, and determine which use case to select.
      */
     public void signupButton(ViewLoginPage page) throws SQLException {
+//        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBC", "root", "root1234");
         Connection connection = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/JDBCT?allowMultiQueries=true", "root", "root");
         String username = page.usernameField.getText();
