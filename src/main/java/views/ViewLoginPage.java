@@ -2,6 +2,10 @@ package views;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 import controllers.LogInController;
 
 //User Interface
@@ -82,10 +86,18 @@ public class ViewLoginPage implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == loginButton){
             LogInController x = new LogInController();
-            x.loginButton(this);
+            try {
+                x.loginButton(this);
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
         } else if (e.getSource()== signupButton) {
             LogInController y = new LogInController();
-            y.signupButton(this);
+            try {
+                y.signupButton(this);
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
         }
     }
 }

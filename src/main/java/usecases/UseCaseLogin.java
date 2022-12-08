@@ -6,7 +6,6 @@ import presenters.Presenter;
 import views.ViewLoginPage;
 
 public class UseCaseLogin{
-
     /**
      * This method calls the login method from the Presenter class after the user successfully login
      */
