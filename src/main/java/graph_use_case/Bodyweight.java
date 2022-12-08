@@ -13,25 +13,41 @@ public class Bodyweight {
     LinkedHashMap<Date, Float> data;
     Float current;
 
-    //Initializes an instance of the bodyweight class for a user that keeps track of current weight and weight over time.
+
+
+    /**
+     * Initializes an instance of the bodyweight class for a user that keeps track of current weight and weight over time.
+     * @param currentweight the weight that the user currently has can be input and stored
+     */
     public Bodyweight(Float currentweight){
         this.data = new LinkedHashMap<Date, Float>();
         this.current = currentweight;
 
     }
 
-    // adds bodyweight value to the hashmap. Users can use this weekly to keep a record that will then be graphed.
+
+    /**
+     *     Adds bodyweight value to the hashmap. Users can use this weekly to keep a record that will then be graphed.
+     * @param date the date that the value was entered on
+     * @param weight the value being entered
+     */
     public void addBodyweight(Date date, Float weight){
         this.data.put(date, weight);
     }
 
-    // getter method to get current weight
+    /**
+     *  getter method to get current weight
+     * @return the current weight
+     */
     public Float getCurrent(){
         return this.current;
     }
 
 
-    // setter method to set current weight
+    /**
+     *  setter method to set current weight
+     * @param currentweight sets this as the user's currentweight
+     */
     public void setCurrent(Float currentweight){
         this.current = currentweight;
     }

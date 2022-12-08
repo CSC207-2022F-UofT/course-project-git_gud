@@ -4,6 +4,11 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
+/**
+ * This is just an example of some input that could be used to make the graphing feature work. Either way, the
+ * input will be stored in hashmaps, so once this data works with the functions, it shows that the functions
+ * work effectively.
+ */
 public class ExampleDatabase {
 
 
