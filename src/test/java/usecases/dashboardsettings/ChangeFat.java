@@ -1,9 +1,9 @@
-package usecases;
+package usecases.dashboardsettings;
 
-import java.sql.PreparedStatement;
 import management.DataManager;
 
-@SuppressWarnings("ALL")
+import java.sql.PreparedStatement;
+
 public class ChangeFat extends DataManager {
     public static PreparedStatement changeFat() {
         return DataManager.fat;

@@ -3,6 +3,7 @@ package management;
 import java.sql.*;
 import controllers.DashboardController;
 
+@SuppressWarnings("ALL")
 public class DataManager {
     /***
      * Data_Manager is a class that
@@ -16,6 +17,9 @@ public class DataManager {
 
     static {
         try {
+            /** TODO
+             Change dashtest to whatever your chosen table name is. Change this is every location you see it.
+             */
             email = DashboardController.connection1.prepareStatement(
                     "UPDATE dashtest SET email = ? WHERE email = ?");
             password = DashboardController.connection1.prepareStatement(

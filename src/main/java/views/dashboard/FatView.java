@@ -8,8 +8,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 
+import static management.DashboardViewSetter.buttonSetter;
+import static management.DashboardViewSetter.viewSetter;
+
 @SuppressWarnings("Convert2Lambda")
 public class FatView {
+    /**
+     * FatView holds a constructor that instantiates a new view model for the usecase of changing a USER's fat stats
+     */
     public JPanel fat;
     public FatView() {}
 
@@ -21,31 +27,14 @@ public class FatView {
         fatFrame.setTitle("Change Body Fat");
 
         fat = new JPanel();
-        fat.setLocation(0, 250);
-        fat.setBounds(50, 144, 200, 275);
-        fat.setBackground(Color.lightGray);
-        fat.setLayout(new FlowLayout(FlowLayout.CENTER));
 
         JTextField usernameInput = new JTextField();
-        usernameInput.setPreferredSize(new Dimension(150, 20));
-        usernameInput.setFont(new Font("Dialog", Font.BOLD, 7));
-        usernameInput.setText("Please Enter Your Current Username");
-
-
         JTextField newFatInput = new JTextField();
-        newFatInput.setPreferredSize(new Dimension(150, 20));
-        newFatInput.setFont(new Font("Dialog", Font.BOLD, 7));
-        newFatInput.setText("Please Enter Your New Body Fat");
 
         JButton submitButton = new JButton();
-        submitButton.setText("Submit");
-        submitButton.setFocusable(false);
-        submitButton.setFont(new Font("Dialog", Font.BOLD, 10));
-
         JButton backButton = new JButton();
-        backButton.setText("Go Back");
-        backButton.setFocusable(false);
-        backButton.setFont(new Font("Dialog", Font.BOLD, 10));
+
+        fatViewSetter(fat, submitButton, backButton, newFatInput, usernameInput);
 
         fat.add(usernameInput);
         fat.add(newFatInput);
@@ -81,5 +70,16 @@ public class FatView {
         };
         submitButton.addActionListener(submission);
         backButton.addActionListener(submission);
+    }
+    public static void fatViewSetter(JPanel viewType, JButton submitButton,
+                                        JButton backButton, JTextField useCaseInput, JTextField userNameInput) {
+        viewSetter(viewType, useCaseInput);
+        useCaseInput.setText("Please Enter Your New Body Fat");
+
+        userNameInput.setPreferredSize(new Dimension(150, 20));
+        userNameInput.setFont(new Font("Dialog", Font.BOLD, 7));
+        userNameInput.setText("Please Enter Your Current Username");
+
+        buttonSetter(submitButton, backButton);
     }
 }

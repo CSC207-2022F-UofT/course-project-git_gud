@@ -1,20 +1,26 @@
 package views.dashboard;
 
 
+import controllers.GraphController;
+import graph_use_case.GraphInteractor;
+import graph_use_case.GraphResponseFormatter;
 import management.RoutineManager;
+import views.GraphMenu;
+import views.HomeTargetUI;
 import views.RoutineManagerView;
-import views.*;
+import views.ViewLoginPage;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-@SuppressWarnings("Convert2Lambda")
+@SuppressWarnings("ALL")
 public class SettingsPage {
     /***
      * SettingsPage is called by Main and builds a GUI with all the available settings for the app. From here you can
      * pick what setting to perform which then calls upon other view pages.
+     * @author bdls-jamal
      */
 
     public SettingsPage() {}
@@ -69,16 +75,8 @@ public class SettingsPage {
 
         horizontalLine.setOrientation(SwingConstants.HORIZONTAL);
 
-        changeUsername.setFont(new Font("Dialog", Font.BOLD, 10));
-        changeEmail.setFont(new Font("Dialog", Font.BOLD, 10));
-        changePassword.setFont(new Font("Dialog", Font.BOLD, 10));
-        deleteAccount.setFont(new Font("Dialog", Font.BOLD, 10));
-        logOut.setFont(new Font("Dialog", Font.BOLD, 10));
-        changeWeight.setFont(new Font("Dialog", Font.BOLD, 10));
-        changeFat.setFont(new Font("Dialog", Font.BOLD, 10));
-        goToGraphs.setFont(new Font("Dialog", Font.BOLD, 10));
-        goToGoals.setFont(new Font("Dialog", Font.BOLD, 10));
-        goToWorkouts.setFont(new Font("Dialog", Font.BOLD, 10));
+        fontSetting(changeUsername, changeEmail, changePassword, deleteAccount, logOut);
+        fontSetting(changeWeight, changeFat, goToGraphs, goToGoals, goToWorkouts);
 
         dashboard.add(changeUsername);
         dashboard.add(changeEmail);
@@ -123,7 +121,6 @@ public class SettingsPage {
                 if (e.getSource() == logOut) {
                     settingsFrame.dispose();
                     ViewLoginPage newLoginPage = new ViewLoginPage();
-                    //newLoginPage.CreateLoginPage();
                 }
                 if (e.getSource() == changeWeight) {
                     settingsFrame.dispose();
@@ -137,17 +134,18 @@ public class SettingsPage {
                 }
                 if (e.getSource() == goToGraphs){
                     settingsFrame.dispose();
-                    //view from Tej goes here
+                    GraphMenu graphView = new GraphMenu(new GraphController(
+                            new GraphInteractor(new GraphResponseFormatter())), "abc");
+
                 }
                 if (e.getSource() == goToGoals){
                     settingsFrame.dispose();
-                    //view from Jhalak goes here
+                    HomeTargetUI targetView = new HomeTargetUI();
                 }
                 if (e.getSource() == goToWorkouts){
                     settingsFrame.dispose();
                     if (userWorkout == null) {
                         RoutineManagerView routineView = new RoutineManagerView(null);
-                        //routineView.CreateRoutineView();
                     }
                     else {
                         RoutineManagerView routineView = new RoutineManagerView(userWorkout);
@@ -165,5 +163,14 @@ public class SettingsPage {
         goToGoals.addActionListener(action);
         goToGraphs.addActionListener(action);
         goToWorkouts.addActionListener(action);
+    }
+
+    private void fontSetting(JButton changeUsername, JButton changeEmail, JButton changePassword,
+                             JButton deleteAccount, JButton logOut) {
+        changeUsername.setFont(new Font("Dialog", Font.BOLD, 10));
+        changeEmail.setFont(new Font("Dialog", Font.BOLD, 10));
+        changePassword.setFont(new Font("Dialog", Font.BOLD, 10));
+        deleteAccount.setFont(new Font("Dialog", Font.BOLD, 10));
+        logOut.setFont(new Font("Dialog", Font.BOLD, 10));
     }
 }
