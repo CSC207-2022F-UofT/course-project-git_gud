@@ -2,7 +2,7 @@ package DashboardSettings;
 
 import controllers.DashboardController;
 import org.junit.jupiter.api.Test;
-import usecases.dashboardsettings.DeleteAccount;
+import DashboardSettings.usecases.DeleteAccount;
 
 import java.sql.*;
 import static controllers.DashboardController.connection1;

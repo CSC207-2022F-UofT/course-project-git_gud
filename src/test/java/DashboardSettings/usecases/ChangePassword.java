@@ -1,4 +1,4 @@
-package usecases.dashboardsettings;
+package DashboardSettings.usecases;
 
 import management.DataManager;
 
