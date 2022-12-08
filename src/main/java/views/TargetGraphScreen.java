@@ -13,27 +13,47 @@ import java.awt.geom.Line2D;
 import java.util.*;
 import java.util.List;
 
-public class ORMScreen extends JFrame //implements ActionListener
+public class TargetGraphScreen extends JFrame //implements ActionListener
 {
 
-    private LinkedHashMap<Date, Float> orm;
+    private LinkedHashMap<Date, Float> target;
 
 
-    public ORMScreen(LinkedHashMap<Date, Float> orm) {
+    public TargetGraphScreen(LinkedHashMap<Date, Float> target, String buttontext) {
 
-        this.orm = orm;
+        this.target = target;
 
-        JFrame f = new JFrame("Volume Screen");
+
+
+        JFrame f = new JFrame("Target Graphing Screen");
         JPanel panel = new JPanel();
         panel.setLayout(null);
         getContentPane().add(panel);
         setSize(700, 700);
 
-        TitledBorder border = new TitledBorder("PLOT SHOWING ORM PROGRESSION OVER TIME");
-        border.setTitleJustification(TitledBorder.CENTER);
-        border.setTitlePosition(TitledBorder.TOP);
-        border.setTitleColor(Color.MAGENTA);
-        panel.setBorder(border);
+        if(buttontext == "TargetORM") {
+            TitledBorder border = new TitledBorder("PLOT SHOWING TARGET ORM OVER TIME");
+            border.setTitleJustification(TitledBorder.CENTER);
+            border.setTitlePosition(TitledBorder.TOP);
+            border.setTitleColor(Color.BLUE);
+            panel.setBorder(border);
+        }
+
+        if(buttontext == "TargetVolume"){
+            TitledBorder border = new TitledBorder("PLOT SHOWING TARGET VOLUME OVER TIME");
+            border.setTitleJustification(TitledBorder.CENTER);
+            border.setTitlePosition(TitledBorder.TOP);
+            border.setTitleColor(Color.BLUE);
+            panel.setBorder(border);
+        }
+        if(buttontext == "TargetBodyweight"){
+            TitledBorder border = new TitledBorder("PLOT SHOWING TARGET BODYWEIGHT OVER TIME");
+            border.setTitleJustification(TitledBorder.CENTER);
+            border.setTitlePosition(TitledBorder.TOP);
+            border.setTitleColor(Color.BLUE);
+            panel.setBorder(border);
+
+        }
 
 
 
@@ -42,7 +62,7 @@ public class ORMScreen extends JFrame //implements ActionListener
         label1.setFont(new Font("Serif", Font.PLAIN, 16));
         panel.add(label1);
 
-        JLabel label2 = new JLabel("ORM");
+        JLabel label2 = new JLabel("Target");
         label2.setBounds(1, 270, 150, 120);
         label2.setFont(new Font("Serif", Font.PLAIN, 14));
         panel.add(label2);
@@ -119,10 +139,11 @@ public class ORMScreen extends JFrame //implements ActionListener
 
 
 
-        List<Float> vals = new ArrayList<Float>(orm.values());
+        List<Float> vals = new ArrayList<Float>(target.values());
 
 
         for(int i=0; i< vals.size(); i++){
+            graphics.setColor(Color.green);
 
             graphics.fill(new Ellipse2D.Float(100 + 25*i, 595 - vals.get(i),8,8));
 

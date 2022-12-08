@@ -37,29 +37,75 @@ public class GraphInteractor implements GraphInputBoundary {
 // but the actual code must do the same thing, just from the real database
         ExampleDatabase database = new ExampleDatabase();
 
-        if (!database.bodyweightdata.containsKey(requestModel.getUsername())){
-            return graphPresenter.prepareFailView();
-        }
+
 
         if (requestModel.getButtontext() == "Bodyweight"){
             GraphResponseModel responseModel = new GraphResponseModel(database.bodyweightdata.get(requestModel.getUsername()),
                     requestModel.getButtontext());
-            return graphPresenter.prepareSuccessView(responseModel);
+            if(database.bodyweightdata.containsKey(requestModel.getUsername())) {
+                return graphPresenter.prepareSuccessView(responseModel);
+            }else{
+                return graphPresenter.prepareFailView();
+            }
         }
+
 
         if (requestModel.getButtontext() == "Volume") {
             GraphResponseModel responseModel = new GraphResponseModel(database.volumedata.get(requestModel.getUsername()),
                     requestModel.getButtontext());
-            return graphPresenter.prepareSuccessView(responseModel);
+            if(database.volumedata.containsKey(requestModel.getUsername())) {
+                return graphPresenter.prepareSuccessView(responseModel);
+            }else{
+                return graphPresenter.prepareFailView();
+            }
         }
 
-            if (requestModel.getButtontext() == "ORM"){
+        if (requestModel.getButtontext() == "ORM"){
                 GraphResponseModel responseModel = new GraphResponseModel(database.ormdata.get(requestModel.getUsername()),
                         requestModel.getButtontext());
+            if(database.ormdata.containsKey(requestModel.getUsername())) {
                 return graphPresenter.prepareSuccessView(responseModel);
-
-
+            }else{
+                return graphPresenter.prepareFailView();
+            }
         }
+
+
+
+
+
+
+        if (requestModel.getButtontext() == "TargetBodyweight"){
+            GraphResponseModel responseModel = new GraphResponseModel(database.targetbodyweightdata.get
+                    (requestModel.getUsername()), requestModel.getButtontext());
+            if(database.targetbodyweightdata.containsKey(requestModel.getUsername())) {
+                return graphPresenter.prepareSuccessView(responseModel);
+            }else{
+                return graphPresenter.prepareFailView();
+            }
+        }
+        if (requestModel.getButtontext() == "TargetVolume"){
+            GraphResponseModel responseModel = new GraphResponseModel(database.targetvolumedata.get(requestModel.getUsername()),
+                    requestModel.getButtontext());
+            if(database.targetvolumedata.containsKey(requestModel.getUsername())) {
+                return graphPresenter.prepareSuccessView(responseModel);
+            }else{
+                return graphPresenter.prepareFailView();
+            }
+        }
+        if (requestModel.getButtontext() == "TargetORM"){
+            GraphResponseModel responseModel = new GraphResponseModel(database.targetormdata.get(requestModel.getUsername()),
+                    requestModel.getButtontext());
+            if(database.targetormdata.containsKey(requestModel.getUsername())) {
+                return graphPresenter.prepareSuccessView(responseModel);
+            }else{
+                return graphPresenter.prepareFailView();
+            }
+        }
+
+        //Try reducing all the if statements by just using the buttontext directly to look up in the database
+
+
         return graphPresenter.prepareFailView();
     }
 
