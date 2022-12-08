@@ -13,7 +13,6 @@ public class Workout {
 
     /**
      * workout: is an ArrayList object containing Exercise objects representing all the exercises in this workout routine.
-     * THE ArrayList TAKES IN STRING FOR NOW, Exercise CLASS NOT IMPLEMENTED YET.
      */
     ArrayList<Exercise> workout;
     public Workout() {
@@ -23,7 +22,6 @@ public class Workout {
 
     /**
      * Adds an Exercise object to the workout ArrayList at a specified index.
-     * THE exercise PARAMETER SHOULD BE AN Exercise OBJECT BUT I MADE IT A String FOR NOW.
      * @param exercise an Exercise object that will be added to the workout ArrayList.
      */
     public void addExercise(String exercise) {

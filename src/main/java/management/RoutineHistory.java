@@ -43,7 +43,7 @@ public class RoutineHistory {
 
     /**
      * Adds the current date the workout was completed to its respective key in completedWorkouts.
-     * Precondition: The parameter that is passed must be one of the five keys stored in completedWorkouts.
+     * PRECONDITION: The parameter that is passed must be one of the five keys stored in completedWorkouts.
      * @param workout a String representing the key where the current LocalDate will be added.
      */
     public void updateHistory(String workout) {
@@ -65,7 +65,7 @@ public class RoutineHistory {
      * Returns the dates of all workouts that were completed.
      * @return the HashMap object completedWorkouts representing the history of completed workouts
      */
-    public HashMap<String, ArrayList<LocalDate>> getCompleted() {
+    public HashMap<String, ArrayList<LocalDate>> getCompletedWorkouts() {
 
         return this.completedWorkouts;
     }

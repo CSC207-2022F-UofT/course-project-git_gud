@@ -66,4 +66,6 @@ public class RoutineManager {
         return this.workouts;
     }
 
+    public RoutineHistory getHistory() {return this.history;}
+
 }
