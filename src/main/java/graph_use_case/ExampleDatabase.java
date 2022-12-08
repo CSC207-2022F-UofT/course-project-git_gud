@@ -7,7 +7,7 @@ import java.util.LinkedHashMap;
 public class ExampleDatabase {
 
 
-    HashMap<String, LinkedHashMap> bodyweightdata = new LinkedHashMap<>();
+    public HashMap<String, LinkedHashMap> bodyweightdata = new LinkedHashMap<>();
     HashMap<String, LinkedHashMap> volumedata = new LinkedHashMap<>();
 
     HashMap<String, LinkedHashMap> ormdata = new LinkedHashMap<>();
