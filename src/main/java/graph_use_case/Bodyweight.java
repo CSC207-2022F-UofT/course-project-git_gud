@@ -1,6 +1,4 @@
 package graph_use_case;
-
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Date;
 
@@ -13,14 +11,26 @@ public class Bodyweight {
     LinkedHashMap<Date, Float> data;
     Float current;
 
-    //Initializes an instance of the bodyweight class for a user that keeps track of current weight and weight over time.
+    /**
+     * Initializes an instance of the bodyweight class for a user that keeps track of current weight and weight over time.
+     *
+     * @param currentweight
+     */
+
     public Bodyweight(Float currentweight){
         this.data = new LinkedHashMap<Date, Float>();
         this.current = currentweight;
 
     }
 
-    // adds bodyweight value to the hashmap. Users can use this weekly to keep a record that will then be graphed.
+
+
+    /**
+     * // adds bodyweight value to the hashmap. Users can use this weekly to keep a record that will then be graphed.
+     *
+     * @param date
+     * @param weight
+     */
     public void addBodyweight(Date date, Float weight){
         this.data.put(date, weight);
     }
