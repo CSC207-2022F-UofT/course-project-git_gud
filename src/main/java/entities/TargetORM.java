@@ -16,7 +16,7 @@ public class TargetORM extends Targets{
      *
      * constructor for class TargetWeight
      */
-    private TargetORM(){
+    TargetORM(){
         targetORMList = new ArrayList<Target>();
     }
 
