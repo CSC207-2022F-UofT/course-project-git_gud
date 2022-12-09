@@ -1,5 +1,6 @@
-package management;
+package workoutTests;
 
+import management.Workout;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

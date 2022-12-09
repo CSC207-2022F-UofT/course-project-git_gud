@@ -1,5 +1,6 @@
-package management;
+package workoutTests;
 
+import management.RoutineManager;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -27,8 +28,8 @@ class RoutineManagerTest {
         r.completeWorkout(r.getWorkouts()[3]);
         r.completeWorkout(r.getWorkouts()[3]);
 
-        assertEquals(1, r.getHistory().completedWorkouts.get("Workout 1").size());
-        assertEquals(0, r.getHistory().completedWorkouts.get("Workout 2").size());
-        assertEquals(2, r.getHistory().completedWorkouts.get("Workout 4").size());
+        assertEquals(1, r.getHistory().getCompletedWorkouts().get("Workout 1").size());
+        assertEquals(0, r.getHistory().getCompletedWorkouts().get("Workout 2").size());
+        assertEquals(2, r.getHistory().getCompletedWorkouts().get("Workout 4").size());
     }
 }

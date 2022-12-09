@@ -16,7 +16,7 @@ public class TargetVolume extends Targets{
      *
      * constructor for class TargetWeight
      */
-    TargetVolume(){
+    public TargetVolume(){
         targetVolumeList = new ArrayList<Target>();
     }
 

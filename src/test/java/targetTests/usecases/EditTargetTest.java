@@ -1,7 +1,9 @@
-package usecases;
+package targetTests.usecases;
 
 import entities.Targets;
 import org.junit.jupiter.api.Test;
+import usecases.AddTarget;
+import usecases.EditTarget;
 
 import java.util.Date;
 import static org.junit.jupiter.api.Assertions.*;

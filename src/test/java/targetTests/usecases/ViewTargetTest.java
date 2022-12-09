@@ -1,7 +1,9 @@
-package usecases;
+package targetTests.usecases;
 
 import entities.Targets;
 import org.junit.jupiter.api.Test;
+import usecases.AddTarget;
+import usecases.ViewTarget;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

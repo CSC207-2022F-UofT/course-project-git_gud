@@ -1,5 +1,6 @@
-package entities;
+package targetTests.entities;
 
+import entities.Target;
 import org.junit.jupiter.api.Test;
 
 import java.text.ParseException;
