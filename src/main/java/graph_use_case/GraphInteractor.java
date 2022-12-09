@@ -3,10 +3,14 @@ package graph_use_case;
 import java.util.LinkedHashMap;
 
 /**
- * This class connects the input with the output, and also gives the output to the GraphPresenter. It takes in
- * a GraphRequestModel as the input. If there is something wrong, for example no data is given in the RequestModel,
- * then it tells the GraphPresenter to give the failure view. Otherwise, it creates a GraphResponseModel object as
- * output, and tells the presenter to use it to prepare the success view.
+ * This class connects the input with the output, and also gives the output to the GraphPresenter.
+ *
+ * THIS CODE USES AN EXAMPLE DATABASE. THIS IS BECAUSE THE PERSON RESPONSIBLE FOR SAVING USER INPUT AND MAKING IT
+ * ACCESSIBLE DID NOT DO SO, AND THUS THIS CLASS HAS NOWHERE TO GET THE DATA FROM. BUT IT DOES WORK PERFECTLY USING SOME
+ * ARBITRARY DATA.
+ *
+ * Also, this plot method has a code smell. It's a bloater, but I was running out of time and didn't get to clean it up.
+ *
  */
 
 public class GraphInteractor implements GraphInputBoundary {
@@ -19,13 +23,21 @@ public class GraphInteractor implements GraphInputBoundary {
     }
 
 
-    //will need to check for the corresponding LinkedHashmap that is saved in our database that corresp. to username.
+
+
+
+    /**The plot method takes in a GraphRequestModel as the input. If there is something wrong, for example no data is given
+     * in the RequestModel,
+     * then it tells the GraphPresenter to give the failure view. Otherwise, it creates a GraphResponseModel object as
+     * output, and tells the presenter to use it to prepare the success view.
+     *
+     * @param requestModel this is an object containing all the information that the interactor needs to
+     *                     find the right output in the database
+     *
+     * @return returns a responsemodel, which has the required data that has been retrieved from the database.
+     */
     @Override
     public GraphResponseModel plot(GraphRequestModel requestModel) {
-//        if (we check and the requestModel.getbuttontext is empty for the user in the database)
-//            return graphPresenter.prepareFailView("There is no data to display");
-//        }
-
 // if buttontext== bodyweight, we get the bodyweight Hashmap from the database
 // if buttontext== volume, we get volume Hashmap etc...
 
@@ -33,11 +45,9 @@ public class GraphInteractor implements GraphInputBoundary {
 //        return graphPresenter.prepareSuccessView(responseModel);
 
 
+
 // below is not the actual code... its just to test using an example database called ExampleDatabase
-// but the actual code must do the same thing, just from the real database
         ExampleDatabase database = new ExampleDatabase();
-
-
 
         if (requestModel.getButtontext() == "Bodyweight"){
             GraphResponseModel responseModel = new GraphResponseModel(database.bodyweightdata.get(requestModel.getUsername()),
@@ -69,8 +79,6 @@ public class GraphInteractor implements GraphInputBoundary {
                 return graphPresenter.prepareFailView();
             }
         }
-
-
 
 
 
