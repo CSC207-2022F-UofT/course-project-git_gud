@@ -2,8 +2,8 @@ package views.dashboard;
 
 
 import controllers.GraphController;
+import graph_use_case.GraphFormatter;
 import graph_use_case.GraphInteractor;
-import graph_use_case.GraphResponseFormatter;
 import management.RoutineManager;
 import views.GraphMenu;
 import views.HomeTargetUI;
@@ -135,7 +135,7 @@ public class SettingsPage {
                 if (e.getSource() == goToGraphs){
                     settingsFrame.dispose();
                     GraphMenu graphView = new GraphMenu(new GraphController(
-                            new GraphInteractor(new GraphResponseFormatter())), "abc");
+                            new GraphInteractor(new GraphFormatter())), "abc");
 
                 }
                 if (e.getSource() == goToGoals){
