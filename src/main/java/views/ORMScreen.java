@@ -13,15 +13,15 @@ import java.awt.geom.Line2D;
 import java.util.*;
 import java.util.List;
 
-public class VolumeScreen extends JFrame //implements ActionListener
+public class ORMScreen extends JFrame //implements ActionListener
 {
 
-    private LinkedHashMap<Date, Float> volume;
+    private LinkedHashMap<Date, Float> orm;
 
 
-    public VolumeScreen(LinkedHashMap<Date, Float> volume) {
+    public ORMScreen(LinkedHashMap<Date, Float> orm) {
 
-        this.volume = volume;
+        this.orm = orm;
 
         JFrame f = new JFrame("Volume Screen");
         JPanel panel = new JPanel();
@@ -29,10 +29,10 @@ public class VolumeScreen extends JFrame //implements ActionListener
         getContentPane().add(panel);
         setSize(700, 700);
 
-        TitledBorder border = new TitledBorder("PLOT SHOWING VOLUME PROGRESSION OVER TIME");
+        TitledBorder border = new TitledBorder("PLOT SHOWING ORM PROGRESSION OVER TIME");
         border.setTitleJustification(TitledBorder.CENTER);
         border.setTitlePosition(TitledBorder.TOP);
-        border.setTitleColor(Color.ORANGE);
+        border.setTitleColor(Color.MAGENTA);
         panel.setBorder(border);
 
 
@@ -42,7 +42,7 @@ public class VolumeScreen extends JFrame //implements ActionListener
         label1.setFont(new Font("Serif", Font.PLAIN, 16));
         panel.add(label1);
 
-        JLabel label2 = new JLabel("Volume");
+        JLabel label2 = new JLabel("ORM");
         label2.setBounds(1, 270, 150, 120);
         label2.setFont(new Font("Serif", Font.PLAIN, 14));
         panel.add(label2);
@@ -106,7 +106,6 @@ public class VolumeScreen extends JFrame //implements ActionListener
 
 
 
-
     }
     public void paint(Graphics gp) {
         super.paint(gp);
@@ -120,7 +119,7 @@ public class VolumeScreen extends JFrame //implements ActionListener
 
 
 
-        List<Float> vals = new ArrayList<Float>(volume.values());
+        List<Float> vals = new ArrayList<Float>(orm.values());
 
 
         for(int i=0; i< vals.size(); i++){
