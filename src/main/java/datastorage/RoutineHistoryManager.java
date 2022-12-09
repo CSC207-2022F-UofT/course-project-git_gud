@@ -7,15 +7,13 @@ public class RoutineHistoryManager {
     String userName;
     String exerciseName;
     Date date;
-    ArrayList<String> weight;
+    int weight;
     int set;
-    ArrayList<String> rep;
+    int rep;
     int oneRepMax;
 
-    RoutineHistoryManager(String un, String en, Date d, ArrayList<String> w, int s, ArrayList<String> r, int orm){
-        userName = un;
+    public RoutineHistoryManager(String en, int w, int s, int r, int orm){
         exerciseName = en;
-        date = d;
         weight = w;
         set = s;
         rep = r;

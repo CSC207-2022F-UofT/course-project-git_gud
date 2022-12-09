@@ -1,8 +1,6 @@
 package datastorage;
 
 import java.util.*;
-import entities.User;
-import java.time.LocalDate;
 
 /*
 Represents where all the data are stored: username, exercise type, date, weight used, set, repetition, one rep max.
@@ -12,13 +10,13 @@ and value is a list of objects that contain date, weight, set, repetition, and o
 public class DataLibrary {
 
     ArrayList<String> lst_exercises = new ArrayList<String>();
-    Objects[] numbers;
+    int[] numbers;
     @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
-    private final HashMap<String, ArrayList<Objects>> data;
+    private final HashMap<String, int[]> data;
 
-    DataLibrary(String en, ArrayList<String> w, ArrayList<String> r, int orm){
-        numbers = new Objects[]{w, r, orm};
-        data = new HashMap<String, ArrayList<Objects>>();
+    public DataLibrary(String en, int w, int r, int orm){
+        numbers = new int[]{w, r, orm};
+        data = new HashMap<String, int[]>();
     }
 
     /*
@@ -26,7 +24,7 @@ public class DataLibrary {
     If the exercise already exists, replace it with the new data.
     If not, add the exercise to the list of exercises and record in the HashMap.
      */
-    public boolean take_in_data(String en, ArrayList<String> w, ArrayList<String> r, int orm){
+    public boolean take_in_data(String en, int w, int r, int orm){
 
         if (lst_exercises.contains(en)){
             data.remove(en);
