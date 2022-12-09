@@ -36,7 +36,7 @@ public class HomeTargetUI extends JFrame {
         getContentPane().setLayout(null);
         JButton backButton = new JButton("Back");
         SettingsPage settings = new SettingsPage();
-        backButton.addActionListener(e -> {settings.CreateSettingsPage();
+        backButton.addActionListener(e -> {settings.CreateSettingsPage(null);
         dispose();});
         backButton.setBounds(0,0,100, 50);
         this.add(backButton);
