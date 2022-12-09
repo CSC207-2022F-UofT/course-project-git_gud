@@ -25,7 +25,7 @@ public class GraphResponseModel {
         this.Data = bodyweightData;
     }
 
-    public LinkedHashMap<Date, Float> getBodyweightData(){
+    public LinkedHashMap<Date, Float> getData(){
         return this.Data;
     }
 

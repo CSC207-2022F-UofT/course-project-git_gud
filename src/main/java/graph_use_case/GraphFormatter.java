@@ -1,7 +1,6 @@
 package graph_use_case;
 
-import views.BodyweightScreen;
-import views.ErrorScreen;
+import views.*;
 
 import java.util.LinkedHashMap;
 
@@ -12,19 +11,14 @@ import java.util.LinkedHashMap;
  *
  */
 
-public class GraphResponseFormatter implements GraphPresenter{
+public class GraphFormatter implements GraphPresenter{
 
 // Need to figure out how to make the presenter do different things depending on the button clicked.
     @Override
     public GraphResponseModel prepareSuccessView(GraphResponseModel graphResponseModel) {
-        if(graphResponseModel.getButtontext() == "Bodyweight") {
-            BodyweightScreen b = new BodyweightScreen(graphResponseModel.getBodyweightData());
-            b.setVisible(true);
-        }
 
-        if(graphResponseModel.getButtontext() == "Volume"){
+    // any formatting can be done here before the response model is returned.
 
-        }
         return graphResponseModel;
     }
 
@@ -36,5 +30,8 @@ public class GraphResponseFormatter implements GraphPresenter{
         LinkedHashMap l = new LinkedHashMap<>();
         GraphResponseModel g = new GraphResponseModel(l, "abc");
         return g;
+
+
+
     }
 }

@@ -10,7 +10,7 @@ public class Targets {
      *
      * constructor for class TargetWeight
      */
-    Targets(){
+    public Targets(){
         targetList = new ArrayList<Target>();
     }
 

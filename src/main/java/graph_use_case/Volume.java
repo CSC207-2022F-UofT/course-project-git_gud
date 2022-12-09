@@ -11,6 +11,8 @@ public class Volume {
 
     LinkedHashMap<Date, Float> data;
 
+
+
     public void addVolume(Date date, int sets, int reps, Float weight) {
         data.put(date, (sets * reps * weight));
     }
