@@ -1,3 +1,5 @@
+package datastorage;
+
 public class Descriptions {
     String pullUps = "[Back] Hang from a pull-up bar by your hands with your palms facing away from you, and " +
             "lift your entire body up with your arm and back muscles until your chest touches the bar.";
