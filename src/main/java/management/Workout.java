@@ -36,10 +36,7 @@ public class Workout {
      * @param index an int object that represents the index of the exercise that will be modified.
      * @param sets an int object representing the number of sets the exercise will have.
      */
-//    public void customizeExercise(int index, int sets) {
-//
-//        workout.get(index).set = sets;
-//    }
+
 
     /**
      * Removes an exercise from the workout ArrayList from a specified index.
@@ -58,4 +55,15 @@ public class Workout {
     public ArrayList<String> getWorkout() {
         return this.workout;
     }
+
+    public void RemoveExercise(int index) {
+
+        this.workout.remove(index);
+    }
+
+    public String GetExercise(int index) {
+
+        return this.workout.get(index);
+    }
+
 }
