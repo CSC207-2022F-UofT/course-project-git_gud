@@ -20,6 +20,13 @@ public class Exercise {
         this.weight = weight;
     }
 
+    public Exercise() {
+        this.type = null;
+        this.reps = 0;
+        this.sets = 0;
+        this.weight = null;
+    }
+
 
     public String getType(){
         return this.type;

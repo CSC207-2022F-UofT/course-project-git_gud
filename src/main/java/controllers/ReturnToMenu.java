@@ -1,7 +1,6 @@
 package controllers;
 
 import management.RoutineManager;
-import views.RemoveExerciseMenuView;
 import views.WorkoutMenuView;
 
 /**

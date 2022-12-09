@@ -4,14 +4,20 @@ import usecases.*;
 
 import java.sql.*;
 
+@SuppressWarnings("ALL")
 public class DashboardController {
     public static final Connection connection1;
 
     static {
         try {
-            connection1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBC", "root", "root1234");
+            /** TODO
+             Change the connection1 variable to match your personal database, localhost should be fine to leave,
+             JDBCT should be changed to JDBC or whatever you setup the database as, user and password
+             should be what you initially setup with your workbench program.
+             */
 //            connection1 = DriverManager.getConnection(
 //                    "jdbc:mysql://localhost:3306/JDBCT?allowMultiQueries=true", "root", "root");
+             connection1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBC", "root", "root1234");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

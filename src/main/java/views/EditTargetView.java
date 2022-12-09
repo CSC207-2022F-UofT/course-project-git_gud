@@ -40,6 +40,7 @@ public class EditTargetView extends JFrame{
                 frame.dispose();
                 EditController EditController = new EditController(targets, date, value);
                 EditController.callEdit();
+                dispose();
             } catch (ParseException ex) {
                 throw new RuntimeException(ex);
             }

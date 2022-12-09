@@ -12,7 +12,7 @@ import java.util.LinkedHashMap;
 public class ExampleDatabase {
 
 
-    HashMap<String, LinkedHashMap> bodyweightdata = new LinkedHashMap<>();
+    public HashMap<String, LinkedHashMap> bodyweightdata = new LinkedHashMap<>();
     HashMap<String, LinkedHashMap> volumedata = new LinkedHashMap<>();
 
     HashMap<String, LinkedHashMap> ormdata = new LinkedHashMap<>();
@@ -83,7 +83,7 @@ public class ExampleDatabase {
         ormdata.put("abc", o);
         targetbodyweightdata.put("abc", tb);
         targetvolumedata.put("abc", tv);
-        targetormdata.put("abcdddd", to);
+        targetormdata.put("abcd", to);
 
     }
 

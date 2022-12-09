@@ -24,17 +24,28 @@ public class AddExerciseMenuView extends JFrame {
 
     /**
      * backButton: takes you back to the Workout Menu
-     * All other buttons are temporary, these exercises will be pulled from our catalogue.
+     * All other buttons represent the list of exercises that can be added to your routine.
      */
     JButton backButton = new JButton("Back");
+    JButton benchPress = new JButton("Bench Press");
+    JButton pushUps = new JButton("Push Ups");
     JButton tricepsDips = new JButton("Triceps Dips");
-    JButton bicepCurls = new JButton("Bicep Curls");
+    JButton handStandPushUps = new JButton("Hand Stand Push Ups");
     JButton militaryPress = new JButton("Military Press");
+    JButton pullUps = new JButton("Pull Ups");
+    JButton barbellRow = new JButton("Barbell Row");
+    JButton bicepCurls = new JButton("Bicep Curls");
+    JButton sideLateralRaise = new JButton("Side Lateral Raise");
+    JButton deadLift = new JButton("Dead Lift");
+    JButton squats = new JButton("Squats");
+    JButton legRaises = new JButton("Leg Raises");
+    JButton crunches = new JButton("Crunches");
 
     /**
      * exercises: an Array representing all exercises to be displayed on the scroll panel.
      */
-    JButton[] exercises = {tricepsDips, bicepCurls, militaryPress};
+    JButton[] exercises = {tricepsDips, bicepCurls, militaryPress, benchPress, pushUps, handStandPushUps, pullUps,
+            barbellRow, sideLateralRaise, deadLift, squats, legRaises, crunches};
 
     /**
      * workoutNumber: an int representing the workout identifier for the specific workout we are currently customizing.
@@ -55,16 +66,6 @@ public class AddExerciseMenuView extends JFrame {
         message.setBounds(25,410,320,20);
         message.setFont(new Font("Dialog", Font.BOLD, 10));
         message.setVisible(true);
-
-        // TEMPORARY until certain features are implemented.
-        String labelText = "<html>Once the Exercise class is fully implemented, you'll be<BR>able to choose from a much " +
-                "bigger list of exercises.</html>";
-
-        JLabel message2 = new JLabel(labelText);
-        message2.setBounds(0,80,320,50);
-        message2.setFont(new Font("Dialog", Font.BOLD, 10));
-        message2.setForeground(Color.RED);
-        message2.setVisible(true);
 
         JPanel displayPanel = new JPanel();
         displayPanel.setLocation(0, 250);
@@ -105,10 +106,59 @@ public class AddExerciseMenuView extends JFrame {
         militaryPress.setFont(new Font("Dialog", Font.BOLD, 11));
         scrollPanel.add(militaryPress);
 
+        benchPress.setFocusable(false);
+        benchPress.setPreferredSize(new Dimension(190,20));
+        benchPress.setFont(new Font("Dialog", Font.BOLD, 11));
+        scrollPanel.add(benchPress);
+
+        pushUps.setFocusable(false);
+        pushUps.setPreferredSize(new Dimension(190,20));
+        pushUps.setFont(new Font("Dialog", Font.BOLD, 11));
+        scrollPanel.add(pushUps);
+
+        handStandPushUps.setFocusable(false);
+        handStandPushUps.setPreferredSize(new Dimension(190,20));
+        handStandPushUps.setFont(new Font("Dialog", Font.BOLD, 11));
+        scrollPanel.add(handStandPushUps);
+
+        pullUps.setFocusable(false);
+        pullUps.setPreferredSize(new Dimension(190,20));
+        pullUps.setFont(new Font("Dialog", Font.BOLD, 11));
+        scrollPanel.add(pullUps);
+
+        barbellRow.setFocusable(false);
+        barbellRow.setPreferredSize(new Dimension(190,20));
+        barbellRow.setFont(new Font("Dialog", Font.BOLD, 11));
+        scrollPanel.add(barbellRow);
+
+        sideLateralRaise.setFocusable(false);
+        sideLateralRaise.setPreferredSize(new Dimension(190,20));
+        sideLateralRaise.setFont(new Font("Dialog", Font.BOLD, 11));
+        scrollPanel.add(sideLateralRaise);
+
+        deadLift.setFocusable(false);
+        deadLift.setPreferredSize(new Dimension(190,20));
+        deadLift.setFont(new Font("Dialog", Font.BOLD, 11));
+        scrollPanel.add(deadLift);
+
+        squats.setFocusable(false);
+        squats.setPreferredSize(new Dimension(190,20));
+        squats.setFont(new Font("Dialog", Font.BOLD, 11));
+        scrollPanel.add(squats);
+
+        legRaises.setFocusable(false);
+        legRaises.setPreferredSize(new Dimension(190,20));
+        legRaises.setFont(new Font("Dialog", Font.BOLD, 11));
+        scrollPanel.add(legRaises);
+
+        crunches.setFocusable(false);
+        crunches.setPreferredSize(new Dimension(190,20));
+        crunches.setFont(new Font("Dialog", Font.BOLD, 11));
+        scrollPanel.add(crunches);
+
         this.add(backButton);
 
         this.add(message);
-        this.add(message2);
         this.add(confirmationMessage);
         this.add(errorMessage);
 

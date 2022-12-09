@@ -3,6 +3,7 @@ package management;
 import java.sql.*;
 import controllers.DashboardController;
 
+@SuppressWarnings("ALL")
 public class DataManager {
     /***
      * Data_Manager is a class that
@@ -16,17 +17,20 @@ public class DataManager {
 
     static {
         try {
+            /** TODO
+             Change TEST to whatever your chosen table name is. Change this is every location you see it.
+             */
             email = DashboardController.connection1.prepareStatement(
-                    "UPDATE dashtest SET email = ? WHERE email = ?");
+                    "UPDATE TEST SET email = ? WHERE email = ?");
             password = DashboardController.connection1.prepareStatement(
-                    "UPDATE dashtest SET password = ? WHERE password = ?");
+                    "UPDATE TEST SET password = ? WHERE password = ?");
             username = DashboardController.connection1.prepareStatement(
-                    "UPDATE dashtest SET username = ? WHERE username = ?");
+                    "UPDATE TEST SET username = ? WHERE username = ?");
             weight = DashboardController.connection1.prepareStatement(
-                    "UPDATE dashtest SET bodyweight = ? WHERE username = ?");
+                    "UPDATE TEST SET bodyweight = ? WHERE username = ?");
             fat = DashboardController.connection1.prepareStatement(
-                    "UPDATE dashtest SET bodyfat = ? WHERE username = ?");
-            delete = DashboardController.connection1.prepareStatement("DELETE FROM dashtest WHERE username=?");
+                    "UPDATE TEST SET bodyfat = ? WHERE username = ?");
+            delete = DashboardController.connection1.prepareStatement("DELETE FROM TEST WHERE username=?");
 
         } catch (SQLException e) {
             throw new RuntimeException(e);

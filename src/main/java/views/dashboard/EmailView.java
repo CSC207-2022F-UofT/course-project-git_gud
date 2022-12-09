@@ -8,8 +8,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 
+import static management.DashboardViewSetter.buttonSetter;
+import static management.DashboardViewSetter.viewSetter;
+
 @SuppressWarnings("Convert2Lambda")
 public class EmailView {
+    /**
+     * EmailView holds a constructor that instantiates a new view model for the usecase of changing a USER's email
+     */
     public JPanel email;
     public EmailView(){}
     public void CreateEmailView(){
@@ -20,31 +26,14 @@ public class EmailView {
         emailFrame.setTitle("Change Email");
 
         email = new JPanel();
-        email.setLocation(0, 250);
-        email.setBounds(50, 144, 200, 275);
-        email.setBackground(Color.lightGray);
-        email.setLayout(new FlowLayout(FlowLayout.CENTER));
 
         JTextField emailInput = new JTextField();
-        emailInput.setPreferredSize(new Dimension(150, 20));
-        emailInput.setFont(new Font("Dialog", Font.BOLD, 10));
-        emailInput.setText("Please Enter Your Current Email");
-
-
         JTextField newEmailInput = new JTextField();
-        newEmailInput.setPreferredSize(new Dimension(150, 20));
-        newEmailInput.setFont(new Font("Dialog", Font.BOLD, 10));
-        newEmailInput.setText("Please Enter Your New Email");
 
         JButton submitButton = new JButton();
-        submitButton.setText("Submit");
-        submitButton.setFocusable(false);
-        submitButton.setFont(new Font("Dialog", Font.BOLD, 10));
-
         JButton backButton = new JButton();
-        backButton.setText("Go Back");
-        backButton.setFocusable(false);
-        backButton.setFont(new Font("Dialog", Font.BOLD, 10));
+
+        emailViewSetter(email, submitButton, backButton, emailInput, newEmailInput);
 
         email.add(emailInput);
         email.add(newEmailInput);
@@ -80,5 +69,16 @@ public class EmailView {
         };
         submitButton.addActionListener(submission);
         backButton.addActionListener(submission);
+    }
+    public static void emailViewSetter(JPanel viewType, JButton submitButton,
+                                        JButton backButton, JTextField useCaseInput, JTextField newEmailInput) {
+        viewSetter(viewType, useCaseInput);
+        useCaseInput.setText("Please Enter Your Current Email");
+
+        newEmailInput.setPreferredSize(new Dimension(150, 20));
+        newEmailInput.setFont(new Font("Dialog", Font.BOLD, 7));
+        newEmailInput.setText("Please Enter Your New Email");
+
+        buttonSetter(submitButton, backButton);
     }
 }

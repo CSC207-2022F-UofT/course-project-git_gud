@@ -14,7 +14,7 @@ public class RoutineManagerView {
         } else {
             theModel = userWorkout;
         }
-        WorkoutSelectionController theController = new WorkoutSelectionController(theModel, theView);
+        new WorkoutSelectionController(theModel, theView);
     }
 }
 

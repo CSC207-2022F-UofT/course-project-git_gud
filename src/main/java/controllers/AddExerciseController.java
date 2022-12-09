@@ -1,5 +1,6 @@
 package controllers;
 
+import entities.Exercise;
 import management.RoutineManager;
 import views.AddExerciseMenuView;
 import views.WorkoutMenuView;
@@ -7,6 +8,7 @@ import views.WorkoutMenuView;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Objects;
 
 /**
  * A controller class for AddExerciseMenuView.
@@ -64,7 +66,7 @@ public class AddExerciseController {
 
                 if (!theModel.getWorkouts()[0].getWorkout().isEmpty()) {
                     for (int i = 0; i < theModel.getWorkouts()[0].getWorkout().size(); i++) {
-                        workoutMenuView.addExercise(theModel.getWorkouts()[0].getWorkout().get(i));
+                        workoutMenuView.addExercise(theModel.getWorkouts()[0].getWorkout().get(i).getType());
                     }
                 }
             }
@@ -76,7 +78,7 @@ public class AddExerciseController {
 
                 if (!theModel.getWorkouts()[1].getWorkout().isEmpty()) {
                     for (int i = 0; i < theModel.getWorkouts()[1].getWorkout().size(); i++) {
-                        workoutMenuView.addExercise(theModel.getWorkouts()[1].getWorkout().get(i));
+                        workoutMenuView.addExercise(theModel.getWorkouts()[1].getWorkout().get(i).getType());
                     }
                 }
             }
@@ -88,7 +90,7 @@ public class AddExerciseController {
 
                 if (!theModel.getWorkouts()[2].getWorkout().isEmpty()) {
                     for (int i = 0; i < theModel.getWorkouts()[2].getWorkout().size(); i++) {
-                        workoutMenuView.addExercise(theModel.getWorkouts()[2].getWorkout().get(i));
+                        workoutMenuView.addExercise(theModel.getWorkouts()[2].getWorkout().get(i).getType());
                     }
                 }
             }
@@ -100,7 +102,7 @@ public class AddExerciseController {
 
                 if (!theModel.getWorkouts()[3].getWorkout().isEmpty()) {
                     for (int i = 0; i < theModel.getWorkouts()[3].getWorkout().size(); i++) {
-                        workoutMenuView.addExercise(theModel.getWorkouts()[3].getWorkout().get(i));
+                        workoutMenuView.addExercise(theModel.getWorkouts()[3].getWorkout().get(i).getType());
                     }
                 }
             }
@@ -112,7 +114,7 @@ public class AddExerciseController {
 
                 if (!theModel.getWorkouts()[4].getWorkout().isEmpty()) {
                     for (int i = 0; i < theModel.getWorkouts()[4].getWorkout().size(); i++) {
-                        workoutMenuView.addExercise(theModel.getWorkouts()[4].getWorkout().get(i));
+                        workoutMenuView.addExercise(theModel.getWorkouts()[4].getWorkout().get(i).getType());
                     }
                 }
             }
@@ -129,78 +131,192 @@ public class AddExerciseController {
                 if (e.getSource()==exercise){
 
                     if (theView.getWorkoutNumber()==1){
-                        if (theModel.getWorkouts()[0].getWorkout().contains(exercise.getText())){
 
-                            theView.setErrorMessage(exercise.getText());
-                            theView.getConfirmationMessage().setText(null);
-                            theView.add(theView.getErrorMessage());
-                        }
-                        else {
-                            theModel.getWorkouts()[0].addExercise(exercise.getText());
+                        int lastIndex = theModel.getWorkouts()[0].getWorkout().size()-1;
+
+                        if (theModel.getWorkouts()[0].getWorkout().isEmpty()){
+                            Exercise newExercise = new Exercise();
+                            newExercise.setType(exercise.getText());
+
+                            theModel.getWorkouts()[0].addExercise(newExercise.getType());
 
                             theView.setConfirmationMessage(exercise.getText());
                             theView.getErrorMessage().setText(null);
                             theView.add(theView.getConfirmationMessage());
+                        }
+                        else {
+
+                            for (Exercise x : theModel.getWorkouts()[0].getWorkout()){
+
+                                if (Objects.equals(x.getType(), exercise.getText())){
+                                    theView.setErrorMessage(exercise.getText());
+                                    theView.getConfirmationMessage().setText(null);
+                                    theView.add(theView.getErrorMessage());
+                                    break;
+                                }
+
+                                if (x==theModel.getWorkouts()[0].getWorkout().get(lastIndex)){
+                                    Exercise newExercise = new Exercise();
+                                    newExercise.setType(exercise.getText());
+
+                                    theModel.getWorkouts()[0].addExercise(newExercise.getType());
+
+                                    theView.setConfirmationMessage(exercise.getText());
+                                    theView.getErrorMessage().setText(null);
+                                    theView.add(theView.getConfirmationMessage());
+                                }
+                            }
                         }
                     }
                     if (theView.getWorkoutNumber()==2){
-                        if (theModel.getWorkouts()[1].getWorkout().contains(exercise.getText())){
+                        int lastIndex = theModel.getWorkouts()[1].getWorkout().size()-1;
 
-                            theView.setErrorMessage(exercise.getText());
-                            theView.getConfirmationMessage().setText(null);
-                            theView.add(theView.getErrorMessage());
-                        }
-                        else {
-                            theModel.getWorkouts()[1].addExercise(exercise.getText());
+                        if (theModel.getWorkouts()[1].getWorkout().isEmpty()){
+                            Exercise newExercise = new Exercise();
+                            newExercise.setType(exercise.getText());
+
+                            theModel.getWorkouts()[1].addExercise(newExercise.getType());
 
                             theView.setConfirmationMessage(exercise.getText());
                             theView.getErrorMessage().setText(null);
                             theView.add(theView.getConfirmationMessage());
+                        }
+                        else {
+
+                            for (Exercise x : theModel.getWorkouts()[1].getWorkout()) {
+
+                                if (Objects.equals(x.getType(), exercise.getText())) {
+                                    theView.setErrorMessage(exercise.getText());
+                                    theView.getConfirmationMessage().setText(null);
+                                    theView.add(theView.getErrorMessage());
+                                    break;
+                                }
+
+                                if (x == theModel.getWorkouts()[1].getWorkout().get(lastIndex)) {
+                                    Exercise newExercise = new Exercise();
+                                    newExercise.setType(exercise.getText());
+
+                                    theModel.getWorkouts()[1].addExercise(newExercise.getType());
+
+                                    theView.setConfirmationMessage(exercise.getText());
+                                    theView.getErrorMessage().setText(null);
+                                    theView.add(theView.getConfirmationMessage());
+                                }
+                            }
                         }
                     }
                     if (theView.getWorkoutNumber()==3){
-                        if (theModel.getWorkouts()[2].getWorkout().contains(exercise.getText())){
 
-                            theView.setErrorMessage(exercise.getText());
-                            theView.getConfirmationMessage().setText(null);
-                            theView.add(theView.getErrorMessage());
-                        }
-                        else {
-                            theModel.getWorkouts()[2].addExercise(exercise.getText());
+                        int lastIndex = theModel.getWorkouts()[2].getWorkout().size()-1;
+
+                        if (theModel.getWorkouts()[2].getWorkout().isEmpty()){
+                            Exercise newExercise = new Exercise();
+                            newExercise.setType(exercise.getText());
+
+                            theModel.getWorkouts()[2].addExercise(newExercise.getType());
 
                             theView.setConfirmationMessage(exercise.getText());
                             theView.getErrorMessage().setText(null);
                             theView.add(theView.getConfirmationMessage());
+                        }
+                        else {
+
+                            for (Exercise x : theModel.getWorkouts()[2].getWorkout()) {
+
+                                if (Objects.equals(x.getType(), exercise.getText())) {
+                                    theView.setErrorMessage(exercise.getText());
+                                    theView.getConfirmationMessage().setText(null);
+                                    theView.add(theView.getErrorMessage());
+                                    break;
+                                }
+
+                                if (x == theModel.getWorkouts()[2].getWorkout().get(lastIndex)) {
+                                    Exercise newExercise = new Exercise();
+                                    newExercise.setType(exercise.getText());
+
+                                    theModel.getWorkouts()[2].addExercise(newExercise.getType());
+
+                                    theView.setConfirmationMessage(exercise.getText());
+                                    theView.getErrorMessage().setText(null);
+                                    theView.add(theView.getConfirmationMessage());
+                                }
+                            }
                         }
                     }
                     if (theView.getWorkoutNumber()==4){
-                        if (theModel.getWorkouts()[3].getWorkout().contains(exercise.getText())){
 
-                            theView.setErrorMessage(exercise.getText());
-                            theView.getConfirmationMessage().setText(null);
-                            theView.add(theView.getErrorMessage());
-                        }
-                        else {
-                            theModel.getWorkouts()[3].addExercise(exercise.getText());
+                        int lastIndex = theModel.getWorkouts()[3].getWorkout().size()-1;
+
+                        if (theModel.getWorkouts()[3].getWorkout().isEmpty()){
+                            Exercise newExercise = new Exercise();
+                            newExercise.setType(exercise.getText());
+
+                            theModel.getWorkouts()[3].addExercise(newExercise.getType());
 
                             theView.setConfirmationMessage(exercise.getText());
                             theView.getErrorMessage().setText(null);
                             theView.add(theView.getConfirmationMessage());
+                        }
+                        else {
+
+                            for (Exercise x : theModel.getWorkouts()[3].getWorkout()) {
+
+                                if (Objects.equals(x.getType(), exercise.getText())) {
+                                    theView.setErrorMessage(exercise.getText());
+                                    theView.getConfirmationMessage().setText(null);
+                                    theView.add(theView.getErrorMessage());
+                                    break;
+                                }
+
+                                if (x == theModel.getWorkouts()[3].getWorkout().get(lastIndex)) {
+                                    Exercise newExercise = new Exercise();
+                                    newExercise.setType(exercise.getText());
+
+                                    theModel.getWorkouts()[3].addExercise(newExercise.getType());
+
+                                    theView.setConfirmationMessage(exercise.getText());
+                                    theView.getErrorMessage().setText(null);
+                                    theView.add(theView.getConfirmationMessage());
+                                }
+                            }
                         }
                     }
                     if (theView.getWorkoutNumber()==5){
-                        if (theModel.getWorkouts()[4].getWorkout().contains(exercise.getText())){
 
-                            theView.setErrorMessage(exercise.getText());
-                            theView.getConfirmationMessage().setText(null);
-                            theView.add(theView.getErrorMessage());
-                        }
-                        else {
-                            theModel.getWorkouts()[4].addExercise(exercise.getText());
+                        int lastIndex = theModel.getWorkouts()[4].getWorkout().size()-1;
+
+                        if (theModel.getWorkouts()[4].getWorkout().isEmpty()){
+                            Exercise newExercise = new Exercise();
+                            newExercise.setType(exercise.getText());
+
+                            theModel.getWorkouts()[4].addExercise(newExercise.getType());
 
                             theView.setConfirmationMessage(exercise.getText());
                             theView.getErrorMessage().setText(null);
                             theView.add(theView.getConfirmationMessage());
+                        }
+                        else {
+
+                            for (Exercise x : theModel.getWorkouts()[4].getWorkout()) {
+
+                                if (Objects.equals(x.getType(), exercise.getText())) {
+                                    theView.setErrorMessage(exercise.getText());
+                                    theView.getConfirmationMessage().setText(null);
+                                    theView.add(theView.getErrorMessage());
+                                    break;
+                                }
+
+                                if (x == theModel.getWorkouts()[4].getWorkout().get(lastIndex)) {
+                                    Exercise newExercise = new Exercise();
+                                    newExercise.setType(exercise.getText());
+
+                                    theModel.getWorkouts()[4].addExercise(newExercise.getType());
+
+                                    theView.setConfirmationMessage(exercise.getText());
+                                    theView.getErrorMessage().setText(null);
+                                    theView.add(theView.getConfirmationMessage());
+                                }
+                            }
                         }
                     }
                 }
