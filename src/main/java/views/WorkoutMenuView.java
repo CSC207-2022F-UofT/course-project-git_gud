@@ -22,6 +22,8 @@ public class WorkoutMenuView extends JFrame {
      * backButton: will take you back to the Workout Selection Menu.
      */
     private final JPanel scrollPanel = new JPanel();
+
+    private final JButton startButton = new JButton("Start Workout");
     private final JButton addButton = new JButton("Add Exercise");
     private final JButton removeButton = new JButton("Remove Exercise");
     private final JButton backButton = new JButton("Back");
@@ -57,7 +59,6 @@ public class WorkoutMenuView extends JFrame {
         scrollPane.setPreferredSize(new Dimension(230, 240));
         displayPanel.add(scrollPane);
 
-        JButton startButton = new JButton("Start Workout");
         startButton.setFocusable(false);
         startButton.setSize(new Dimension(200,30));
         startButton.setLocation(52,120);
@@ -144,4 +145,8 @@ public class WorkoutMenuView extends JFrame {
         removeButton.addActionListener(displayListener);
     }
 
+    public void addWorkoutStartView(ActionListener displayListener) {
+
+        startButton.addActionListener(displayListener);
+    }
 }
