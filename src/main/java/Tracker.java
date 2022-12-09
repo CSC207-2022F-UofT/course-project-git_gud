@@ -1,47 +1,47 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 class Tracker extends Exercises {
-    // Records the weight, number of reps in a set, and number of sets
+    // Modifies the weight, number of reps in a set, and number of sets
 
     String typeExercise;
     int weight;
     int rep;
     int set;
+    String[] listExercise = {"pullUps", "barbellRow", "handstandPushUps", "militaryPress", "sideLateralRaise", "benchPress",
+            "pushUps", "squats", "deadLift", "legRaises", "crunches"};
 
-    // user will use this method after each workout to record what they just did
-    // this method will then call UpdateHistory to send the data to RoutineHistory
-    void GetExercise() {
-        Scanner scan = new Scanner(System.in);
+    // Constructor
+    Tracker (String t, int w, int r, int s) {
 
-        System.out.println("Enter the name of the exercise: ");
-        System.out.println("Options: Pull-up, Barbell rows\n" +
-                "Shoulders: Handstand push ups, Military press, Side lateral raise\n" +
-                "Chest: Bench press, Push ups\n" +
-                "Legs: Squats, Dead lift\n" +
-                "Core: Leg raises, Crunches\n");
-        typeExercise = scan.next();
-
-        System.out.println("Enter the weight you'll use for this exercise: ");
-        weight = scan.nextInt();
-
-        System.out.println("Enter the number of repetitions: ");
-        rep = scan.nextInt();
-
-        System.out.println("Enter the number of sets: ");
-        set = scan.nextInt();
-
-        UpdateHistory();
+        // Initializing class variables
+        typeExercise = null;
+        weight = 0;
+        rep = 0;
+        set = 0;
     }
 
     // Modifies weight, rep, set depending on the input
     void CustomizeSets() {
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("Enter the name of the exercise you'd like to modify: ");
-        typeExercise = scan.next();
+        boolean contains = false;
 
+        while(!contains) {
+            System.out.println("Enter the name of the exercise you'd like to modify: ");
+            contains = Arrays.asList(listExercise).contains(scan.next());
+            if (contains) {
+                typeExercise = scan.next();
+            }
+        }
         System.out.println("Enter the new weight: ");
-        typeExercise = scan.next();
+        weight = scan.nextInt();
+
+        System.out.println("Enter the new Set: ");
+        set = scan.nextInt();
+
+        System.out.println("Enter the new rep: ");
+        rep = scan.nextInt();
     }
 
     // call RoutineHistory

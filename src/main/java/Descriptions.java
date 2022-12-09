@@ -2,7 +2,7 @@ public class Descriptions {
     String pullUps = "[Back] Hang from a pull-up bar by your hands with your palms facing away from you, and " +
             "lift your entire body up with your arm and back muscles until your chest touches the bar.";
     String barbellRow = "[Back] Hold the barbell directly in front of you and lift it toward your chest.";
-    String HandstandPushUps = "[Shoulders] Face a wall in a standing position. " +
+    String handstandPushUps = "[Shoulders] Face a wall in a standing position. " +
             "Kick your feet up so you're in a handstand position against a wall. " +
             "Squeeze your abs and thigh muscles. Lower yourself toward the ground as far as possible. " +
             "Push back up and repeat.";
