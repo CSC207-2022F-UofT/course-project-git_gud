@@ -37,12 +37,57 @@ public class WorkoutMenuController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            theView.dispose();
-            WorkoutStartView workoutStartView = new WorkoutStartView();
 
-            workoutStartView.setWorkoutNumber(1);
+            if (theView.getWorkoutNumber()==1){
+                theView.dispose();
+                WorkoutStartView workoutStartView = new WorkoutStartView();
 
-            new WorkoutStartController(theModel, workoutStartView);
+                workoutStartView.setWorkoutNumber(1);
+                workoutStartView.setExerciseName(theModel.getWorkouts()[0].getWorkout().get(workoutStartView.getExerciseNumber()).getType());
+
+
+                new WorkoutStartController(theModel, workoutStartView);
+            }
+            if (theView.getWorkoutNumber()==2){
+                theView.dispose();
+                WorkoutStartView workoutStartView = new WorkoutStartView();
+
+                workoutStartView.setWorkoutNumber(2);
+                workoutStartView.setExerciseName(theModel.getWorkouts()[1].getWorkout().get(workoutStartView.getExerciseNumber()).getType());
+
+
+                new WorkoutStartController(theModel, workoutStartView);
+            }
+            if (theView.getWorkoutNumber()==3){
+                theView.dispose();
+                WorkoutStartView workoutStartView = new WorkoutStartView();
+
+                workoutStartView.setWorkoutNumber(3);
+                workoutStartView.setExerciseName(theModel.getWorkouts()[2].getWorkout().get(workoutStartView.getExerciseNumber()).getType());
+
+
+                new WorkoutStartController(theModel, workoutStartView);
+            }
+            if (theView.getWorkoutNumber()==4){
+                theView.dispose();
+                WorkoutStartView workoutStartView = new WorkoutStartView();
+
+                workoutStartView.setWorkoutNumber(4);
+                workoutStartView.setExerciseName(theModel.getWorkouts()[3].getWorkout().get(workoutStartView.getExerciseNumber()).getType());
+
+
+                new WorkoutStartController(theModel, workoutStartView);
+            }
+            if (theView.getWorkoutNumber()==5){
+                theView.dispose();
+                WorkoutStartView workoutStartView = new WorkoutStartView();
+
+                workoutStartView.setWorkoutNumber(5);
+                workoutStartView.setExerciseName(theModel.getWorkouts()[4].getWorkout().get(workoutStartView.getExerciseNumber()).getType());
+
+
+                new WorkoutStartController(theModel, workoutStartView);
+            }
         }
     }
 
