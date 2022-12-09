@@ -1,9 +1,9 @@
-package usecases;
+package dashboardSettings.usecases;
 
-import java.sql.PreparedStatement;
 import management.DataManager;
 
-@SuppressWarnings("ALL")
+import java.sql.PreparedStatement;
+
 public class ChangeWeight extends DataManager {
     public static PreparedStatement changeWeight() {
         return DataManager.weight;

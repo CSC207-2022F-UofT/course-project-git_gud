@@ -31,7 +31,10 @@ public class ViewTargetOptions extends JFrame{
         JButton ORM = types.getButtonORM();
         JButton volume = types.getButtonVolume();
         JButton weight = types.getButtonWeight();
-
+        JButton backButton = new JButton("Back");
+        backButton.addActionListener(e -> frame.dispose());
+        backButton.setBounds(0,0,100, 50);
+        frame.add(backButton);
         ViewController viewORMController = new ViewController(TargetORM.getInstance());
         String stringORM = viewORMController.view(); //calls the controller method to view a target
         ORM.addActionListener(e -> {

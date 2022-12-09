@@ -1,5 +1,7 @@
 package views;
 
+import views.dashboard.SettingsPage;
+
 import javax.swing.*;
 
 
@@ -32,6 +34,12 @@ public class HomeTargetUI extends JFrame {
         buttonEdit.addActionListener(e -> EditTargetOptions.main());
         buttonEdit.setBounds(510,150,100, 50);
         getContentPane().setLayout(null);
+        JButton backButton = new JButton("Back");
+        SettingsPage settings = new SettingsPage();
+        backButton.addActionListener(e -> {settings.CreateSettingsPage(null);
+        dispose();});
+        backButton.setBounds(0,0,100, 50);
+        this.add(backButton);
         this.getContentPane().add(buttonAdd);
         this.getContentPane().add(buttonView);
         this.getContentPane().add(buttonDelete);
@@ -43,9 +51,12 @@ public class HomeTargetUI extends JFrame {
      * @param args
      * running this function creates new homeFrame and displays it
      */
-//    public static void main(String args[]){
-//        HomeTargetUI homeFrame = new HomeTargetUI();
-//        homeFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-//        homeFrame.setVisible(true);
-//    }
+    public static void main(String args[]){
+        HomeTargetUI homeFrame = new HomeTargetUI();
+        homeFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        homeFrame.setVisible(true);
+    }
+
+    // SettingsPage name = new SettingsPage();
+    // dispose.
 }

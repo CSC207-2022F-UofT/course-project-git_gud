@@ -1,9 +1,9 @@
-package usecases;
+package dashboardSettings.usecases;
 
 import management.DataManager;
-import java.sql.*;
 
-@SuppressWarnings("ALL")
+import java.sql.PreparedStatement;
+
 public class DeleteAccount extends DataManager {
     public static PreparedStatement deleteAccount() {
         return DataManager.delete;
