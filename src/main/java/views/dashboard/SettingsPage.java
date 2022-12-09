@@ -100,41 +100,41 @@ public class SettingsPage {
         ActionListener action = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (e.getSource() == changeUsername) {
-                    settingsFrame.dispose();
-                    UsernameView usernameViewer = new UsernameView();
-                    usernameViewer.CreateUsernameView();
-                }
-                if (e.getSource() == changeEmail) {
-                    settingsFrame.dispose();
-                    EmailView emailViewer = new EmailView();
-                    emailViewer.CreateEmailView();
-                }
-                if (e.getSource() == changePassword) {
-                    settingsFrame.dispose();
-                    PasswordView passwordViewer = new PasswordView();
-                    passwordViewer.CreatePasswordView();
-                }
-                if (e.getSource() == deleteAccount) {
-                    settingsFrame.dispose();
-                    DeleteView deleteViewer = new DeleteView();
-                    deleteViewer.CreateDeleteView();
-                }
-                if (e.getSource() == logOut) {
-                    settingsFrame.dispose();
-                    ViewLoginPage newLoginPage = new ViewLoginPage();
-                    //newLoginPage.CreateLoginPage();
-                }
-                if (e.getSource() == changeWeight) {
-                    settingsFrame.dispose();
-                    WeightView weightViewer = new WeightView();
-                    weightViewer.CreateWeightView();
-                }
-                if (e.getSource() == changeFat) {
-                    settingsFrame.dispose();
-                    FatView fatViewer = new FatView();
-                    fatViewer.CreateFatView();
-                }
+//                if (e.getSource() == changeUsername) {
+//                    settingsFrame.dispose();
+//                    UsernameView usernameViewer = new UsernameView();
+//                    usernameViewer.CreateUsernameView();
+//                }
+//                if (e.getSource() == changeEmail) {
+//                    settingsFrame.dispose();
+//                    EmailView emailViewer = new EmailView();
+//                    emailViewer.CreateEmailView();
+//                }
+//                if (e.getSource() == changePassword) {
+//                    settingsFrame.dispose();
+//                    PasswordView passwordViewer = new PasswordView();
+//                    passwordViewer.CreatePasswordView();
+//                }
+//                if (e.getSource() == deleteAccount) {
+//                    settingsFrame.dispose();
+//                    DeleteView deleteViewer = new DeleteView();
+//                    deleteViewer.CreateDeleteView();
+//                }
+//                if (e.getSource() == logOut) {
+//                    settingsFrame.dispose();
+//                    ViewLoginPage newLoginPage = new ViewLoginPage();
+//                    //newLoginPage.CreateLoginPage();
+//                }
+//                if (e.getSource() == changeWeight) {
+//                    settingsFrame.dispose();
+//                    WeightView weightViewer = new WeightView();
+//                    weightViewer.CreateWeightView();
+//                }
+//                if (e.getSource() == changeFat) {
+//                    settingsFrame.dispose();
+//                    FatView fatViewer = new FatView();
+//                    fatViewer.CreateFatView();
+//                }
                 if (e.getSource() == goToGraphs){
                     settingsFrame.dispose();
                     //view from Tej goes here
