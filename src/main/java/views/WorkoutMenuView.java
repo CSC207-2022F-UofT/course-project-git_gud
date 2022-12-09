@@ -22,6 +22,8 @@ public class WorkoutMenuView extends JFrame {
      * backButton: will take you back to the Workout Selection Menu.
      */
     private final JPanel scrollPanel = new JPanel();
+
+    private final JButton startButton = new JButton("Start Workout");
     private final JButton addButton = new JButton("Add Exercise");
     private final JButton removeButton = new JButton("Remove Exercise");
     private final JButton backButton = new JButton("Back");
@@ -44,28 +46,6 @@ public class WorkoutMenuView extends JFrame {
         this.setLayout(null);
         this.setTitle("Workout Menu");
 
-        // TEMPORARY until certain features are implemented
-        JLabel message1 = new JLabel("The Start Workout, Workout History, and all the exercise");
-        message1.setBounds(0,40,300,100);
-        message1.setFont(new Font("Dialog", Font.BOLD, 10));
-        message1.setForeground(Color.RED);
-        message1.setVisible(true);
-
-        // TEMPORARY until certain features are implemented
-        JLabel message2 = new JLabel("buttons from THIS menu don't do anything yet as they ");
-        message2.setBounds(0,50,300,100);
-        message2.setFont(new Font("Dialog", Font.BOLD, 10));
-        message2.setForeground(Color.RED);
-        message2.setVisible(true);
-
-        // TEMPORARY until certain features are implemented
-        JLabel message3 = new JLabel("depend on other features that need to be implemented first.");
-        message3.setBounds(0,60,300,100);
-        message3.setFont(new Font("Dialog", Font.BOLD, 10));
-        message3.setForeground(Color.RED);
-        message3.setVisible(true);
-
-
         JPanel displayPanel = new JPanel();
         displayPanel.setLocation(0, 250);
         displayPanel.setBounds(22, 157, 260, 250);
@@ -79,7 +59,6 @@ public class WorkoutMenuView extends JFrame {
         scrollPane.setPreferredSize(new Dimension(230, 240));
         displayPanel.add(scrollPane);
 
-        JButton startButton = new JButton("Start Workout");
         startButton.setFocusable(false);
         startButton.setSize(new Dimension(200,30));
         startButton.setLocation(52,120);
@@ -104,10 +83,6 @@ public class WorkoutMenuView extends JFrame {
         backButton.setBounds(0,0,100,50);
         backButton.setFocusable(false);
         backButton.setFont(new Font("Dialog", Font.BOLD, 15));
-
-        this.add(message1);
-        this.add(message2);
-        this.add(message3);
 
         this.add(startButton);
         this.add(addButton);
@@ -170,4 +145,8 @@ public class WorkoutMenuView extends JFrame {
         removeButton.addActionListener(displayListener);
     }
 
+    public void addWorkoutStartView(ActionListener displayListener) {
+
+        startButton.addActionListener(displayListener);
+    }
 }

@@ -57,17 +57,6 @@ public class RemoveExerciseMenuView extends JFrame {
         message.setFont(new Font("Dialog", Font.BOLD, 10));
         message.setVisible(true);
 
-        // TEMPORARY until certain features are implemented.
-        String labelText = "<html>These exercises on the list were added manually for testing<BR>purposes, once the " +
-                "Exercise class is implemented, you'll be able to use the add exercise function to add these from scratch.</html>";
-
-        JLabel message2 = new JLabel(labelText);
-        message2.setBounds(0,80,320,50);
-        message2.setFont(new Font("Dialog", Font.BOLD, 10));
-        message2.setForeground(Color.RED);
-        message2.setVisible(true);
-
-
         JPanel displayPanel = new JPanel();
         displayPanel.setLocation(0, 250);
         displayPanel.setBounds(22, 157, 260, 250);
@@ -94,7 +83,6 @@ public class RemoveExerciseMenuView extends JFrame {
         this.add(backButton);
 
         this.add(message);
-        this.add(message2);
         this.add(errorMessage);
         this.add(confirmationMessage);
 

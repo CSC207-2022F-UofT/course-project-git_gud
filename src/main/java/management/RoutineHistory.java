@@ -1,5 +1,9 @@
 package management;
 
+import entities.User;
+import graph_use_case.Bodyweight;
+import graph_use_case.Volume;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,21 +22,28 @@ public class RoutineHistory {
      */
     HashMap<String, ArrayList<LocalDate>> completedWorkouts;
 
+    HashMap<User, Bodyweight> bodyWeightData;
+
+    HashMap<User, Volume> volumeData;
+
     public RoutineHistory() {
 
-        this.completedWorkouts = new HashMap<String, ArrayList<LocalDate>>();
+        this.completedWorkouts = new HashMap<>();
 
-        this.completedWorkouts.put("Workout 1", new ArrayList<LocalDate>());
-        this.completedWorkouts.put("Workout 2", new ArrayList<LocalDate>());
-        this.completedWorkouts.put("Workout 3", new ArrayList<LocalDate>());
-        this.completedWorkouts.put("Workout 4", new ArrayList<LocalDate>());
-        this.completedWorkouts.put("Workout 5", new ArrayList<LocalDate>());
+        this.completedWorkouts.put("Workout 1", new ArrayList<>());
+        this.completedWorkouts.put("Workout 2", new ArrayList<>());
+        this.completedWorkouts.put("Workout 3", new ArrayList<>());
+        this.completedWorkouts.put("Workout 4", new ArrayList<>());
+        this.completedWorkouts.put("Workout 5", new ArrayList<>());
 
+        this.bodyWeightData = new HashMap<>();
+
+        this.volumeData = new HashMap<>();
     }
 
     /**
      * Adds the current date the workout was completed to its respective key in completedWorkouts.
-     * Precondition: The parameter that is passed must be one of the five keys stored in completedWorkouts.
+     * PRECONDITION: The parameter that is passed must be one of the five keys stored in completedWorkouts.
      * @param workout a String representing the key where the current LocalDate will be added.
      */
     public void updateHistory(String workout) {
@@ -40,11 +51,21 @@ public class RoutineHistory {
         this.completedWorkouts.get(workout).add(LocalDate.now());
     }
 
+    public Bodyweight getBodyWeight(User user){
+
+        return this.bodyWeightData.get(user);
+    }
+
+    public Volume getVolume(User user){
+
+        return this.volumeData.get(user);
+    }
+
     /**
      * Returns the dates of all workouts that were completed.
      * @return the HashMap object completedWorkouts representing the history of completed workouts
      */
-    public HashMap<String, ArrayList<LocalDate>> getCompleted() {
+    public HashMap<String, ArrayList<LocalDate>> getCompletedWorkouts() {
 
         return this.completedWorkouts;
     }
@@ -58,13 +79,13 @@ public class RoutineHistory {
      */
     public HashMap<String, ArrayList<LocalDate>> getYear(int year) {
 
-        HashMap<String, ArrayList<LocalDate>> hash = new HashMap<String, ArrayList<LocalDate>>();
+        HashMap<String, ArrayList<LocalDate>> hash = new HashMap<>();
 
         for (String i : this.completedWorkouts.keySet()) {
 
             if (!this.completedWorkouts.get(i).isEmpty()) {
 
-                hash.put(i, new ArrayList<LocalDate>());
+                hash.put(i, new ArrayList<>());
 
                 for (int j = 0; j < this.completedWorkouts.get(i).size(); j++) {
 
@@ -88,13 +109,13 @@ public class RoutineHistory {
      */
     public HashMap<String, ArrayList<LocalDate>> getMonth(int month) {
 
-        HashMap<String, ArrayList<LocalDate>> hash = new HashMap<String, ArrayList<LocalDate>>();
+        HashMap<String, ArrayList<LocalDate>> hash = new HashMap<>();
 
         for (String i : this.completedWorkouts.keySet()) {
 
             if (!this.completedWorkouts.get(i).isEmpty()) {
 
-                hash.put(i, new ArrayList<LocalDate>());
+                hash.put(i, new ArrayList<>());
 
                 for (int j = 0; j < this.completedWorkouts.get(i).size(); j++) {
 
