@@ -67,13 +67,15 @@ ADD COLUMN `bodyweight` INT NOT NULL;
 8) 
 
 ## Feature 6 (Graphing)
-The graphing feature produces output on the right input(A LinkedHashMap of Dates and Floats), but a lot still needs to be done to make the graphs look better. At the moment, the axes aren't labeled and only points are plotted. 
+The graphing feature is now fully functional, and can accurately plot given data by accepting a hash map. There are six buttons, and each one is able to plot the required data by creating the necessary screen.
 
-Can you also provide feedback on whether the flow of the usecase (from controller to interactor to presenter etc.) had too many classes for this particular use case, and if the GraphResponseModel and GraphRequestModel were necessary.
+The only problem is that the Interactor depends on the class called ExampleDatabase in its method for getting data.This is because the storage of user input for bodyweight etc. took really long to be completed, so I didn't have enough time to rewrite the code to accomodate user input via the buttons.
 
-Also a lot of the latest changes I made (for example the inclusion of JAVADOC) are in the last commit I made and not in the last pull request on the document.
+ A few of the design patterns that were used were dependency injection with the GraphFormatter and Interactor, as well as the observer design pattern in the view for button clicks. 
+ 
+ 
 
-![Screenshot (786)](https://user-images.githubusercontent.com/96087837/203178755-40d391e2-d651-4e50-a318-faa0f36ba13c.png)
+
 
 ## Feature 7 (Targets)
 This feature can be used to add, delete, edit and view targets of 3 types: ORM, Volume and Weight. Each target has two components: its date and its value. A user can add upto three targets of any given type. Adding a fourth target, will delete the oldest target. The user can also edit or delete the most recently added target. The user can also want to view saved targets. 
