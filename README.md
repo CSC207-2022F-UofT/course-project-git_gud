@@ -69,9 +69,11 @@ ADD COLUMN `bodyweight` INT NOT NULL;
 ## Feature 6 (Graphing)
 The graphing feature is now fully functional, and can accurately plot given data by accepting a hash map. There are six buttons, and each one is able to plot the required data by creating the necessary screen.
 
-The only problem is that the Interactor depends on the class called ExampleDatabase in its method for getting data.This is because the storage of user input for bodyweight etc. took really long to be completed, so I didn't have enough time to rewrite the code to accomodate user input via the buttons.
+The only problem is that the Interactor depends on the class called ExampleDatabase in its method for getting data.This is because the storage of user input for bodyweight etc. was not completed by whoever was supposed to do it in time, so I didn't have enough time to rewrite the code to accomodate user input via the buttons.
 
  A few of the design patterns that were used were dependency injection with the GraphFormatter and Interactor, as well as the observer design pattern in the view for button clicks. 
+ 
+ To run the graphing feature independently, you can create a Graphmenu object with a Graph controller object as its parameter. You would also have to create a GraphInteractor variable as well as a GraphFormatter to put into the Interactor as a parameter. (You should put the username as "abc" since the ExampleDatabase file has data mapped to that username.
  
  
 
