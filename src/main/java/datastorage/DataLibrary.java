@@ -18,7 +18,6 @@ public class DataLibrary {
         numbers = new int[]{w, r, orm};
         data = new HashMap<String, int[]>();
     }
-
     /*
     Saves data into the HashMap where all data gets stored for each user and each date.
     If the exercise already exists, replace it with the new data.
