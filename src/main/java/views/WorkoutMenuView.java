@@ -69,12 +69,6 @@ public class WorkoutMenuView extends JFrame {
         addButton.setLocation(52,420);
         addButton.setFont(new Font("Dialog", Font.BOLD, 13));
 
-        JButton historyButton = new JButton("Workout History");
-        historyButton.setFocusable(false);
-        historyButton.setSize(new Dimension(200,30));
-        historyButton.setLocation(52,480);
-        historyButton.setFont(new Font("Dialog", Font.BOLD, 13));
-
         removeButton.setFocusable(false);
         removeButton.setSize(new Dimension(200,30));
         removeButton.setLocation(52,450);
@@ -86,7 +80,6 @@ public class WorkoutMenuView extends JFrame {
 
         this.add(startButton);
         this.add(addButton);
-        this.add(historyButton);
         this.add(removeButton);
         this.add(backButton);
 

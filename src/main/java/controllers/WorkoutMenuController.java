@@ -30,21 +30,21 @@ public class WorkoutMenuController {
         this.theView.addWorkoutSelectionDisplay(new WorkoutSelectionDisplay());
         this.theView.addAddExerciseDisplay(new AddExerciseDisplay());
         this.theView.addRemoveExerciseDisplay(new RemoveExerciseDisplay());
-//        this.theView.addWorkoutStartView(new WorkoutStartDisplay());
+        this.theView.addWorkoutStartView(new WorkoutStartDisplay());
     }
 
-//    class WorkoutStartDisplay implements ActionListener {
+    class WorkoutStartDisplay implements ActionListener {
 
-//        @Override
-//        public void actionPerformed(ActionEvent e) {
-//            theView.dispose();
-//            WorkoutStartView workoutStartView = new WorkoutSelectionView();
-//
-//            workoutStartView.setWorkoutNumber = 1;
-//
-//            new WorkoutStartController(theModel, workoutStartView);
-//        }
-//    }
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            theView.dispose();
+            WorkoutStartView workoutStartView = new WorkoutStartView();
+
+            workoutStartView.setWorkoutNumber(1);
+
+            new WorkoutStartController(theModel, workoutStartView);
+        }
+    }
 
     /**
      * An action listener class in charge of returning to WorkoutSelectionView once the back button is pressed.
