@@ -64,7 +64,6 @@ ADD COLUMN `bodyfat` INT NOT NULL,
 ADD COLUMN `bodyweight` INT NOT NULL;
 ```
 7) Make changes to the code where it says TODO. 
-8) 
 
 ## Feature 6 (Graphing)
 The graphing feature is now fully functional, and can accurately plot given data by accepting a hash map. There are six buttons, and each one is able to plot the required data by creating the necessary screen.
