@@ -15,7 +15,7 @@ public class TargetWeight extends Targets{
     /**
      * constructor for class TargetWeight
      */
-    private TargetWeight(){
+    TargetWeight(){
         targetWeightList = new ArrayList<Target>();
     }
 
