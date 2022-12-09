@@ -12,13 +12,13 @@ import java.awt.*;
 
 public class WorkoutStartView extends JFrame{
 
-    private WorkoutStartViewPanel basePanel;
+
     ArrayList<String> workout;
 
     public String exerciseName = "";
     public ArrayList<String> exerciseList;
-    public int workoutNumber = 0;
-    public int exerciseNumber = 1;
+    public int workoutNumber = 1;
+    public int exerciseNumber = 0;
 
     public ArrayList<String> weights = new ArrayList<String>();
     public ArrayList<String> repsNumber = new ArrayList<String>();
@@ -50,9 +50,7 @@ public class WorkoutStartView extends JFrame{
 
 
     public WorkoutStartView() {
-        this.workout = new ArrayList<>();
-        this.workout.add("Triceps Dips");
-        this.workout.add("Bicep Curls"); // THESE ARE TEMPORARY UNTIL THE EXERCISE FEATURE IS IMPLEMENTED, FOR TESTING PURPOSES
+
         initialize();
 
     }
@@ -65,11 +63,8 @@ public class WorkoutStartView extends JFrame{
         //Display the window.
         setVisible(true);
 
-        this.workout = new ArrayList<>();
-        this.workout.add("Triceps Dips");
-        this.workout.add("Bicep Curls"); // THESE ARE TEMPORARY UNTIL THE EXERCISE FEATURE IS IMPLEMENTED, FOR TESTING PURPOSES
 
-//        panel.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 5));
+
         panel.setLayout(new GridLayout(5, 3, 3, 5));
         add(panel);
         panel.setBackground(Color.GRAY);
@@ -91,23 +86,27 @@ public class WorkoutStartView extends JFrame{
         ghost.setEnabled(false);
         ghost.setVisible(false);
 
-
+        // Titles
         panel.add(exercise);
         panel.add(weight);
         panel.add(reps);
 
+        //First set
         panel.add(one);
         panel.add(weight1);
         panel.add(reps1);
 
+        //Second Set
         panel.add(two);
         panel.add(weight2);
         panel.add(reps2);
 
+        //Third Set
         panel.add(three);
         panel.add(weight3);
         panel.add(reps3);
 
+        //Fourth Set
         panel.add(ghost);
         panel.add(ghost);
         panel.add(next);
@@ -158,42 +157,90 @@ public class WorkoutStartView extends JFrame{
 
     }
 
+    /**
+     * Action Listener Method
+     * @param displayListener
+     */
     public void nextExerciseDisplay(ActionListener displayListener) {
         next.addActionListener(displayListener);
     }
 
+    /**
+     * This method adds exercises to the exerciseList from the particular workout.
+     * @param exercise a String representing the exercise from the workout.
+     */
     public void addExercises(String exercise){
         exerciseList.add(exercise);
     }
 
+    /**
+     * This method updates the workout number based on which workout has been opened.
+     * @param i the woekout number that has been sent by the controller.
+     */
     public void setWorkoutNumber(int i){
 
         this.workoutNumber = i;
     }
 
+    /**
+     * This method gets the workout number from the controller
+     * @return
+     */
     public int getWorkoutNumber() {
 
         return this.workoutNumber;
     }
 
+    /**
+     * This method sets the exercise number to figure out which exercise in the workout we are on.
+     * @param i the updated exercise number.
+     */
     public void setExerciseNumber(int i){
 
         this.exerciseNumber = i;
     }
 
+    /**
+     * This method gets the exercise number.
+     * @return
+     */
     public int getExerciseNumber(){
 
         return this.exerciseNumber;
     }
 
+    /**
+     * This method sets the current exercise name as the name of the exercise button in the view.
+     * @param name The exercise name.
+     */
     public void setExerciseName(String name){
 
         this.exercise.setText(name);
     }
 
+    /**
+     * This exercise gets the exercise name of the current exercise.
+     * @return
+     */
     public String getExerciseName(){
 
         return this.exercise.getText();
+    }
+
+    /**
+     * This method returns the arraylist of the weights lifted for each exercise in any particular workout.
+     * @return
+     */
+    public ArrayList<String> getWeights(){
+        return weights;
+    }
+
+    /**
+     * This method returns the arraylist of the number of reps done for each exercise in any particular workout.
+     * @return
+     */
+    public ArrayList<String> getReps(){
+        return repsNumber;
     }
 
 }
