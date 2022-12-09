@@ -11,13 +11,11 @@ public class UseCaseRegister {
     /**
      * This method instantiates a new EntityAppUser as well as add this new user into the Database Entity.
      */
-    public void newUser(String username, String password, String email) {
+    public void newUser(String username, String password, String email, Connection connection, String tableName) {
         EntitiyAppUser x = new EntitiyAppUser(username, password, email);
         try {
-            //Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBC", "root", "root1234");
-            Connection connection = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/JDBCT?allowMultiQueries=true", "root", "root");
-            String SQL = "INSERT into dashtest(username, password, email)" + "VALUES (?, ?, ?)";
+//            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBC", "root", "root1234");
+            String SQL = "INSERT into "+ tableName + "(username, password, email)" + "VALUES (?, ?, ?)";
             PreparedStatement p = connection.prepareStatement(SQL);
             p.setString(1, x.getUsername());
             p.setString(2, x.getPassword());

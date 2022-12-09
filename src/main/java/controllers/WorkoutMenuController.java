@@ -1,20 +1,27 @@
 package controllers;
 
 import management.RoutineManager;
-import views.AddExerciseMenu;
-import views.RemoveExerciseMenu;
-import views.WorkoutMenu;
-import views.WorkoutSelection;
+import views.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * A controller class for WorkoutMenuView.
+ * @author turne142
+ */
 public class WorkoutMenuController {
 
-    private RoutineManager theModel;
-    private WorkoutMenu theView;
+    private final RoutineManager theModel;
+    private final WorkoutMenuView theView;
 
-    public WorkoutMenuController(RoutineManager theModel, WorkoutMenu theView){
+    /**
+     * The constructor adds action listeners to the back, start exercise, add exercise, remove exercise, and workout
+     * history buttons.
+     * @param theModel a RoutineManager instance where all the data is stored.
+     * @param theView a WorkoutMenuView instance representing the current display.
+     */
+    public WorkoutMenuController(RoutineManager theModel, WorkoutMenuView theView){
 
         this.theModel = theModel;
 
@@ -25,17 +32,23 @@ public class WorkoutMenuController {
         this.theView.addRemoveExerciseDisplay(new RemoveExerciseDisplay());
     }
 
+    /**
+     * An action listener class in charge of returning to WorkoutSelectionView once the back button is pressed.
+     */
     class WorkoutSelectionDisplay implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
             theView.dispose();
-            WorkoutSelection workoutSelection = new WorkoutSelection();
+            WorkoutSelectionView workoutSelectionView = new WorkoutSelectionView();
 
-            WorkoutSelectionController theController = new WorkoutSelectionController(theModel, workoutSelection);
+            new WorkoutSelectionController(theModel, workoutSelectionView);
         }
     }
 
+    /**
+     * An action listener class in charge of displaying AddExerciseMenuView once the add exercise button is pressed.
+     */
     class AddExerciseDisplay implements ActionListener {
 
 
@@ -45,51 +58,55 @@ public class WorkoutMenuController {
             if (theView.getWorkoutNumber()==1) {
 
                 theView.dispose();
-                AddExerciseMenu addExerciseMenu = new AddExerciseMenu();
+                AddExerciseMenuView addExerciseMenuView = new AddExerciseMenuView();
 
-                addExerciseMenu.setWorkoutNumber(1);
+                addExerciseMenuView.setWorkoutNumber(1);
 
-                AddExerciseController addExerciseController = new AddExerciseController(theModel, addExerciseMenu);
+                new AddExerciseController(theModel, addExerciseMenuView);
             }
             if (theView.getWorkoutNumber()==2) {
 
                 theView.dispose();
-                AddExerciseMenu addExerciseMenu = new AddExerciseMenu();
+                AddExerciseMenuView addExerciseMenuView = new AddExerciseMenuView();
 
-                addExerciseMenu.setWorkoutNumber(2);
+                addExerciseMenuView.setWorkoutNumber(2);
 
-                AddExerciseController addExerciseController = new AddExerciseController(theModel, addExerciseMenu);
+                new AddExerciseController(theModel, addExerciseMenuView);
             }
             if (theView.getWorkoutNumber()==3) {
 
                 theView.dispose();
-                AddExerciseMenu addExerciseMenu = new AddExerciseMenu();
+                AddExerciseMenuView addExerciseMenuView = new AddExerciseMenuView();
 
-                addExerciseMenu.setWorkoutNumber(3);
+                addExerciseMenuView.setWorkoutNumber(3);
 
-                AddExerciseController addExerciseController = new AddExerciseController(theModel, addExerciseMenu);
+                new AddExerciseController(theModel, addExerciseMenuView);
             }
             if (theView.getWorkoutNumber()==4) {
 
                 theView.dispose();
-                AddExerciseMenu addExerciseMenu = new AddExerciseMenu();
+                AddExerciseMenuView addExerciseMenuView = new AddExerciseMenuView();
 
-                addExerciseMenu.setWorkoutNumber(4);
+                addExerciseMenuView.setWorkoutNumber(4);
 
-                AddExerciseController addExerciseController = new AddExerciseController(theModel, addExerciseMenu);
+                new AddExerciseController(theModel, addExerciseMenuView);
             }
             if (theView.getWorkoutNumber()==5) {
 
                 theView.dispose();
-                AddExerciseMenu addExerciseMenu = new AddExerciseMenu();
+                AddExerciseMenuView addExerciseMenuView = new AddExerciseMenuView();
 
-                addExerciseMenu.setWorkoutNumber(5);
+                addExerciseMenuView.setWorkoutNumber(5);
 
-                AddExerciseController addExerciseController = new AddExerciseController(theModel, addExerciseMenu);
+                new AddExerciseController(theModel, addExerciseMenuView);
             }
         }
     }
 
+    /**
+     * An action listener class in charge of displaying RemoveExerciseMenuView once the remove exercise button is
+     * pressed.
+     */
     class RemoveExerciseDisplay implements ActionListener, DisplayExercisesRemoveMenu {
 
         @Override
@@ -98,69 +115,72 @@ public class WorkoutMenuController {
             if (theView.getWorkoutNumber()==1) {
 
                 theView.dispose();
-                RemoveExerciseMenu removeExerciseMenu = new RemoveExerciseMenu();
+                RemoveExerciseMenuView removeExerciseMenuView = new RemoveExerciseMenuView();
 
-                displayExercises(theModel, removeExerciseMenu, 1);
+                displayExercises(theModel, removeExerciseMenuView, 1);
 
-                removeExerciseMenu.setWorkoutNumber(1);
+                removeExerciseMenuView.setWorkoutNumber(1);
 
-                RemoveExerciseMenuController theController = new RemoveExerciseMenuController(theModel, removeExerciseMenu);
+                new RemoveExerciseMenuController(theModel, removeExerciseMenuView);
 
             }
             if (theView.getWorkoutNumber()==2) {
 
                 theView.dispose();
-                RemoveExerciseMenu removeExerciseMenu = new RemoveExerciseMenu();
+                RemoveExerciseMenuView removeExerciseMenuView = new RemoveExerciseMenuView();
 
-                displayExercises(theModel, removeExerciseMenu, 2);
+                displayExercises(theModel, removeExerciseMenuView, 2);
 
-                removeExerciseMenu.setWorkoutNumber(2);
+                removeExerciseMenuView.setWorkoutNumber(2);
 
-                RemoveExerciseMenuController theController = new RemoveExerciseMenuController(theModel, removeExerciseMenu);
+                new RemoveExerciseMenuController(theModel, removeExerciseMenuView);
 
             }
             if (theView.getWorkoutNumber()==3) {
 
                 theView.dispose();
-                RemoveExerciseMenu removeExerciseMenu = new RemoveExerciseMenu();
+                RemoveExerciseMenuView removeExerciseMenuView = new RemoveExerciseMenuView();
 
-                displayExercises(theModel, removeExerciseMenu, 3);
+                displayExercises(theModel, removeExerciseMenuView, 3);
 
-                removeExerciseMenu.setWorkoutNumber(3);
+                removeExerciseMenuView.setWorkoutNumber(3);
 
-                RemoveExerciseMenuController theController = new RemoveExerciseMenuController(theModel, removeExerciseMenu);
+                new RemoveExerciseMenuController(theModel, removeExerciseMenuView);
 
             }
             if (theView.getWorkoutNumber()==4) {
 
                 theView.dispose();
-                RemoveExerciseMenu removeExerciseMenu = new RemoveExerciseMenu();
+                RemoveExerciseMenuView removeExerciseMenuView = new RemoveExerciseMenuView();
 
-                displayExercises(theModel, removeExerciseMenu, 4);
+                displayExercises(theModel, removeExerciseMenuView, 4);
 
-                removeExerciseMenu.setWorkoutNumber(4);
+                removeExerciseMenuView.setWorkoutNumber(4);
 
-                RemoveExerciseMenuController theController = new RemoveExerciseMenuController(theModel, removeExerciseMenu);
+                new RemoveExerciseMenuController(theModel, removeExerciseMenuView);
 
             }
             if (theView.getWorkoutNumber()==5) {
 
                 theView.dispose();
-                RemoveExerciseMenu removeExerciseMenu = new RemoveExerciseMenu();
+                RemoveExerciseMenuView removeExerciseMenuView = new RemoveExerciseMenuView();
 
-                displayExercises(theModel, removeExerciseMenu, 5);
+                displayExercises(theModel, removeExerciseMenuView, 5);
 
-                removeExerciseMenu.setWorkoutNumber(5);
+                removeExerciseMenuView.setWorkoutNumber(5);
 
-                RemoveExerciseMenuController theController = new RemoveExerciseMenuController(theModel, removeExerciseMenu);
+                new RemoveExerciseMenuController(theModel, removeExerciseMenuView);
             }
         }
 
+        /**
+         * A method overridden from the DisplayExercisesRemoveMenu interface, check the JavaDoc there for more details.
+         */
         @Override
-        public void displayExercises(RoutineManager theModel, RemoveExerciseMenu removeExerciseMenu, int workoutNumber) {
+        public void displayExercises(RoutineManager theModel, RemoveExerciseMenuView removeExerciseMenuView, int workoutNumber) {
             if (!theModel.getWorkouts()[workoutNumber-1].getWorkout().isEmpty()) {
                 for (int i = 0; i < theModel.getWorkouts()[workoutNumber - 1].getWorkout().size(); i++) {
-                    removeExerciseMenu.addExercise(theModel.getWorkouts()[workoutNumber - 1].getWorkout().get(i));
+                    removeExerciseMenuView.addExercise(theModel.getWorkouts()[workoutNumber - 1].getWorkout().get(i));
                 }
             }
         }

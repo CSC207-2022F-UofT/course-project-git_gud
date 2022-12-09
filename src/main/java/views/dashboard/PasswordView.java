@@ -8,6 +8,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 
+import static management.DashboardViewSetter.buttonSetter;
+import static management.DashboardViewSetter.viewSetter;
+
 @SuppressWarnings("Convert2Lambda")
 public class PasswordView {
     public JPanel password;
@@ -29,24 +32,16 @@ public class PasswordView {
         JLabel inputPassword = new JLabel("Enter Your Current Password");
 
         JPasswordField passwordInput = new JPasswordField();
-        passwordInput.setPreferredSize(new Dimension(150, 20));
-        passwordInput.setFont(new Font("Dialog", Font.BOLD, 10));
 
         JLabel inputNewPassword = new JLabel("Enter Your New Password");
 
         JPasswordField newPasswordInput = new JPasswordField();
-        newPasswordInput.setPreferredSize(new Dimension(150, 20));
-        newPasswordInput.setFont(new Font("Dialog", Font.BOLD, 10));
 
         JButton submitButton = new JButton();
-        submitButton.setText("Submit");
-        submitButton.setFocusable(false);
-        submitButton.setFont(new Font("Dialog", Font.BOLD, 10));
-
         JButton backButton = new JButton();
-        backButton.setText("Go Back");
-        backButton.setFocusable(false);
-        backButton.setFont(new Font("Dialog", Font.BOLD, 10));
+
+
+        passwordViewSetter(password, submitButton, backButton, passwordInput, newPasswordInput);
 
         password.add(inputPassword);
         password.add(passwordInput);
@@ -76,7 +71,7 @@ public class PasswordView {
                 }
                 if (e.getSource() == backButton){
                     SettingsPage newPage = new SettingsPage();
-                    newPage.CreateSettingsPage();
+                    newPage.CreateSettingsPage(null);
                     passwordFrame.dispose();
                 }
 
@@ -84,5 +79,16 @@ public class PasswordView {
         };
         submitButton.addActionListener(submission);
         backButton.addActionListener(submission);
+    }
+    public static void passwordViewSetter(JPanel viewType, JButton submitButton,
+                                        JButton backButton, JTextField useCaseInput, JTextField newPasswordInput) {
+        viewSetter(viewType, useCaseInput);
+        useCaseInput.setText("");
+
+        newPasswordInput.setPreferredSize(new Dimension(150, 20));
+        newPasswordInput.setFont(new Font("Dialog", Font.BOLD, 7));
+        newPasswordInput.setText("");
+
+        buttonSetter(submitButton, backButton);
     }
 }

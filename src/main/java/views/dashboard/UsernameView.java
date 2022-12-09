@@ -8,8 +8,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 
+import static management.DashboardViewSetter.buttonSetter;
+import static management.DashboardViewSetter.viewSetter;
+
 @SuppressWarnings("Convert2Lambda")
 public class UsernameView {
+    /**
+     * UsernameView holds a constructor that instantiates a new view model for the usecase of changing a USER's username
+     */
     public JPanel username;
     public UsernameView(){}
 
@@ -21,31 +27,14 @@ public class UsernameView {
         usernameFrame.setTitle("Change Username");
 
         username = new JPanel();
-        username.setLocation(0, 250);
-        username.setBounds(50, 144, 200, 275);
-        username.setBackground(Color.lightGray);
-        username.setLayout(new FlowLayout(FlowLayout.CENTER));
 
         JTextField usernameInput = new JTextField();
-        usernameInput.setPreferredSize(new Dimension(150, 20));
-        usernameInput.setFont(new Font("Dialog", Font.BOLD, 10));
-        usernameInput.setText("Please Enter Your Current Username");
-
-
         JTextField newUsernameInput = new JTextField();
-        newUsernameInput.setPreferredSize(new Dimension(150, 20));
-        newUsernameInput.setFont(new Font("Dialog", Font.BOLD, 10));
-        newUsernameInput.setText("Please Enter Your New Username");
 
         JButton submitButton = new JButton();
-        submitButton.setText("Submit");
-        submitButton.setFocusable(false);
-        submitButton.setFont(new Font("Dialog", Font.BOLD, 10));
-
         JButton backButton = new JButton();
-        backButton.setText("Go Back");
-        backButton.setFocusable(false);
-        backButton.setFont(new Font("Dialog", Font.BOLD, 10));
+
+        usernameViewSetter(username, submitButton, backButton, usernameInput, newUsernameInput);
 
         username.add(usernameInput);
         username.add(newUsernameInput);
@@ -73,13 +62,26 @@ public class UsernameView {
                 }
                 if (e.getSource() == backButton){
                     SettingsPage newPage = new SettingsPage();
-                    newPage.CreateSettingsPage();
+                    newPage.CreateSettingsPage(null);
                     usernameFrame.dispose();
                 }
-
             }
         };
         submitButton.addActionListener(submission);
         backButton.addActionListener(submission);
     }
+    public static void usernameViewSetter(JPanel viewType, JButton submitButton,
+                                        JButton backButton, JTextField useCaseInput, JTextField userNameInput) {
+        viewSetter(viewType, userNameInput);
+        userNameInput.setText("Please Enter Your New Username");
+
+        useCaseInput.setPreferredSize(new Dimension(150, 20));
+        useCaseInput.setFont(new Font("Dialog", Font.BOLD, 7));
+        useCaseInput.setText("Please Enter Your Current Username");
+
+        buttonSetter(submitButton, backButton);
+    }
+
+
+
 }

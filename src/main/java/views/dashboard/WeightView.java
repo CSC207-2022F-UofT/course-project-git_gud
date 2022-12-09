@@ -8,8 +8,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 
+import static management.DashboardViewSetter.buttonSetter;
+import static management.DashboardViewSetter.viewSetter;
+
 @SuppressWarnings("Convert2Lambda")
 public class WeightView {
+    /**
+     * WeightView holds a constructor that instantiates a new view model for the usecase of changing a USER's weight
+     * stats
+     */
     public JPanel weight;
     public WeightView(){}
 
@@ -21,31 +28,14 @@ public class WeightView {
         weightFrame.setTitle("Change Body Weight");
 
         weight = new JPanel();
-        weight.setLocation(0, 250);
-        weight.setBounds(50, 144, 200, 275);
-        weight.setBackground(Color.lightGray);
-        weight.setLayout(new FlowLayout(FlowLayout.CENTER));
 
         JTextField weightInput = new JTextField();
-        weightInput.setPreferredSize(new Dimension(150, 20));
-        weightInput.setFont(new Font("Dialog", Font.BOLD, 7));
-        weightInput.setText("Please Enter Your New Body Weight");
-
-
         JTextField userNameInput = new JTextField();
-        userNameInput.setPreferredSize(new Dimension(150, 20));
-        userNameInput.setFont(new Font("Dialog", Font.BOLD, 7));
-        userNameInput.setText("Please Enter Your Current Username");
 
         JButton submitButton = new JButton();
-        submitButton.setText("Submit");
-        submitButton.setFocusable(false);
-        submitButton.setFont(new Font("Dialog", Font.BOLD, 10));
-
         JButton backButton = new JButton();
-        backButton.setText("Go Back");
-        backButton.setFocusable(false);
-        backButton.setFont(new Font("Dialog", Font.BOLD, 10));
+
+        weightViewSetter(weight, submitButton, backButton, weightInput, userNameInput);
 
         weight.add(userNameInput);
         weight.add(weightInput);
@@ -73,7 +63,7 @@ public class WeightView {
                 }
                 if (e.getSource() == backButton){
                     SettingsPage newPage = new SettingsPage();
-                    newPage.CreateSettingsPage();
+                    newPage.CreateSettingsPage(null);
                     weightFrame.dispose();
                 }
 
@@ -81,5 +71,16 @@ public class WeightView {
         };
         submitButton.addActionListener(submission);
         backButton.addActionListener(submission);
+    }
+    public static void weightViewSetter(JPanel viewType, JButton submitButton,
+                                    JButton backButton, JTextField useCaseInput, JTextField userNameInput) {
+        viewSetter(viewType, useCaseInput);
+        useCaseInput.setText("Please Enter Your New Body Weight");
+
+        userNameInput.setPreferredSize(new Dimension(150, 20));
+        userNameInput.setFont(new Font("Dialog", Font.BOLD, 7));
+        userNameInput.setText("Please Enter Your Current Username");
+
+        buttonSetter(submitButton, backButton);
     }
 }
