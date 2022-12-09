@@ -23,8 +23,8 @@ public class LogInController {
         String username = page.usernameField.getText();
         String password = String.valueOf(page.passwordField.getPassword());
 
-        if(existsInDatabase(username, connection, "dashtest")){
-            if(passwordCorrectness(password, connection, "dashtest")){
+        if(existsInDatabase(username, connection, "USER")){
+            if(passwordCorrectness(password, connection, "USER")){
                 UseCaseLogin login = new UseCaseLogin();
                 login.login(page);
             }
@@ -44,19 +44,20 @@ public class LogInController {
      * of the given UI page, and determine which use case to select.
      */
     public void signupButton(ViewLoginPage page) throws SQLException {
-        Connection connection = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/JDBCT?allowMultiQueries=true", "root", "root");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBC", "root", "root1234");
+//        Connection connection = DriverManager.getConnection(
+//                "jdbc:mysql://localhost:3306/JDBCT?allowMultiQueries=true", "root", "root");
         String username = page.usernameField.getText();
         String password = String.valueOf(page.passwordField.getPassword());
         String email = page.emailField.getText();
 
-        if(existsInDatabase(username, connection, "dashtest")){
+        if(existsInDatabase(username, connection, "USER")){
             UseCaseRegister register = new UseCaseRegister();
             register.usernameExists(page);
         }
         else{
             UseCaseRegister register = new UseCaseRegister();
-            register.newUser(username, password, email, connection, "dashtest");
+            register.newUser(username, password, email, connection, "USER");
             register.Registered(page);
         }
     }

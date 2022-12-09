@@ -1,8 +1,8 @@
-package DashboardSettings;
+package dashboardSettings;
 
 import controllers.DashboardController;
 import org.junit.jupiter.api.Test;
-import DashboardSettings.usecases.DeleteAccount;
+import dashboardSettings.usecases.DeleteAccount;
 
 import java.sql.*;
 import static controllers.DashboardController.connection1;
@@ -13,8 +13,7 @@ class DashboardControllerTest {
     @Test
     void deleteAccountUseCase() throws SQLException {
         //create new account with username, password, and email
-        PreparedStatement newAccount = connection1.prepareStatement("INSERT into " +
-                "dashtest(username, password, email)" + "VALUES (?, ?, ?)");
+        PreparedStatement newAccount = connection1.prepareStatement("INSERT into TEST(username, password, email)" + "VALUES (?, ?, ?)");
         newAccount.setString(1, "testusername");
         newAccount.setString(2, "testpassword");
         newAccount.setString(3, "testemail");
@@ -27,7 +26,7 @@ class DashboardControllerTest {
 
         //test if the user exists in the table
         PreparedStatement existsRow = connection1.prepareStatement("SELECT EXISTS(" +
-                "Select * FROM dashtest WHERE username = ?)");
+                "Select * FROM USER WHERE username = ?)");
         existsRow.setString(1, "testusername");
         int capturedOutput = existsRow.executeQuery().getRow();
 
@@ -39,8 +38,7 @@ class DashboardControllerTest {
     @Test
     void changeEmailUseCase() throws SQLException {
         //create new account with username, password, and email
-        PreparedStatement newAccount = connection1.prepareStatement("INSERT into " +
-                "dashtest(username, password, email)" + "VALUES (?, ?, ?)");
+        PreparedStatement newAccount = connection1.prepareStatement("INSERT into TEST(username, password, email)" + "VALUES (?, ?, ?)");
         newAccount.setString(1, "testusername");
         newAccount.setString(2, "testpassword");
         newAccount.setString(3, "testemail");
@@ -52,7 +50,7 @@ class DashboardControllerTest {
         DashboardController.changeEmailUseCase(oldEmail, newEmail);
 
         //select the row in the table where the new user is located
-        PreparedStatement p = connection1.prepareStatement("Select * FROM dashtest WHERE username = ?");
+        PreparedStatement p = connection1.prepareStatement("Select * FROM TEST WHERE username = ?");
         p.setString(1, "testusername");
 
         //grab the email of the user after updates have been made and assert with its expected value
@@ -69,8 +67,7 @@ class DashboardControllerTest {
     @Test
     void changeUsernameUseCase() throws SQLException {
         //create new account with username, password, and email
-        PreparedStatement newAccount = connection1.prepareStatement("INSERT into " +
-                "dashtest(username, password, email)" + "VALUES (?, ?, ?)");
+        PreparedStatement newAccount = connection1.prepareStatement("INSERT into TEST(username, password, email)" + "VALUES (?, ?, ?)");
         newAccount.setString(1, "testusername");
         newAccount.setString(2, "testpassword");
         newAccount.setString(3, "testemail");
@@ -82,7 +79,7 @@ class DashboardControllerTest {
         DashboardController.changeUsernameUseCase(oldUsername, newUsername);
 
         //select the row in the table where the new user is located
-        PreparedStatement p = connection1.prepareStatement("Select * FROM dashtest WHERE email = ?");
+        PreparedStatement p = connection1.prepareStatement("Select * FROM TEST WHERE email = ?");
         p.setString(1, "testemail");
 
         //grab the username of the user after updates have been made and assert with its expected value
@@ -99,8 +96,7 @@ class DashboardControllerTest {
     @Test
     void changePasswordUseCase() throws SQLException {
         //create new account with username, password, and email
-        PreparedStatement newAccount = connection1.prepareStatement("INSERT into " +
-                "dashtest(username, password, email)" + "VALUES (?, ?, ?)");
+        PreparedStatement newAccount = connection1.prepareStatement("INSERT into TEST(username, password, email)" + "VALUES (?, ?, ?)");
         newAccount.setString(1, "testusername");
         newAccount.setString(2, "testpassword");
         newAccount.setString(3, "testemail");
@@ -112,7 +108,7 @@ class DashboardControllerTest {
         DashboardController.changePasswordUseCase(oldPassword, newPassword);
 
         //select the row in the table where the new user is located
-        PreparedStatement p = connection1.prepareStatement("Select * FROM dashtest WHERE username = ?");
+        PreparedStatement p = connection1.prepareStatement("Select * FROM TEST WHERE username = ?");
         p.setString(1, "testusername");
 
         //grab the password of the user after updates have been made and assert with its expected value
@@ -129,8 +125,7 @@ class DashboardControllerTest {
     @Test
     void changeBodyWeightUseCase() throws SQLException {
         //create new account with username, password, and email
-        PreparedStatement newAccount = connection1.prepareStatement("INSERT into " +
-                "dashtest(username, password, email)" + "VALUES (?, ?, ?)");
+        PreparedStatement newAccount = connection1.prepareStatement("INSERT into TEST(username, password, email)" + "VALUES (?, ?, ?)");
         newAccount.setString(1, "testusername");
         newAccount.setString(2, "testpassword");
         newAccount.setString(3, "testemail");
@@ -142,7 +137,7 @@ class DashboardControllerTest {
         DashboardController.changeBodyWeightUseCase(username1, weight);
 
         //select the row in the table where the new user is located
-        PreparedStatement p = connection1.prepareStatement("Select * FROM dashtest WHERE username = ?");
+        PreparedStatement p = connection1.prepareStatement("Select * FROM TEST WHERE username = ?");
         p.setString(1, "testusername");
 
         //grab the bodyweight of the user after updates have been made and assert with its expected value
@@ -159,8 +154,7 @@ class DashboardControllerTest {
     @Test
     void changeBodyFatUseCase() throws SQLException {
         //create new account with username, password, and email
-        PreparedStatement newAccount = connection1.prepareStatement("INSERT into " +
-                "dashtest(username, password, email)" + "VALUES (?, ?, ?)");
+        PreparedStatement newAccount = connection1.prepareStatement("INSERT into TEST(username, password, email)" + "VALUES (?, ?, ?)");
         newAccount.setString(1, "testusername");
         newAccount.setString(2, "testpassword");
         newAccount.setString(3, "testemail");
@@ -172,7 +166,7 @@ class DashboardControllerTest {
         DashboardController.changeBodyFatUseCase(username2, fat);
 
         //select the row in the table where the new user is located
-        PreparedStatement p = connection1.prepareStatement("Select * FROM dashtest WHERE username = ?");
+        PreparedStatement p = connection1.prepareStatement("Select * FROM TEST WHERE username = ?");
         p.setString(1, "testusername");
 
         //grab the username of the user after updates have been made and assert with its expected value
@@ -189,8 +183,7 @@ class DashboardControllerTest {
     @Test
     void changeUsernameWithoutCorrectInput() throws SQLException {
         //create new account with username, password, and email
-        PreparedStatement newAccount = connection1.prepareStatement("INSERT into " +
-                "dashtest(username, password, email)" + "VALUES (?, ?, ?)");
+        PreparedStatement newAccount = connection1.prepareStatement("INSERT into TEST(username, password, email)" + "VALUES (?, ?, ?)");
         newAccount.setString(1, "testusername");
         newAccount.setString(2, "testpassword");
         newAccount.setString(3, "testemail");
@@ -202,7 +195,7 @@ class DashboardControllerTest {
         DashboardController.changeUsernameUseCase(oldUsername, newUsername);
 
         //select the row in the table where the new user is located
-        PreparedStatement p = connection1.prepareStatement("Select * FROM dashtest WHERE email = ?");
+        PreparedStatement p = connection1.prepareStatement("Select * FROM TEST WHERE email = ?");
         p.setString(1, "testemail");
 
         //grab the username of the user after updates have been made and assert with its expected value
@@ -223,8 +216,7 @@ class DashboardControllerTest {
     @Test
     void changeBodyWeightWithoutCorrectInput() throws SQLException {
         //create new account with username, password, and email
-        PreparedStatement newAccount = connection1.prepareStatement("INSERT into " +
-                "dashtest(username, password, email)" + "VALUES (?, ?, ?)");
+        PreparedStatement newAccount = connection1.prepareStatement("INSERT into TEST(username, password, email)" + "VALUES (?, ?, ?)");
         newAccount.setString(1, "testusername");
         newAccount.setString(2, "testpassword");
         newAccount.setString(3, "testemail");
@@ -236,7 +228,7 @@ class DashboardControllerTest {
         DashboardController.changeBodyWeightUseCase(username1, weight);
 
         //select the row in the table where the new user is located
-        PreparedStatement p = connection1.prepareStatement("Select * FROM dashtest WHERE username = ?");
+        PreparedStatement p = connection1.prepareStatement("Select * FROM TEST WHERE username = ?");
         p.setString(1, "testusername");
 
         //grab the bodyweight of the user after updates have been made and assert with its expected value
@@ -254,8 +246,7 @@ class DashboardControllerTest {
     @Test
     void changeBodyFatWithoutCorrectInput() throws SQLException {
         //create new account with username, password, and email
-        PreparedStatement newAccount = connection1.prepareStatement("INSERT into " +
-                "dashtest(username, password, email)" + "VALUES (?, ?, ?)");
+        PreparedStatement newAccount = connection1.prepareStatement("INSERT into TEST(username, password, email)" + "VALUES (?, ?, ?)");
         newAccount.setString(1, "testusername");
         newAccount.setString(2, "testpassword");
         newAccount.setString(3, "testemail");
@@ -267,7 +258,7 @@ class DashboardControllerTest {
         DashboardController.changeBodyFatUseCase(username2, fat);
 
         //select the row in the table where the new user is located
-        PreparedStatement p = connection1.prepareStatement("Select * FROM dashtest WHERE username = ?");
+        PreparedStatement p = connection1.prepareStatement("Select * FROM TEST WHERE username = ?");
         p.setString(1, "testusername");
 
         //grab the username of the user after updates have been made and assert with its expected value

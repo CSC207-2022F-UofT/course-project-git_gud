@@ -15,8 +15,9 @@ public class DashboardController {
              JDBCT should be changed to JDBC or whatever you setup the database as, user and password
              should be what you initially setup with your workbench program.
              */
-            connection1 = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/JDBCT?allowMultiQueries=true", "root", "root");
+//            connection1 = DriverManager.getConnection(
+//                    "jdbc:mysql://localhost:3306/JDBCT?allowMultiQueries=true", "root", "root");
+             connection1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBC", "root", "root1234");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

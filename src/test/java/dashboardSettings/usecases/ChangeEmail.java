@@ -1,4 +1,4 @@
-package DashboardSettings.usecases;
+package dashboardSettings.usecases;
 
 import management.DataManager;
 
